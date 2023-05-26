@@ -40,11 +40,15 @@ class Comment(models.Model):
     def __str__(self):
         return f"{self.name}: {self.body}"
 
+DIET = ((0, "No Special Requirement"), (1, "Vegetarian"), (2, "Pescetarian"), (3, "Vegan"), (4, "Nut Allergy"))
 
 class Booking(models.Model):
     workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE, related_name="workshop")
     name = models.CharField(max_length=80)
     email = models.EmailField()
+    phone_number = models.BigIntegerField(default=123456789)
+    spaces = models.IntegerField(default=1)
+    dietary_requirements = models.IntegerField(choices=DIET, default=0)
     booked_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 
@@ -52,4 +56,4 @@ class Booking(models.Model):
         ordering = ['-booked_on']
 
     def __str__(self):
-        return self.title
+        return f"Booking for {self.name} - Workshop: {self.workshop}"
