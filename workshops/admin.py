@@ -1,4 +1,8 @@
 from django.contrib import admin
 from .models import Workshop, Comment, Make_Booking
+from django_summernote.admin import SummernoteModelAdmin
 
-admin.site.register(Workshop)
+
+@admin.register(Workshop)
+class WorkshopAdmin(SummernoteModelAdmin):
+    summernote_fields = ('content')
