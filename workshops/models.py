@@ -15,8 +15,7 @@ class Workshop(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='workshop_likes', blank=True)
-    total_spaces = models.IntegerField()
-    remaining_spaces = models.IntegerField()
+    spaces = models.IntegerField(default=6)
 
     class Meta:
         ordering = ['-created_on']
@@ -26,11 +25,7 @@ class Workshop(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
-
-    def save(self, *args, **kwargs):
-        self.remaining_spaces = self.total_spaces - self.reserve_space.count()
-        super().save(*args, **kwargs)
-
+        
 
 class Comment(models.Model):
     post = models.ForeignKey(Workshop, on_delete=models.CASCADE, related_name="comments")
@@ -59,7 +54,3 @@ class Booking(models.Model):
 
     def __str__(self):
         return self.title
-
-
-
-# Create your models here.

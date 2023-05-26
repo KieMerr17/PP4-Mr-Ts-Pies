@@ -7,7 +7,7 @@ from django_summernote.admin import SummernoteModelAdmin
 class WorkshopAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     list_filter = ('status', 'event_date', 'created_on')
-    list_display = ('title', 'slug', 'chef', 'event_date', 'created_on')
+    list_display = ('title', 'slug', 'chef','event_date', 'spaces', 'created_on', )
     search_fields = ('title', 'content')
     summernote_fields = ('content')
 
@@ -18,4 +18,3 @@ class BookingAdmin(SummernoteModelAdmin):
     list_filter = ('booked_on', 'approved')
     search_fields = ('name', 'email')
 
-    
