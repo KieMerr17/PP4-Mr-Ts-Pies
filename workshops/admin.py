@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Workshop, Comment, Make_Booking
+from .models import Workshop, Booking
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -10,3 +10,12 @@ class WorkshopAdmin(SummernoteModelAdmin):
     list_display = ('title', 'slug', 'chef', 'event_date', 'created_on')
     search_fields = ('title', 'content')
     summernote_fields = ('content')
+
+
+@admin.register(Booking)
+class BookingAdmin(SummernoteModelAdmin):
+    list_display = ('name', 'email', 'booked_on', 'approved')
+    list_filter = ('booked_on', 'approved')
+    search_fields = ('name', 'email')
+
+    
