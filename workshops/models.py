@@ -4,6 +4,7 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+
 class Workshop(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -16,7 +17,7 @@ class Workshop(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='workshop_likes', blank=True)
-    
+ 
     class Meta:
         ordering = ['-created_on']
 
@@ -25,7 +26,7 @@ class Workshop(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
-   
+
 
 class Comment(models.Model):
     post = models.ForeignKey(Workshop, on_delete=models.CASCADE, related_name="comments")
@@ -40,7 +41,9 @@ class Comment(models.Model):
     def __str__(self):
         return f"{self.name}: {self.body}"
 
+
 DIET = ((0, "No Special Requirement"), (1, "Vegetarian"), (2, "Pescetarian"), (3, "Vegan"), (4, "Nut Allergy"))
+
 
 class Booking(models.Model):
     workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE, related_name="workshop")
