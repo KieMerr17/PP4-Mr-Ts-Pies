@@ -2,16 +2,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-#index-body {
-    background: url('../images/pies-1.jpg') no-repeat bottom left fixed;
-    background-size: cover;
-}
-
-#contact-body {
-    background: url('../images/pie-2.jpg') no-repeat top right fixed;
-    background-size: cover;
-}
-
 .overlay {
     top: 0;
     left: 0;
@@ -27,10 +17,8 @@ body {
 
 .cta-container {
     max-height: 1200px;
-    
     align-items: center;
     justify-content: center;
-
     position: relative;
 }
 
@@ -48,7 +36,7 @@ body {
 /*--------------------------------------------------------- Navbar */
 
 #register, #logout {
-    border-left: 1px solid white;
+    border-left: 1px solid grey;
 }
 
 .navbar-toggler-icon {
@@ -98,6 +86,7 @@ body {
 /*--------------------------------------------------------- Block dividers */
 
 .block-divider {
+    margin: 0 auto;
     width: 75px;
     height: 5px;
     border: 0;
@@ -119,14 +108,14 @@ body {
 /*--------------------------------------------------------- Buttons */
 
 .btn--cta {
-    font-weight: bold;
-    border-radius: 23px;
+    font-weight: bold !important;
+    border-radius: 23px !important;
 }
 
 .btn--red {
-    color: white;
-    background-color: #f05f40;
-    border-color: #f05f40;
+    color: white !important;
+    background-color: #f05f40 !important;
+    border-color: #f05f40 !important;
 }
 
 .btn--red:hover,
@@ -258,14 +247,28 @@ footer {
 /* Media queries for medium screen sizes 575px and smaller */
 @media screen and (max-width: 575px){
 
+    #contact-nav a {
+        color: white;
+    }
+
+    #register a, #login a, #logout a {
+        color: rgb(209, 209, 209);
+    }
+
+    #contact-nav {
+        background-color: #f05f40;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
     #register, #logout {
         border-left: 0px;
-        border-top: 1px solid white;
-        background-color: grey;
+        border-top: 2px solid grey;
+        background-color: rgb(83, 83, 83);
     }
 
     #login {
-        background-color: grey;
+        background-color: rgb(83, 83, 83);
     }
 
     .navbar-nav {
