@@ -11,12 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/css/style.css" type="text/css" />
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
-    <link rel="stylesheet" href="#">
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
 </head>
 
@@ -26,8 +28,10 @@
     <div class="container-fluid nav-container px-0">
         <nav class="navbar navbar-light navbar-expand-sm mb-0 b-0">
             <button class="navbar-toggler ml-auto b-0" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon rounded"></span></button>
+                <span class="navbar-toggler-icon rounded"></span>
+            </button>
 
+            <!-- Main Nav Section -->
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav mr-auto">
                     <li class="active nav-item mr-2">
@@ -55,7 +59,8 @@
                     <li>
                         <a class="nav-link mr-2" aria-current="page" href="#">News</a>
                     </li>
-                    
+
+                    <!-- Login/Logout section -->
                     {% if user.is_authenticated %}
                     <li class="nav-item border-start border-white">
                         <a class="nav-link mr-2" href="#">Logout</a>
@@ -67,13 +72,15 @@
                     <li class="nav-item">
                         <a class="nav-link mr-2" href="#">Login</a>
                     </li>
-                    {% endif %}   
+                    {% endif %}
 
                     <li class="d-sm-none nav-item mr-2" data-toggle="collapse" data-target="#navbarNavDropdown">
                         <a class="nav-link" href="#">Get In Touch</a>
                     </li>
                 </ul>
             </div>
+
+            <!-- Right side nav bar -->
             <div class="d-none d-sm-block">
                 <p class="d-none d-lg-inline navbar-text my-auto mr-2"><i>Great pies just when you need them!</i></p>
                 <a href="#" class="d-md-inline btn btn--cta btn--red">Get in Touch</a>
@@ -112,6 +119,10 @@
     <script src="https://kit.fontawesome.com/dce19298c1.js" crossorigin="anonymous"></script>  
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
