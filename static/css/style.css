@@ -38,6 +38,18 @@ body {
     padding-bottom: 25px;
 }
 
+#workshop-container {
+    text-align: center;
+    padding: 50px 20px 0px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#workshop-container h1 {
+    padding: 10px;
+    color: #fff;
+}
+
+
 /*--------------------------------------------------------- Navbar */
 
 #register, #logout {
