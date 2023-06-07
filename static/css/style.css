@@ -47,6 +47,10 @@ body {
 
 /*--------------------------------------------------------- Navbar */
 
+#register, #logout {
+    border-left: 1px solid white;
+}
+
 .navbar-toggler-icon {
     border: 1px solid #fff;
 }
@@ -254,9 +258,20 @@ footer {
 /* Media queries for medium screen sizes 575px and smaller */
 @media screen and (max-width: 575px){
 
+    #register, #logout {
+        border-left: 0px;
+        border-top: 1px solid white;
+        background-color: grey;
+    }
+
+    #login {
+        background-color: grey;
+    }
+
     .navbar-nav {
+        margin: 0 auto;
         border: 2px solid grey;
-        border-radius: 100px 0px 100px 10px;
+        border-radius: 20px;
         font-size: 120%;
         text-align: center;
         background-color: rgba(51, 51, 51, 1);
