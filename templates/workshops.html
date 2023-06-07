@@ -12,6 +12,9 @@
                 {% for workshop in workshop_list %}
                 <div class="col-xxl-3 col-md-6">
                     <div class="card mb-4">
+                        {% if workshop.event_date|date:'Y-m-d' <= now|date:'Y-m-d' %}
+                        text-muted
+                        {% endif %}
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in workshop.featured_image.url %}
