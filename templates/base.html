@@ -37,8 +37,19 @@
                     <li class="active nav-item mr-2">
                         <a class="nav-link" href="{% url 'home' %}">Home</a>
                     </li>
-                    <li class="nav-item mr-2" data-toggle="collapse" data-target="#navbarNavDropdown">
-                        <a class="nav-link" href="#">About</a>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEvents" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDropdownEvents">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">Company</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" aria-current="page" href="#">News</a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item mr-2" data-toggle="collapse" data-target="#navbarNavDropdown">
                         <a class="nav-link" href="#">Pies</a>
@@ -55,9 +66,6 @@
                                 <a class="nav-link" aria-current="page" href="{% url 'workshops' %}">Workshops</a>
                             </li>
                         </ul>
-                    </li>
-                    <li>
-                        <a class="nav-link mr-2" aria-current="page" href="#">News</a>
                     </li>
 
                     <!-- Login/Logout section -->
