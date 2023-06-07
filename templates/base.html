@@ -80,23 +80,38 @@
             </div>
         </nav>
     </div>
+    <!-- End Navigation -->
+
 
     <main class="flex-shrink-0 main-bg">
         {% block content %}
+
         <!-- Content Goes here -->
+
         {% endblock content %}
     </main>
 
-    <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">
-            Follow us:
-            <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i>
-        </p>
-    </footer>
+
+    <!-- Social Links -->
+    <footer>
+        <ul id="social-networks" class="p-2 mb-0 text-center">
+            <li class="d-inline mx-5">
+                <a href="https://www.facebook.com/mrtpies" target="_blank" rel="noopener" aria-label="Vist our Facebook page (Opens in new tab)">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </li>
+            <li class="d-inline m-5">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Vist our Instagram page (Opens in new tab)">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>     
+  
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/dce19298c1.js" crossorigin="anonymous"></script>  
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 </body>
 
 </html>
