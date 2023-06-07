@@ -92,7 +92,7 @@ body {
 
 
 .block-divider {
-    margin: 0 auto;
+    margin: 10px auto;
     width: 75px;
     height: 5px !important;
     border: 0;
