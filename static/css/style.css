@@ -76,6 +76,7 @@ body {
 
 .jumbotron {
     margin: 0 auto 200px;
+    padding: 4rem 2rem;
     max-width: 800px;
     background-color: transparent;
 }
