@@ -32,7 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['mrtspies.herokuapp.com',
                  'localhost',
-                 '8000-kiemerr17-pp4mrtspies-tbh9awon0ho.ws-eu98.gitpod.io']
+                 '8000-kiemerr17-pp4mrtspies-tbh9awon0ho.ws-eu99.gitpod.io']
 
 
 # Application definition
