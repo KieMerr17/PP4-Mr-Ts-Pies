@@ -1,0 +1,49 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+</body>
+<!-- Re-open body tag to allow background image -->
+<body id="index-body" class="d-flex flex-column h-100 main-bg">
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Workshops Column -->
+        <div id="workshop-container" class="col-12 left">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Post title -->
+                    <h1 class="">{{ workshop.title }}</h1>
+                    <!-- Workshop Date goes before the | the post's created date goes after -->
+                    <p class="">{{ workshop.event_date }} | {{ workshop.created_on }}</p>
+                </div>
+                <div class="d-none d-md-block col-md-6 ">
+                    <!-- The featured image -->
+                        <img class="card-img-top" src="{{ workshop.featured_image.url }}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col card mb-4  mt-3 left top">
+                <div class="card-body">
+                    <!-- The workshop content goes inside the card-text. -->
+                    <!-- Use the | safe filter inside the template tags -->
+                    <p class="card-text ">
+                        {{ workshop.content | safe }}
+                    </p>
+                    <div class="row">
+                        <div class="col-1">
+                            <strong class="text-secondary"><i class="far fa-heart"></i> {{ workshop.likes }} </strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
