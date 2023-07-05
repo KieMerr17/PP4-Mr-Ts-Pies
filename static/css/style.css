@@ -39,6 +39,7 @@ body {
 }
 
 #workshop-container {
+    min-height: 100vh;
     text-align: center;
     padding: 50px 20px 0px;
     background-color: rgba(0, 0, 0, 0.8);
