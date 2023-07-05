@@ -15,7 +15,7 @@
                     <!-- Workshop Date goes before the | the post's created date goes after -->
                     <p class="">{{ workshop.event_date }} | {{ workshop.spaces }} Spaces</p>
                     <div class="row">
-                        <div class="d-block col-12 col-md-6">
+                        <div class="d-block col-12 col-lg-6">
                             <!-- The featured image -->
                             {% if "placeholder" in workshop.featured_image.url %}
                                 <img class="rounded-3 card-img-top" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1688574410/pie-2_mbcs4v.jpg">
@@ -23,11 +23,13 @@
                                 <img class="rounded-3 card-img-top" src="{{ workshop.featured_image.url }}">
                             {% endif %}
                         </div>
-                        <div class="d-block col-12 col-md-6">
-                            <h5 class="d-block d-md-none py-2 col-12">{{ workshop.title }}</h5>
-                            <p class="card-text">
-                                {{ workshop.content | safe }}
-                            </p>
+                        <div class="d-flex align-items-center col-12 col-lg-6 pt-2">
+                            <div>
+                                <h5 class="d-block d-md-none py-2 col-12">{{ workshop.title }}</h5>
+                                <p class="card-text">
+                                    {{ workshop.content | safe }}
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <!-- The workshop content goes inside the card-text. -->
