@@ -11,27 +11,32 @@
             <!-- Workshops Column -->
             <div id="workshop-container" class="col-12 left">
                 <div class="row">
-                    <div class="col card mx-auto mb-4  mt-3 left top">
+                    <div class="col card mx-5 mb-4  mt-3 left top">
                         <div class="card-body">
                             <!-- Post title -->
-                            <h1 class="">{{ workshop.title }}</h1>
+                            <h2 class="col-12">{{ workshop.title }}</h2>
                             <!-- Workshop Date goes before the | the post's created date goes after -->
-                            <p class="">{{ workshop.spaces }} Spaces | {{ workshop.event_date }}</p>
-                            <div class="d-none d-md-block col-12 ">
-                                <!-- The featured image -->
-                                {% if "placeholder" in workshop.featured_image.url %}
-                                    <img class="card-img-top" src="../static/images/ph_workshop_img.jpg">
-                                {% else %}
-                                    <img class="card-img-top" src="{{ workshop.featured_image.url }}">
-                                {% endif %}
+                            <p class="">{{ workshop.event_date }} | {{ workshop.spaces }} Spaces</p>
+                            <div class="row">
+                                <div class="d-block col-12 col-md-6">
+                                    <!-- The featured image -->
+                                    {% if "placeholder" in workshop.featured_image.url %}
+                                        <img class="card-img-top" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1688574410/pie-2_mbcs4v.jpg">
+                                    {% else %}
+                                        <img class="card-img-top" src="{{ workshop.featured_image.url }}">
+                                    {% endif %}
+                                </div>
+                                <div class="d-block col-12 col-md-6">
+                                    <p class="card-text ">
+                                        {{ workshop.content | safe }}
+                                    </p>
+                                </div>
                             </div>
                             <!-- The workshop content goes inside the card-text. -->
                             <!-- Use the | safe filter inside the template tags -->
-                            <p class="card-text ">
-                                {{ workshop.content | safe }}
-                            </p>
+                            
                             <div class="row">
-                                <div class="col-1">
+                                <div class="col-12">
                                     <strong class="text-secondary"><i class="far fa-heart"></i> {{ workshop.likes }} </strong>
                                 </div>
                             </div>
