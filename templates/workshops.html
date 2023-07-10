@@ -35,7 +35,18 @@
                             </a>
                             <hr />
                             <p class="card-text text-muted h6">
-                                {{ workshop.event_date}} | Spaces: {{ workshop.spaces }}
+                                {{ workshop.event_date}} | 
+                                    {% if workshop.spaces == 0 %}
+                                        <strong> SOLD OUT</strong>
+                                    {% else %}
+                                    {% if workshop.spaces == 1 %}
+                                            Space: 
+                                        {% else %}
+                                            Spaces: 
+                                        {% endif %}
+                                        {{ workshop.spaces }}
+                                    {% endif %}
+                                </p>
                             </p>
                         </div>
                     </div>

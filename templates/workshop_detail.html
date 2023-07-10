@@ -37,7 +37,21 @@
                     
                     <div class="row">
                         <div class="col-12 pt-3">
-                            <strong class="text-secondary"><a href="#">Reserve your space!</a></strong>
+                            {% if workshop.spaces == 0 %}
+                                <p><strong>- SOLD OUT -</strong></p>
+                            {% else %}
+                                <p>{{ workshop.spaces }} 
+                                    <span>
+                                        {% if workshop.spaces == 1 %}
+                                        Space
+                                        {% else %}
+                                        Spaces
+                                        {% endif %}
+                                    </span>
+                                    Remaining
+                                </p>
+                                <strong class="text-secondary"><a href="#">BOOK ON!</a></strong>                
+                            {% endif %}
                         </div>
                     </div>
                 </div>
