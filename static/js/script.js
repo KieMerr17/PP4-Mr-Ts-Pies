@@ -5,8 +5,8 @@ const marketScrollWidth = marketItems.scrollWidth;
 
 $(window).scroll(function() {
     var scrollTop = $(this).scrollTop();
-    var maxOpacity = 0.8; // maximum opacity value
-    var minOpacity = 0.0; // minimum opacity value
+    var maxOpacity = 0.9; // maximum opacity value
+    var minOpacity = 0.4; // minimum opacity value
 
     var opacity = maxOpacity - (scrollTop / ($(window).height() * 2)); // opacity based on the user's position
     
