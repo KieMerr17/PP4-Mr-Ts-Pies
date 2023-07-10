@@ -18,7 +18,7 @@
                         {% if workshop.event_date|date:'Y-m-d' <= now|date:'Y-m-d' %}
                         text-muted
                         {% endif %}
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <div class="image-container ">
                                 {% if "placeholder" in workshop.featured_image.url %}
                                     <img class="card-img-top" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1688574410/pie-2_mbcs4v.jpg">
