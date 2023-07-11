@@ -7,71 +7,70 @@
 
 <div class="container-fluid">
     <div class="row">
-
+        
         <!-- Workshops Column -->
         <div id="workshop-container" class="col-12 left">
             <div class="row">
                 <h1>Workshops</h1>
-                {% for workshop in workshop_list %}
-                <div class="col-xxl-3 col-md-6">
-                    <div class="card mb-4">
-                        {% if workshop.event_date|date:'Y-m-d' <= now|date:'Y-m-d' %}
-                        text-muted
-                        {% endif %}
-                        <div class="card-body d-flex flex-column">
-                            <div class="image-container ">
-                                {% if "placeholder" in workshop.featured_image.url %}
-                                    <img class="card-img-top" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1688574410/pie-2_mbcs4v.jpg">
-                                {% else %}
-                                    <img class="card-img-top" src="{{ workshop.featured_image.url }}">
-                                {% endif %}
+                <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
+                    {% for workshop in workshop_list %}
+                    <div class="col">
+                        <a href="{% url 'workshop_detail' workshop.slug %}" class="post-link text-decoration-none">
+                            <div class="card h-100">
+                                    {% if "placeholder" in workshop.featured_image.url %}
+                                        <img class="card-img-top fixed-height-img" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1688574410/pie-2_mbcs4v.jpg">
+                                    {% else %}
+                                        <img class="card-img-top fixed-height-img" src="{{ workshop.featured_image.url }}">
+                                    {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Chef: {{ workshop.chef }}</p>
                                 </div>
-                            </div>
-                            <a href="{% url 'workshop_detail' workshop.slug %}" class="post-link">
-                                <h2 class="card-title">{{ workshop.title }}</h2>
-                                <p class="card-text">{{ workshop.excerpt }}</p>
-                            </a>
-                            <hr />
-                            <p class="card-text text-muted h6">
-                                {{ workshop.event_date}} | 
-                                    {% if workshop.spaces == 0 %}
-                                        <strong> SOLD OUT</strong>
-                                    {% else %}
-                                    {% if workshop.spaces == 1 %}
-                                            Space: 
+                                <div class="card-body">                            
+                                    <h5 class="card-title">{{ workshop.title }}</h5>
+                                    <div>
+                                        <p class="card-text">{{ workshop.excerpt }}</p>
+                                    </div>
+                                    
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-body-secondary">
+                                        {{ workshop.event_date }} | 
+                                        {% if workshop.spaces == 0 %}
+                                            <strong> SOLD OUT</strong>
                                         {% else %}
-                                            Spaces: 
+                                            {% if workshop.spaces == 1 %}
+                                                Space: 
+                                            {% else %}
+                                                Spaces: 
+                                            {% endif %}
+                                            {{ workshop.spaces }}
                                         {% endif %}
-                                        {{ workshop.spaces }}
-                                    {% endif %}
-                                </p>
-                            </p>
-                        </div>
+                                    </small>
+                                </div>
+                            </div>
+                        </a>
                     </div>
+                    {% if forloop.counter|divisibleby:4 %}
+                        </div>
+                        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
+                    {% endif %}
+                    {% endfor %}
                 </div>
-                {% if forloop.counter|divisibleby:4 %}
             </div>
-            <div class="row">
+
+            <!-- Pagination -->
+            {% if is_paginated %}
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                    <li class="page-item"><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
                 {% endif %}
-                {% endfor %}
-
-            </div>
+                {% if page_obj.has_next %}
+                    <li class="page-item"><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+                {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
         </div>
-    </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
-</div>
+    </div>   
 {%endblock%}

@@ -261,6 +261,16 @@ footer {
 }
 
 
+/*--------------------------------------------------------- Workshops */
+
+
+.fixed-height-img {
+    height: 350px; /* Adjust the desired height here */
+    width: auto;
+    object-fit: cover;
+}
+
+
 /*--------------------------------------------------------- Media Queries */
 
 /* Media queries for medium screen sizes 575px and smaller */
