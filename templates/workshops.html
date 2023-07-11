@@ -34,16 +34,17 @@
                                 </div>
                                 <div class="card-footer">
                                     <small class="text-body-secondary">
-                                        {{ workshop.event_date }} | 
+                                        {{ workshop.event_date }} |
                                         {% if workshop.spaces == 0 %}
                                             <strong> SOLD OUT</strong>
                                         {% else %}
-                                            {% if workshop.spaces == 1 %}
-                                                Space: 
-                                            {% else %}
-                                                Spaces: 
-                                            {% endif %}
                                             {{ workshop.spaces }}
+                                            {% if workshop.spaces == 1 %}
+                                                Space
+                                            {% else %}
+                                                Spaces
+                                            {% endif %}
+                                            
                                         {% endif %}
                                     </small>
                                 </div>
