@@ -18,9 +18,9 @@
                         <a href="{% url 'news_detail' article.slug %}" class="post-link text-decoration-none">
                             <div class="card h-100">
                                     {% if "placeholder" in article.featured_image.url %}
-                                        <img class="card-img-top fixed-height-img-news" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1689102979/yjdzd1iiqsdundx3xmk3.jpg">
+                                        <img class="card-img-top fixed-height-img" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1689102979/yjdzd1iiqsdundx3xmk3.jpg">
                                     {% else %}
-                                        <img class="card-img-top fixed-height-img-news" src="{{ article.featured_image.url }}">
+                                        <img class="card-img-top fixed-height-img" src="{{ article.featured_image.url }}">
                                     {% endif %}
                                 <div class="image-flash">
                                     <p class="author"></p>

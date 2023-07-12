@@ -270,12 +270,6 @@ footer {
     object-fit: cover;
 }
 
-.fixed-height-img-news {
-    height: 500px; /* Adjust the desired height here */
-    width: auto;
-    object-fit: cover;
-}
-
 .fixed-height-img-detail {
     height: 700px; /* Adjust the desired height here */
     width: auto;
