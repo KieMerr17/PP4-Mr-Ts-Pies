@@ -18,7 +18,7 @@ class Workshop(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='workshop_likes', blank=True)
- 
+
     class Meta:
         ordering = ['-created_on']
 
@@ -72,3 +72,9 @@ class Booking(models.Model):
             self.workshop.spaces -= self.spaces
             self.workshop.save()
         super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        # Add the spaces back to the workshop when a booking is deleted
+        self.workshop.spaces += self.spaces
+        self.workshop.save()
+        super().delete(*args, **kwargs)
