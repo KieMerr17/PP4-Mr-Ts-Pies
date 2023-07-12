@@ -9,7 +9,7 @@
     <div id="workshop-container" class="col-12 left">
         <div class="row">
             <div class="col card mx-5 mb-4  mt-3 left top">
-                <div class="card-body">
+                <div class="card-body h-100">
                     <!-- Post title -->
                     <h2 class="col-12">{{ workshop.title }}</h2>
                     <!-- Workshop Date goes before the | the post's created date goes after -->
@@ -18,9 +18,9 @@
                         <div class="d-block col-12 col-lg-6">
                             <!-- The featured image -->
                             {% if "placeholder" in workshop.featured_image.url %}
-                                <img class="rounded-3 card-img-top" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1688574410/pie-2_mbcs4v.jpg">
+                                <img class="rounded-3 card-img-top fixed-height-img-detail" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1688574410/pie-2_mbcs4v.jpg">
                             {% else %}
-                                <img class="rounded-3 card-img-top" src="{{ workshop.featured_image.url }}">
+                                <img class="rounded-3 card-img-top fixed-height-img-detail" src="{{ workshop.featured_image.url }}">
                             {% endif %}
                         </div>
                         <div class="d-flex align-items-center col-12 col-lg-6 pt-2">

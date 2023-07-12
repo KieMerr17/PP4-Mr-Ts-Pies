@@ -276,6 +276,12 @@ footer {
     object-fit: cover;
 }
 
+.fixed-height-img-detail {
+    height: 700px; /* Adjust the desired height here */
+    width: auto;
+    object-fit: cover;
+}
+
 /*--------------------------------------------------------- Media Queries */
 
 /* Media queries for medium screen sizes 575px and smaller */
