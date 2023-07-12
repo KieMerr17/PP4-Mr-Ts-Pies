@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.core.exceptions import ValidationError
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -60,6 +61,10 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"Booking for {self.name} - Workshop: {self.workshop}"
+
+    def clean(self):
+        if self.spaces > self.workshop.spaces:
+            raise ValidationError("The number of spaces booked exceeds the available spaces in the workshop.")
 
     def save(self, *args, **kwargs):
         if not self.pk:
