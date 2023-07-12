@@ -19,5 +19,10 @@ class BookingAdmin(SummernoteModelAdmin):
     search_fields = ('name', 'email')
     actions = ['approve_booking']
 
+    def get_actions(self, request):
+        actions = super().get_actions(request)
+        del actions['delete_selected']
+        return actions
+
     def approve_booking(self, request, queryset):
         queryset.update(approved=True)
