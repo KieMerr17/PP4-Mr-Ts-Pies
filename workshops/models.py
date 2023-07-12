@@ -60,3 +60,10 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"Booking for {self.name} - Workshop: {self.workshop}"
+
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            # Only reduce the number of spaces when a new booking is created
+            self.workshop.spaces -= self.spaces
+            self.workshop.save()
+        super().save(*args, **kwargs)
