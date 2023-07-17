@@ -1,7 +1,7 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-from django.core.exceptions import ValidationError
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -47,7 +47,7 @@ DIET = ((0, "No Special Requirement"), (1, "Vegetarian"), (2, "Pescetarian"), (3
 
 
 class Booking(models.Model):
-    workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE, related_name="workshop")
+    workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE, related_name="bookings")
     name = models.CharField(max_length=80)
     email = models.EmailField()
     phone_number = models.BigIntegerField(default=123456789)
@@ -62,11 +62,8 @@ class Booking(models.Model):
     def __str__(self):
         return f"Booking for {self.name} - Workshop: {self.workshop}"
 
-    def clean(self):
-        if self.spaces > self.workshop.spaces:
-            raise ValidationError("The number of spaces booked exceeds the available spaces in the workshop.")
-
     def save(self, *args, **kwargs):
+
         if not self.pk:
             if self.approved:
                 # Only reduce the number of spaces when a new booking is created
@@ -76,9 +73,20 @@ class Booking(models.Model):
             if original_booking.approved and not self.approved:
                 # Increase the number of spaces when an approved booking is modified to be unapproved
                 self.workshop.spaces += original_booking.spaces
+
             elif not original_booking.approved and self.approved:
                 # Reduce the number of spaces when an unapproved booking is modified to be approved
                 self.workshop.spaces -= self.spaces
+
+            elif original_booking.spaces != self.spaces:
+            # Adjust the spaces based on the difference between the original and updated number of spaces
+                space_diff = self.spaces - original_booking.spaces
+                new_spaces = self.workshop.spaces - space_diff
+                self.workshop.spaces = new_spaces
+
+        # TO BE SORTED
+        # if self.workshop.spaces < 0:
+        #     raise ValidationError("The number of spaces booked exceeds the available spaces in the workshop.")
         
         self.workshop.save()
         super().save(*args, **kwargs)
