@@ -68,9 +68,19 @@ class Booking(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.pk:
-            # Only reduce the number of spaces when a new booking is created
-            self.workshop.spaces -= self.spaces
-            self.workshop.save()
+            if self.approved:
+                # Only reduce the number of spaces when a new booking is created
+                self.workshop.spaces -= self.spaces
+        else:
+            original_booking = Booking.objects.get(pk=self.pk)
+            if original_booking.approved and not self.approved:
+                # Increase the number of spaces when an approved booking is modified to be unapproved
+                self.workshop.spaces += original_booking.spaces
+            elif not original_booking.approved and self.approved:
+                # Reduce the number of spaces when an unapproved booking is modified to be approved
+                self.workshop.spaces -= self.spaces
+        
+        self.workshop.save()
         super().save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):
