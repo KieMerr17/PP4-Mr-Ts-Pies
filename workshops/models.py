@@ -84,7 +84,8 @@ class Booking(models.Model):
         super().save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):
-        # Add the spaces back to the workshop when a booking is deleted
-        self.workshop.spaces += self.spaces
+        if self.approved:
+            # Add the spaces back to the workshop when an approved booking is deleted
+            self.workshop.spaces += self.spaces
         self.workshop.save()
         super().delete(*args, **kwargs)
