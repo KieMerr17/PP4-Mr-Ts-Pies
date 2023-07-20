@@ -64,15 +64,24 @@ class Booking(models.Model):
 
     def clean(self):
         if self.approved:
-            original_booking = Booking.objects.get(pk=self.pk)
-            if original_booking.spaces != self.spaces:
-                space_diff = self.spaces - original_booking.spaces
-                new_spaces = self.workshop.spaces - space_diff
+            # Check if it's a new booking (no primary key) or an existing one
+            if self.pk is None:
+                new_spaces = self.workshop.spaces - self.spaces
                 if new_spaces < 0:
                     raise ValidationError("Requested spaces exceed available spaces")
                 else:
                     self.workshop.spaces = new_spaces
                     self.workshop.save()  # Save the related workshop with updated spaces
+            else:
+                original_booking = Booking.objects.get(pk=self.pk)
+                if original_booking.spaces != self.spaces:
+                    space_diff = self.spaces - original_booking.spaces
+                    new_spaces = self.workshop.spaces - space_diff
+                    if new_spaces < 0:
+                        raise ValidationError("Requested spaces exceed available spaces")
+                    else:
+                        self.workshop.spaces = new_spaces
+                        self.workshop.save()  # Save the related workshop with updated spaces
 
     def save(self, *args, **kwargs):
         self.workshop.save()  # Save the related workshop with updated spaces
