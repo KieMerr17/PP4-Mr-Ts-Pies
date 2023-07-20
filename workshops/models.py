@@ -62,33 +62,20 @@ class Booking(models.Model):
     def __str__(self):
         return f"Booking for {self.name} - Workshop: {self.workshop}"
 
-    def save(self, *args, **kwargs):
-
-        if not self.pk:
-            if self.approved:
-                # Only reduce the number of spaces when a new booking is created
-                self.workshop.spaces -= self.spaces
-        else:
+    def clean(self):
+        if self.approved:
             original_booking = Booking.objects.get(pk=self.pk)
-            if original_booking.approved and not self.approved:
-                # Increase the number of spaces when an approved booking is modified to be unapproved
-                self.workshop.spaces += original_booking.spaces
-
-            elif not original_booking.approved and self.approved:
-                # Reduce the number of spaces when an unapproved booking is modified to be approved
-                self.workshop.spaces -= self.spaces
-
-            elif original_booking.spaces != self.spaces:
-            # Adjust the spaces based on the difference between the original and updated number of spaces
+            if original_booking.spaces != self.spaces:
                 space_diff = self.spaces - original_booking.spaces
                 new_spaces = self.workshop.spaces - space_diff
-                self.workshop.spaces = new_spaces
+                if new_spaces < 0:
+                    raise ValidationError("Requested spaces exceed available spaces")
+                else:
+                    self.workshop.spaces = new_spaces
+                    self.workshop.save()  # Save the related workshop with updated spaces
 
-        # TO BE SORTED
-        # if self.workshop.spaces < 0:
-        #     raise ValidationError("The number of spaces booked exceeds the available spaces in the workshop.")
-        
-        self.workshop.save()
+    def save(self, *args, **kwargs):
+        self.workshop.save()  # Save the related workshop with updated spaces
         super().save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):
