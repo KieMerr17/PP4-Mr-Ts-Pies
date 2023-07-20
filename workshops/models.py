@@ -63,6 +63,10 @@ class Booking(models.Model):
         return f"Booking for {self.name} - Workshop: {self.workshop}"
 
     def clean(self):
+
+        if self.spaces <= 0:
+            raise ValidationError("Please cancel your booking if you do not require any spaces")
+
         if self.approved:
             # Check if it's a new booking (no primary key) or an existing one
             if self.pk is None:
