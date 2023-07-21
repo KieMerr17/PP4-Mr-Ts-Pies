@@ -63,7 +63,6 @@ class Booking(models.Model):
         return f"Booking for {self.name} - Workshop: {self.workshop}"
 
     def clean(self):
-
         if self.spaces <= 0:
             raise ValidationError("Please cancel your booking if you do not require any")
 
@@ -76,9 +75,6 @@ class Booking(models.Model):
                 else:
                     self.workshop.spaces = new_spaces
                     self.workshop.save()  # Save the related workshop with updated spaces
-
-
-        
             else:
                 original_booking = Booking.objects.get(pk=self.pk)
                 original_approved = original_booking.approved
@@ -93,13 +89,20 @@ class Booking(models.Model):
                             self.workshop.spaces = new_spaces
                             self.workshop.save()  # Save the related workshop with updated spaces
                 elif new_approved:
-                    check_spaces = self.workshop.spaces - original_booking.spaces
+                    check_spaces = self.workshop.spaces - self.spaces
                     if check_spaces < 0:
                         raise ValidationError("Requested spaces exceed available spaces")
                     else:
-                        self.workshop.spaces = new_spaces
+                        self.workshop.spaces = check_spaces
                         self.workshop.save()  # Save the related workshop with updated spaces
-                    
+        # else:  # Booking changed from approved to unapproved
+        #     new_spaces = self.workshop.spaces + self.spaces
+        #     self.workshop.spaces = new_spaces
+        #     self.workshop.save()  # Save the related workshop with updated spaces
+                
+                
+
+
 
 
 
