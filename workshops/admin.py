@@ -17,14 +17,14 @@ class BookingAdmin(admin.ModelAdmin):
     list_display = ('name', 'phone_number', 'workshop', 'spaces', 'dietary_requirements', 'booked_on', 'approved')
     list_filter = ('booked_on', 'approved')
     search_fields = ('name', 'email')
-    actions = ['approve_booking']
+    actions = ['Approve_selected', 'Delete_selected']
 
     def get_actions(self, request):
         actions = super().get_actions(request)
         del actions['delete_selected']
         return actions
 
-    def approve_booking(self, request, queryset):
+    def Approve_selected(self, request, queryset):
         for booking in queryset:
             if not booking.approved:
                 booking.approved = True
@@ -36,4 +36,8 @@ class BookingAdmin(admin.ModelAdmin):
                     booking.workshop.save()
                     booking.save()
 
-    approve_booking.short_description = "Approve selected bookings"
+    def Delete_selected(self, request, queryset):
+        # Add the spaces back for the bookings that were approved before deleting.
+        for booking in queryset:
+            booking.delete()
+
