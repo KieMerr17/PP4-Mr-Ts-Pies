@@ -65,7 +65,7 @@ class Booking(models.Model):
     def clean(self):
 
         if self.spaces <= 0:
-            raise ValidationError("Please cancel your booking if you do not require any spaces")
+            raise ValidationError("Please cancel your booking if you do not require any")
 
         if self.approved:
             # Check if it's a new booking (no primary key) or an existing one
@@ -76,16 +76,36 @@ class Booking(models.Model):
                 else:
                     self.workshop.spaces = new_spaces
                     self.workshop.save()  # Save the related workshop with updated spaces
+
+
+        
             else:
                 original_booking = Booking.objects.get(pk=self.pk)
-                if original_booking.spaces != self.spaces:
-                    space_diff = self.spaces - original_booking.spaces
-                    new_spaces = self.workshop.spaces - space_diff
-                    if new_spaces < 0:
+                original_approved = original_booking.approved
+                new_approved = self.approved
+                if original_approved:
+                    if original_booking.spaces != self.spaces:
+                        space_diff = self.spaces - original_booking.spaces
+                        new_spaces = self.workshop.spaces - space_diff
+                        if new_spaces < 0:
+                            raise ValidationError("Requested spaces exceed available spaces")
+                        else:
+                            self.workshop.spaces = new_spaces
+                            self.workshop.save()  # Save the related workshop with updated spaces
+                elif new_approved:
+                    check_spaces = self.workshop.spaces - original_booking.spaces
+                    if check_spaces < 0:
                         raise ValidationError("Requested spaces exceed available spaces")
                     else:
                         self.workshop.spaces = new_spaces
                         self.workshop.save()  # Save the related workshop with updated spaces
+                    
+
+
+
+
+
+                
 
     def save(self, *args, **kwargs):
         self.workshop.save()  # Save the related workshop with updated spaces
