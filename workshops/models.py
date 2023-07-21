@@ -64,7 +64,7 @@ class Booking(models.Model):
 
     def clean(self):
         if self.spaces <= 0:
-            raise ValidationError("Please cancel your booking if you do not require any")
+            raise ValidationError("Please cancel your booking if you do not require any spaces")
 
         if self.approved:
             # Check if it's a new booking (no primary key) or an existing one
@@ -95,19 +95,19 @@ class Booking(models.Model):
                     else:
                         self.workshop.spaces = check_spaces
                         self.workshop.save()  # Save the related workshop with updated spaces
-        # else:  # Booking changed from approved to unapproved
-        #     new_spaces = self.workshop.spaces + self.spaces
-        #     self.workshop.spaces = new_spaces
-        #     self.workshop.save()  # Save the related workshop with updated spaces
-                
-                
 
-
-
-
-
-
-
+        else:  # Booking changed from approved to unapproved
+            if self.pk is None:
+                self.workshop.save()
+            else:
+                original_booking = Booking.objects.get(pk=self.pk)
+                original_approved = original_booking.approved
+                new_spaces = self.workshop.spaces + self.spaces
+                if not original_booking.approved:
+                    self.workshop.save()
+                else:
+                    self.workshop.spaces = new_spaces
+                    self.workshop.save()  # Save the related workshop with updated spaces
                 
 
     def save(self, *args, **kwargs):
