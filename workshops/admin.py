@@ -1,4 +1,4 @@
-from django.contrib import admin
+from django.contrib import admin, messages
 from .models import Workshop, Booking
 from django_summernote.admin import SummernoteModelAdmin
 
@@ -13,7 +13,7 @@ class WorkshopAdmin(SummernoteModelAdmin):
 
 
 @admin.register(Booking)
-class BookingAdmin(SummernoteModelAdmin):
+class BookingAdmin(admin.ModelAdmin):
     list_display = ('name', 'phone_number', 'workshop', 'spaces', 'dietary_requirements', 'booked_on', 'approved')
     list_filter = ('booked_on', 'approved')
     search_fields = ('name', 'email')
@@ -25,4 +25,15 @@ class BookingAdmin(SummernoteModelAdmin):
         return actions
 
     def approve_booking(self, request, queryset):
-        queryset.update(approved=True)
+        for booking in queryset:
+            if not booking.approved:
+                booking.approved = True
+                new_spaces = booking.workshop.spaces - booking.spaces
+                if new_spaces < 0:
+                    messages.error(request, f"Spaces for this booking exceed the spaces available.")
+                else:
+                    booking.workshop.spaces = new_spaces
+                    booking.workshop.save()
+                    booking.save()
+
+    approve_booking.short_description = "Approve selected bookings"
