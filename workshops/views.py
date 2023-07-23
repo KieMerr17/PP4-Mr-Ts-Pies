@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
-from .models import Workshop
-
+from django.views.generic import ListView, DetailView, CreateView
+from .models import Workshop, Booking
 
 class WorkshopList(generic.ListView):
     model = Workshop
@@ -28,3 +28,30 @@ class WorkshopDetail(View):
                 "liked": liked
             }
         )
+
+class BookingListView(ListView):
+    model = Booking
+    template_name = 'booking_list.html'
+    context_object_name = 'bookings'
+
+    def get_queryset(self):
+        return Booking.objects.filter(user=self.request.user).order_by('-booked_on')
+
+
+# View to create a new booking for the logged-in user
+class BookingCreateView(CreateView):
+    model = Booking
+    template_name = 'booking_form.html'
+    fields = ['workshop', 'name', 'email', 'phone_number', 'spaces', 'dietary_requirements']
+    success_url = '/bookings/'  # Redirect to the booking list after successful creation
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+
+# View to display details of a specific booking for the logged-in user
+class BookingDetailView(DetailView):
+    model = Booking
+    template_name = 'booking_detail.html'
+    context_object_name = 'booking'
