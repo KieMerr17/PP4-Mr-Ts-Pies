@@ -43,16 +43,10 @@ class Comment(models.Model):
         return f"{self.name}: {self.body}"
 
 
-class Booking(models.Model):
-    DIET = (
-        (0, "No Special Requirement"),
-        (1, "Vegetarian"),
-        (2, "Pescetarian"),
-        (3, "Vegan"),
-        (4, "Nut Allergy"),
-    )
+DIET = ((0, "No Special Requirement"), (1, "Vegetarian"), (2, "Pescetarian"), (3, "Vegan"), (4, "Nut Allergy"))
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=0)
+
+class Booking(models.Model):
     workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE, related_name="bookings")
     name = models.CharField(max_length=80)
     email = models.EmailField()
