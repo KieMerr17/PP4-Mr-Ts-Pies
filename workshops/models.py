@@ -52,6 +52,7 @@ class Booking(models.Model):
         (4, "Nut Allergy"),
     )
 
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=0)
     workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE, related_name="bookings")
     name = models.CharField(max_length=80)
     email = models.EmailField()
