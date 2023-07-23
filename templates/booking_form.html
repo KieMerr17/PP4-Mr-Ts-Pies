@@ -10,7 +10,7 @@
         <div class="row justify-content-center">
             <h1>Make a booking</h1>
             <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
-                <form method="post" action="{% url 'booking_create' %}?workshop_id={{ workshop.title }}">
+                <form method="post" action="{% url 'booking_create' %}?workshop_id={{ workshop.title }}?diet_id={{booking.dietary_requirements}}">
                     {% csrf_token %}
                     <div class="form-group">
                         <label for="name">Workshop:</label>
@@ -37,6 +37,16 @@
                     <div class="form-group">
                         <label for="spaces">Number of Spaces:</label>
                         <input type="number" id="spaces" name="spaces" class="form-control" min="1" max="{{ workshop.spaces }}" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Diet:</label>
+                        <select id="diet_id" name="diet_id" class="form-control">
+                            {% for value, label in dietary_requirements %}
+                            <option value="{{ value }}">
+                                {{ label }}
+                            </option>
+                            {% endfor %}
+                        </select>
                     </div>
                 </form>
                 

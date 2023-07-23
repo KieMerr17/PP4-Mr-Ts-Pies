@@ -48,7 +48,7 @@ class BookingCreateView(CreateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['workshop_list'] = Workshop.objects.all()  # Fetch all workshops and add them to the context
-        context['dietary_requirements'] = Booking.objects.values_list('dietary_requirements', flat=True).distinct()
+        context['dietary_requirements'] = Booking.DIET
         return context
 
     def form_valid(self, form):
