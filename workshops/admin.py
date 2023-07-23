@@ -40,4 +40,3 @@ class BookingAdmin(admin.ModelAdmin):
         # Add the spaces back for the bookings that were approved before deleting.
         for booking in queryset:
             booking.delete()
-
