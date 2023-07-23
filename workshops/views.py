@@ -43,7 +43,13 @@ class BookingCreateView(CreateView):
     model = Booking
     template_name = 'booking_form.html'
     fields = ['workshop', 'name', 'email', 'phone_number', 'spaces', 'dietary_requirements']
-    success_url = '/bookings/'  # Redirect to the booking list after successful creation
+    success_url = '/bookings/'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['workshop_list'] = Workshop.objects.all()  # Fetch all workshops and add them to the context
+        context['dietary_requirements'] = Booking.objects.values_list('dietary_requirements', flat=True).distinct()
+        return context
 
     def form_valid(self, form):
         form.instance.user = self.request.user

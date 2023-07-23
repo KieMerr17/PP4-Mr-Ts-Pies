@@ -8,7 +8,7 @@
     <!-- Workshops Column -->
     <div id="workshop-container" class="col-12 left">
         <div class="row">
-            <div class="col card mx-5 mb-4  mt-3 left top">
+            <div class="col card mx-5 mb-4 mt-3 left top">
                 <div class="card-body h-100">
                     <!-- Post title -->
                     <h2 class="col-12">{{ workshop.title }}</h2>
@@ -50,7 +50,9 @@
                                     </span>
                                     Remaining
                                 </p>
-                                <strong class="text-secondary"><a href="#">BOOK ON!</a></strong>                
+                                <strong class="text-secondary">
+                                    <a href="{% url 'booking_create' %}?workshop_id={{ workshop.id }}">BOOK NOW!</a>
+                                </strong>
                             {% endif %}
                         </div>
                     </div>
