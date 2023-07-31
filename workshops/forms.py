@@ -1,10 +1,10 @@
 from django import forms
-from .models import Booking, DIET
+from .models import Booking, Workshop, DIET
 
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ['name', 'email', 'phone_number', 'spaces', 'dietary_requirements']
+        fields = ['workshop', 'name', 'email', 'phone_number', 'spaces', 'dietary_requirements']
 
     def clean_spaces(self):
         spaces = self.cleaned_data.get('spaces')
