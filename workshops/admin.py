@@ -35,8 +35,3 @@ class BookingAdmin(admin.ModelAdmin):
                     booking.workshop.spaces = new_spaces
                     booking.workshop.save()
                     booking.save()
-
-    def Delete_selected(self, request, queryset):
-        # Add the spaces back for the bookings that were approved before deleting.
-        for booking in queryset:
-            booking.delete()
