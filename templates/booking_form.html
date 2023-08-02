@@ -11,11 +11,45 @@
             <div class="col card mx-5 mb-4  mt-3 left top">
                 <div class="card-body h-100">
 
-                    <form method="post">
+
+                    <form method="post" action="#">
                         {% csrf_token %}
-                        {{ form.as_p }}
-                        <button type="submit">Book Now</button>
+                        <div class="form-group">
+                            <label for="workshop">Workshop:</label>
+                            <select id="id_workshop" name="workshop" class="form-control text-center">
+                                {% for value, label in form.fields.workshop.choices %}
+                                    <option value="{{ value }}">{{ label }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_name">Name:</label>
+                            <input type="text" id="id_name" name="name" class="form-control text-center" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_email">Email:</label>
+                            <input type="email" id="id_email" name="email" class="form-control text-center" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_phone_number">Phone Number:</label>
+                            <input type="tel" id="id_phone_number" name="phone_number" class="form-control text-center" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_spaces">Number of Spaces:</label>
+                            <input type="number" id="id_spaces" name="spaces" class="form-control text-center" min="1" max="{{ workshop.spaces }}" value="" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dietary_requirements">Dietary Requirements:</label>
+                            <select id="dietary_requirements" name="dietary_requirements" class="form-control text-center">
+                                {% for value, label in form.fields.dietary_requirements.choices %}
+                                    <option value="{{ value }}">{{ label }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Book Now</button>
                     </form>
+
 
                 </div>
             </div>
