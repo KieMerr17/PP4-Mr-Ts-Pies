@@ -276,6 +276,11 @@ footer {
     object-fit: cover;
 }
 
+/*--------------------------------------------------------- Booking Form */
+#form_spaces_error {
+    list-style-type: none; 
+}
+
 /*--------------------------------------------------------- Media Queries */
 
 /* Media queries for medium screen sizes 575px and smaller */

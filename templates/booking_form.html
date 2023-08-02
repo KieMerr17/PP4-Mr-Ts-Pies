@@ -7,12 +7,12 @@
 
     <!-- Workshops Column -->
     <div id="workshop-container" class="col-12 left">
-        <div class="row">
+        <div id="form-container" class="row mx-auto w-50">
             <div class="col card mx-5 mb-4  mt-3 left top">
                 <div class="card-body h-100">
 
-
-                    <form method="post" action="#">
+                    <!-- Workshop booking form -->
+                    <form method="post">
                         {% csrf_token %}
                         <div class="form-group">
                             <label for="workshop">Workshop:</label>
@@ -36,7 +36,10 @@
                         </div>
                         <div class="form-group">
                             <label for="id_spaces">Number of Spaces:</label>
-                            <input type="number" id="id_spaces" name="spaces" class="form-control text-center" min="1" max="{{ workshop.spaces }}" value="" required>
+                            <input type="number" id="id_spaces" name="spaces" class="form-control text-center" min="1" max="{{ workshop.spaces }}" required>
+                            {% if form.errors.spaces %}
+                                <div id="form_spaces_error" class="text-danger">{{ form.errors.spaces }}</div>
+                            {% endif %}
                         </div>
                         <div class="form-group">
                             <label for="dietary_requirements">Dietary Requirements:</label>
@@ -47,7 +50,7 @@
                             </select>
                         </div>
                         <br>
-                        <button type="submit" class="btn btn-primary">Book Now</button>
+                        <button type="submit" class="btn btn-primary">Book Now</button>             
                     </form>
 
 

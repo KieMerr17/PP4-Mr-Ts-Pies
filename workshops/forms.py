@@ -1,5 +1,6 @@
 from django import forms
 from .models import Booking, Workshop, DIET
+from django.utils.safestring import mark_safe
 
 class BookingForm(forms.ModelForm):
     class Meta:
@@ -14,7 +15,7 @@ class BookingForm(forms.ModelForm):
             raise forms.ValidationError("Please enter a valid number of spaces.")
 
         if workshop and spaces > workshop.spaces:
-            raise forms.ValidationError("Booking exceeds spaces available.")
+            raise ValidationError(mark_safe(f'<strong>{ workshop.spaces }</strong> spaces remaining. '))
 
         return spaces
 
