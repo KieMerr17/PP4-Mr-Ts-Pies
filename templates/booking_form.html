@@ -42,6 +42,7 @@
                             <input type="number" id="id_spaces" name="spaces" class="form-control text-center" min="1" max="{{ workshop.spaces }}" required>
                             {% if form.errors.spaces %}
                                 <div id="form_spaces_error" class="text-danger">{{ form.errors.spaces }}</div>
+                                <br>
                             {% endif %}
                         </div>
                         <div class="form-group">
