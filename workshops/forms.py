@@ -15,7 +15,7 @@ class BookingForm(forms.ModelForm):
             raise forms.ValidationError("Please enter a valid number of spaces.")
 
         if workshop and spaces > workshop.spaces:
-            raise forms.ValidationError(mark_safe(f'<strong>{ workshop.spaces }</strong> spaces remaining. '))
+            raise forms.ValidationError(mark_safe(f'Only <strong>{ workshop.spaces }</strong> spaces remain on <br>"{ workshop }" '))
 
         return spaces
 
