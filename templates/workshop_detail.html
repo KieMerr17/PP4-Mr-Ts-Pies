@@ -50,7 +50,15 @@
                                     </span>
                                     Remaining
                                 </p>
-                                <strong class="text-secondary"><a href="{% url 'book_workshop' workshop.id %}">BOOK ON!</a></strong>                
+                                <strong class="text-secondary"><a href="{% url 'book_workshop' workshop.id %}">BOOK ON!</a></strong>
+                                <br>
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <div class="alert alert-success">
+                                            {{ message }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}               
                             {% endif %}
                         </div>
                     </div>

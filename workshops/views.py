@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
+from django.contrib import messages
 from .models import Workshop
 from .forms import BookingForm
 
@@ -11,6 +12,7 @@ def book_workshop(request, workshop_id):
             booking = form.save(commit=False)
             booking.workshop = workshop
             booking.save()
+            messages.success(request, 'Booking pending Approval!')
             return redirect('workshop_detail', slug=workshop.slug)
     else:
         form = BookingForm()
