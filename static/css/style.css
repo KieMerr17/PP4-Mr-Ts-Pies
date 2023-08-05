@@ -287,6 +287,9 @@ footer {
     border-radius: 20px;
 }
 
+#booking_message {
+    padding: 1rem 0;
+}
 /*--------------------------------------------------------- Media Queries */
 
 /* Media queries for medium screen sizes 575px and smaller */

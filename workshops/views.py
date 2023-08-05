@@ -12,7 +12,7 @@ def book_workshop(request, workshop_id):
             booking = form.save(commit=False)
             booking.workshop = workshop
             booking.save()
-            messages.success(request, 'Booking pending Approval!')
+            messages.success(request, 'Booking awaiting approval!')
             return redirect('workshop_detail', slug=workshop.slug)
     else:
         form = BookingForm()

@@ -14,6 +14,13 @@
                     <h2 class="col-12">{{ workshop.title }}</h2>
                     <!-- Workshop Date goes before the | the post's created date goes after -->
                     <p class="">{{ workshop.event_date }}</p>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div id="booking_message" class="alert alert-success">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}    
                     <div class="row">
                         <div class="d-block col-12 col-lg-6">
                             <!-- The featured image -->
@@ -51,14 +58,7 @@
                                     Remaining
                                 </p>
                                 <strong class="text-secondary"><a href="{% url 'book_workshop' workshop.id %}">BOOK ON!</a></strong>
-                                <br>
-                                {% if messages %}
-                                    {% for message in messages %}
-                                        <div class="alert alert-success">
-                                            {{ message }}
-                                        </div>
-                                    {% endfor %}
-                                {% endif %}               
+                                <br>           
                             {% endif %}
                         </div>
                     </div>
