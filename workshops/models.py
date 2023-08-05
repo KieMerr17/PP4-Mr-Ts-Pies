@@ -2,6 +2,7 @@ from django.core.exceptions import ValidationError
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from datetime import date
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -27,6 +28,9 @@ class Workshop(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
+
+    def future_event(self):
+        return self.event_date > date.today()
 
 
 class Comment(models.Model):
