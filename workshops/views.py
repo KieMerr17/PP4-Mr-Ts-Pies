@@ -4,6 +4,7 @@ from django.contrib import messages
 from .models import Workshop
 from .forms import BookingForm
 
+
 def book_workshop(request, workshop_id):
     workshop = Workshop.objects.get(pk=workshop_id)
     if request.method == 'POST':
@@ -13,7 +14,7 @@ def book_workshop(request, workshop_id):
             booking.workshop = workshop
             booking.save()
             messages.success(request, 'Booking awaiting approval!')
-            return redirect('workshop_detail', slug=workshop.slug)
+            return redirect('workshops')
     else:
         form = BookingForm()
     return render(request, 'booking_form.html', {'form': form})
@@ -27,7 +28,6 @@ class WorkshopList(generic.ListView):
 
 
 class WorkshopDetail(View):
-    
     def get(self, request, slug, *args, **kwargs):
         queryset = Workshop.objects.filter (status=1)
         workshop = get_object_or_404(queryset, slug=slug)
@@ -44,4 +44,3 @@ class WorkshopDetail(View):
                 "liked": liked
             }
         )
-        
