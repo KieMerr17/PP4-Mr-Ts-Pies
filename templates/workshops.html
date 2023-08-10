@@ -16,11 +16,9 @@
                 <!-- Booking waiting approval message following redirect from the form -->
                 {% if messages %}
                     {% for message in messages %}
-                        {% if message.message == 'Booking awaiting approval!' %}
-                            <div id="booking_message" class="alert alert-success">
-                                {{ message }}
-                            </div>
-                        {% endif %}
+                        <div id="alert-booking" class="alert alert-success">
+                            {{ message }}
+                        </div>
                     {% endfor %}
                 {% endif %}
 
@@ -85,5 +83,5 @@
                 </nav>
             {% endif %}
         </div>
-    </div>   
+    </div>
 {%endblock%}

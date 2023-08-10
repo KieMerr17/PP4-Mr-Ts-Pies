@@ -287,9 +287,16 @@ footer {
     border-radius: 20px;
 }
 
-#booking_message {
-    padding: 1rem 0;
+#alert-booking {
+    max-width: 800px;
 }
+
+/*--------------------------------------------------------- Sign In/Out Notifications */
+@keyframes fadeout {
+    0% { opacity: 1; }
+    100% { opacity: 0; display: none; }
+}
+
 /*--------------------------------------------------------- Media Queries */
 
 /* Media queries for medium screen sizes 575px and smaller */
