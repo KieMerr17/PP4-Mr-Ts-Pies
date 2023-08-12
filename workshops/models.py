@@ -51,7 +51,6 @@ DIET = ((0, "No Special Requirement"), (1, "Vegetarian"), (2, "Pescetarian"), (3
 
 
 class Booking(models.Model):
-    booked_by = models.ForeignKey(User, on_delete=models.CASCADE, default=User)
     workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE, related_name="bookings")
     name = models.CharField(max_length=80)
     email = models.EmailField()
