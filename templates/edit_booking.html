@@ -18,6 +18,15 @@
 
         <!-- Card detailed information -->
         <section class="row">
+            <!-- Display error messages -->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
             <div class="col card mx-5 mb-4 mt-3 left top">
                 <div class="card-body h-100">
                     <div class="row">

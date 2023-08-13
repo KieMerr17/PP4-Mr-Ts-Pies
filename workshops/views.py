@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.contrib import messages
 from .models import Workshop, Booking
 from .forms import BookingForm
+from django.db.models import F
 
 
 def book_workshop(request, workshop_id):
@@ -22,13 +23,33 @@ def book_workshop(request, workshop_id):
 
 def edit_booking(request, booking_id):
     booking = get_object_or_404(Booking, pk=booking_id)
+    current_spaces = booking.spaces
+    workshop = booking.workshop
+
     if request.method == 'POST':
-        form = BookingForm(request.POST, instance=booking)
-        if form.is_valid():
-            form.save()
-            return redirect('profile')  # Redirect to the user's profile page
-    else:
-        form = BookingForm(instance=booking)
+        new_spaces = int(request.POST.get('spaces', 0))
+        space_diff = new_spaces - current_spaces
+        available_spaces = workshop.spaces
+        if booking.approved:
+            if space_diff <= available_spaces:
+                workshop.spaces -= space_diff
+                booking.spaces = new_spaces
+                booking.save()
+                workshop.save()
+                messages.success(request, 'Booking updated successfully.')
+                return redirect('profile')
+            else:
+                messages.error(request, 'Too many spaces requested.')
+        else:
+            booking.spaces = new_spaces
+            if booking.spaces > available_spaces:
+                messages.error(request, 'Too many spaces requested.')
+            else:
+                booking.save()
+                messages.success(request, 'Booking updated successfully.')
+                return redirect('profile')
+
+    form = BookingForm(instance=booking, initial={'spaces': current_spaces})
     return render(request, 'edit_booking.html', {'form': form})
 
 
