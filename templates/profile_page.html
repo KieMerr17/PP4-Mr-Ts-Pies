@@ -19,8 +19,7 @@
         <section class="row">
             <div class="col card mx-5 mb-4  mt-3 left top">
                 <div class="card-body h-100"> 
-                    <div class="row">
-                        
+                    
                         <section class="row">
                             <div class="col card mx-5 mb-4 mt-3 left top">
                                 <div class="card-body h-100"> 
@@ -30,19 +29,35 @@
                                             <br>
                                         </div>
                                         <div class="col-12">
+                                            <ul>
                                             {% for booking in user.bookings.all %}
-                                            <div>
-                                                {{ booking }}
-                                            </div>
+                                                <li>
+                                                    Workshop: <strong>{{ booking.workshop.title }}</strong>
+                                                    <br>
+                                                    Spaces: <strong>{{ booking.spaces }}</strong>
+                                                    <br>
+                                                    Dietary Requirements: <strong>{{ booking.get_dietary_requirements_display }}</strong>
+                                                    <br>
+                                                    Approved: 
+                                                    <strong>
+                                                        {% if booking.approved %} 
+                                                        Yes 
+                                                        {% else %} 
+                                                        No 
+                                                        {% endif %}
+                                                    </strong>
+                                                </li>
+                                                <hr>
                                             {% endfor %}
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </section>
-                    </div>
-        
+                    
                 </div>
             </div>
         </section>
+
 {%endblock%}
