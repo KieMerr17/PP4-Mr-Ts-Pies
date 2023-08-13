@@ -8,7 +8,7 @@
 <div class="container-fluid">
     <div class="row">
         
-        <!-- Workshops Column -->
+        <!-- Title section -->
         <div id="workshop-container" class="col-12 left">
             <div class="row justify-content-center">
             {% if user.is_authenticated %}
@@ -16,55 +16,50 @@
             {% endif %}
         </div>
 
+        <!-- Card detailed information -->
         <section class="row">
-            <div class="col card mx-5 mb-4  mt-3 left top">
-                <div class="card-body h-100">
-                    
-                        <section class="row">
-                            <!-- Display sign in/out messages following redirect back to homepage -->
-                            {% if messages %}
-                                {% for message in messages %}
-                                    <div class="alert alert-success">
-                                        {{ message }}
-                                    </div>
-                                {% endfor %}
-                            {% endif %}
+            <!-- Display sign in/out messages following redirect back to homepage -->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
 
-                            <div class="col card mx-5 mb-4 mt-3 left top">
-                                <div class="card-body h-100">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h2 class="card-text">Your Bookings</h2>
-                                            <br>
-                                        </div>
-                                        <div class="col-12">
-                                            <ul>
-                                            {% for booking in user.bookings.all %}
-                                                <li>
-                                                    Workshop: <strong>{{ booking.workshop.title }}</strong>
-                                                    <br>
-                                                    Spaces: <strong>{{ booking.spaces }}</strong>
-                                                    <br>
-                                                    Dietary Requirements: <strong>{{ booking.get_dietary_requirements_display }}</strong>
-                                                    <br>
-                                                    Approved: 
-                                                    <strong>
-                                                        {% if booking.approved %} 
-                                                        Yes 
-                                                        {% else %} 
-                                                        No 
-                                                        {% endif %}
-                                                    </strong>
-                                                </li>
-                                                <hr>
-                                            {% endfor %}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    
+            <div class="col card mx-5 mb-4 mt-3 left top">
+                <div class="card-body h-100">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="card-text">Your Bookings</h2>
+                            <br>
+                        </div>
+                        <div class="col-12">
+                            <ul>
+                            {% for booking in user.bookings.all %}
+                                <li>
+                                    Workshop: <strong>{{ booking.workshop.title }}</strong>
+                                    <br>
+                                    Spaces: <strong>{{ booking.spaces }}</strong>
+                                    <br>
+                                    Dietary Requirements: <strong>{{ booking.get_dietary_requirements_display }}</strong>
+                                    <br>
+                                    Approved: 
+                                    <strong>
+                                        {% if booking.approved %} 
+                                        Yes 
+                                        {% else %} 
+                                        No 
+                                        {% endif %}
+                                    </strong>
+                                    <br>
+                                    <a href="{% url 'delete_booking' booking.id %}">Delete</a>
+                                </li>
+                                <hr>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

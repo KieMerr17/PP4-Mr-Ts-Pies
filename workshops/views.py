@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from django.contrib import messages
-from .models import Workshop
+from .models import Workshop, Booking
 from .forms import BookingForm
 
 
@@ -18,6 +18,14 @@ def book_workshop(request, workshop_id):
     else:
         form = BookingForm()
     return render(request, 'booking_form.html', {'form': form})
+
+
+def delete_booking(request, booking_id):
+    booking = get_object_or_404(Booking, pk=booking_id)
+    if request.method == 'POST':
+        booking.delete()
+        return redirect('profile')  # Redirect to the user's profile page
+    return render(request, 'delete_booking.html', {'booking': booking})
 
 
 class WorkshopList(generic.ListView):
