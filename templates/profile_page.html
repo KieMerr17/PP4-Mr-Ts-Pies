@@ -8,14 +8,19 @@
 <div class="container-fluid">
     <div class="row">
         
+        
         <!-- Title section -->
         <div id="workshop-container" class="col-12 left">
             <div class="row justify-content-center">
             {% if user.is_authenticated %}
                 <h1>Welcome, {{ user.username }}</h1>
+            {% else %}
+            <h1>Hello Guest</h1>
             {% endif %}
+            
         </div>
 
+        {% if user.is_authenticated %}
         <!-- Card detailed information -->
         <section class="row">
             <!-- Display sign in/out messages following redirect back to homepage -->
@@ -63,5 +68,26 @@
                 </div>
             </div>
         </section>
+        {% else %}
+
+        <!-- Sign in/up notification -->
+        <section class="row">
+            <div class="col card mx-5 mb-4 mt-3 left top">
+                <div class="card-body h-100">
+                    <div class="row">
+                        <div class="col-12">
+                            <strong>
+                                Please <a href="{% url 'account_login' %}">log in</a>
+                                or <a href="{% url 'account_signup' %}">sign up</a>
+                                to view the profile section.
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% endif %}
+    
 
 {%endblock%}
