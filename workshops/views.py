@@ -20,6 +20,18 @@ def book_workshop(request, workshop_id):
     return render(request, 'booking_form.html', {'form': form})
 
 
+def edit_booking(request, booking_id):
+    booking = get_object_or_404(Booking, pk=booking_id)
+    if request.method == 'POST':
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')  # Redirect to the user's profile page
+    else:
+        form = BookingForm(instance=booking)
+    return render(request, 'edit_booking.html', {'form': form})
+
+
 def delete_booking(request, booking_id):
     booking = get_object_or_404(Booking, pk=booking_id)
     if request.method == 'POST':

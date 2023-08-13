@@ -56,7 +56,11 @@
                                 <strong class="text-secondary"><a href="{% url 'book_workshop' workshop.id %}">BOOK ON!</a></strong>
                                 <br>
                                 {% else %}
-                                    <p><strong>Please <a href="{% url 'account_login' %}">log in</a> to book a workshop.</strong></p>
+                                    <p><strong>
+                                        Please <a href="{% url 'account_login' %}">log in</a>
+                                        or <a href="{% url 'account_signup' %}">sign up</a>
+                                        to book a workshop.
+                                    </strong></p>
                                 {% endif %}
                             {% endif %}
                         </div>
