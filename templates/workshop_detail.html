@@ -49,9 +49,13 @@
                                     </span>
                                     Remaining
                                 </p>
+                                {% if user.is_authenticated %}
                                 <!-- Link book now button to the booking form url -->
                                 <strong class="text-secondary"><a href="{% url 'book_workshop' workshop.id %}">BOOK ON!</a></strong>
-                                <br>           
+                                <br>
+                                {% else %}
+                                    <p><strong>Please <a href="{% url 'account_login' %}">log in</a> to book a workshop.</strong></p>
+                                {% endif %}
                             {% endif %}
                         </div>
                     </div>
