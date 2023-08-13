@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from datetime import date
+from django.contrib.auth import get_user_model
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -49,8 +50,8 @@ class Comment(models.Model):
 
 DIET = ((0, "No Special Requirement"), (1, "Vegetarian"), (2, "Pescetarian"), (3, "Vegan"), (4, "Nut Allergy"))
 
-
 class Booking(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1, related_name="bookings") 
     workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE, related_name="bookings")
     name = models.CharField(max_length=80)
     email = models.EmailField()

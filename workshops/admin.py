@@ -14,7 +14,7 @@ class WorkshopAdmin(SummernoteModelAdmin):
 
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
-    list_display = ('name', 'phone_number', 'workshop', 'spaces', 'dietary_requirements', 'booked_on', 'approved')
+    list_display = ('user', 'name', 'phone_number', 'workshop', 'spaces', 'dietary_requirements', 'booked_on', 'approved')
     list_filter = ('booked_on', 'approved')
     search_fields = ('name', 'email')
     actions = ['Approve_selected', 'Delete_selected']

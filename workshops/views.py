@@ -11,6 +11,7 @@ def book_workshop(request, workshop_id):
         form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
+            booking.user = request.user
             booking.save()
             messages.success(request, 'Booking awaiting approval!')
             return redirect('workshops')
