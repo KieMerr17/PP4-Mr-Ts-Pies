@@ -35,6 +35,8 @@
             <div class="col card mx-5 mb-4 mt-3 left top">
                 <div class="card-body h-100">
                     <div class="row">
+                        <!-- Validate if user has an current bookings -->
+                        {% if user.bookings.all %}
                         <div class="col-12">
                             <h2 class="card-text">Your Bookings</h2>
                             <br>
@@ -63,6 +65,11 @@
                                 <hr>
                             {% endfor %}
                             </ul>
+                            {% else %}
+                                <h4>You have no bookings</h4>
+                                <br>
+                                <p>Click <a href="{% url 'workshops' %}">here</a> to view available workshops.</p>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
