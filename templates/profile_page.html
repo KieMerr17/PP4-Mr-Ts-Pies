@@ -18,11 +18,20 @@
 
         <section class="row">
             <div class="col card mx-5 mb-4  mt-3 left top">
-                <div class="card-body h-100"> 
+                <div class="card-body h-100">
                     
                         <section class="row">
+                            <!-- Display sign in/out messages following redirect back to homepage -->
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <div class="alert alert-success">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+
                             <div class="col card mx-5 mb-4 mt-3 left top">
-                                <div class="card-body h-100"> 
+                                <div class="card-body h-100">
                                     <div class="row">
                                         <div class="col-12">
                                             <h2 class="card-text">Your Bookings</h2>

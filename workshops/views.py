@@ -11,10 +11,10 @@ def book_workshop(request, workshop_id):
         form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
-            booking.user = request.user
+            booking.user = request.user  # Associate the booking with the logged-in user
             booking.save()
             messages.success(request, 'Booking awaiting approval!')
-            return redirect('workshops')
+            return redirect('profile')
     else:
         form = BookingForm()
     return render(request, 'booking_form.html', {'form': form})
