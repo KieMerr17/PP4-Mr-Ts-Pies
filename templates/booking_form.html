@@ -16,6 +16,8 @@
 
                     <!-- Workshop booking form -->
                     <form method="post">
+                    <!-- Check user is logged-in first -->
+                    {% if user.is_authenticated %}
 
                         {% csrf_token %}
                         <div class="form-group">
@@ -65,6 +67,9 @@
                         <br>
 
                         <button type="submit" class="btn btn-primary">Book Now</button>             
+                    {% else %}
+                        <p><strong>Please <a href="{% url 'account_login' %}">log in</a> to book a workshop.</strong></p>
+                    {% endif %}
                     </form>
 
                 </div>
