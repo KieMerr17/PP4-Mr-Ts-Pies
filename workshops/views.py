@@ -24,16 +24,14 @@ def book_workshop(request, workshop_id):
 def edit_booking(request, booking_id):
     booking = get_object_or_404(Booking, pk=booking_id)
     current_workshop = booking.workshop
-    current_name = booking.name
-    current_email = booking.email
-    current_phone_number = booking.phone_number
-    current_diet = booking.dietary_requirements
     current_spaces = booking.spaces
 
     if request.method == 'POST':
         new_spaces = int(request.POST.get('spaces', 0))
         space_diff = new_spaces - current_spaces
         available_spaces = current_workshop.spaces
+
+
         if booking.approved:
             if space_diff <= available_spaces:
                 current_workshop.spaces -= space_diff
@@ -56,12 +54,12 @@ def edit_booking(request, booking_id):
     form = BookingForm(instance=booking, initial={'spaces': current_spaces})
     return render(request, 'edit_booking.html', {
         'form': form, 
-        'current_workshop': current_workshop,
-        'current_name': current_name,
-        'current_email': current_email,
-        'current_phone_number': current_phone_number,
-        'current_diet': current_diet,
-        'current_spaces': current_spaces,
+        'current_workshop': booking.workshop,
+        'current_name': booking.name,
+        'current_email': booking.email,
+        'current_phone_number': booking.phone_number,
+        'current_diet': booking.dietary_requirements,
+        'current_spaces': booking.spaces,
     })
 
 
