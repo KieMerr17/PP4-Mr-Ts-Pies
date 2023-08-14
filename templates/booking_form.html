@@ -23,9 +23,11 @@
                         <div class="form-group">
                             <label for="workshop">Workshop:</label>
                             <select id="id_workshop" name="workshop" class="form-control text-center">
-                                <!-- List selection of workshops -->
+                                <!-- List selection of workshops, skipping the first option -->
                                 {% for value, label in form.fields.workshop.choices %}
-                                    <option value="{{ value }}" {% if value == clicked_workshop %}selected{% endif %}>{{ label }}</option>
+                                    {% if forloop.counter > 1 %}
+                                        <option value="{{ value }}" {% if value == clicked_workshop %}selected{% endif %}>{{ label }}</option>
+                                    {% endif %}
                                 {% endfor %}
                             </select>
                         </div>
