@@ -28,6 +28,11 @@ def edit_booking(request, booking_id):
 
     if request.method == 'POST':
         new_spaces = int(request.POST.get('spaces', 0))
+        new_name = request.POST.get('name')
+        new_email = request.POST.get('email')
+        new_phone_number = request.POST.get('phone_number')
+        new_diet = request.POST.get('dietary_requirements')
+
         space_diff = new_spaces - current_spaces
         available_spaces = current_workshop.spaces
 
@@ -35,7 +40,13 @@ def edit_booking(request, booking_id):
         if booking.approved:
             if space_diff <= available_spaces:
                 current_workshop.spaces -= space_diff
+                # update each booking field individually
+                booking.name = new_name
+                booking.email = new_email
+                booking.phone_number = new_phone_number
+                booking.dietary_requirements = new_diet
                 booking.spaces = new_spaces
+                # save fields
                 booking.save()
                 current_workshop.save()
                 messages.success(request, 'Booking updated successfully.')

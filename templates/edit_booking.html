@@ -31,15 +31,15 @@
                 <div id="form-container-inner" class="col card mx-5 mb-4 mt-3 left top">
                     <div class="card-body h-100">
     
-                        <!-- Workshop booking form -->
+                        <!-- Edit booking form -->
                         <form method="post">
                         <!-- Check user is logged-in first -->
                         {% if user.is_authenticated %}
     
                             {% csrf_token %}
                             <div class="form-group">
-                                <label for="workshop">Workshop:</label>
-                                <p name="workshop"><strong>{{ current_workshop.title }}</strong></p>
+                                <p name="workshop"><h3><strong>{{ current_workshop.title }}</strong></h3></p>
+                                <hr>
                             </div>
     
                             <div class="form-group">
