@@ -50,7 +50,7 @@ def edit_booking(request, booking_id):
                 return redirect('profile')
 
     form = BookingForm(instance=booking, initial={'spaces': current_spaces})
-    return render(request, 'edit_booking.html', {'form': form})
+    return render(request, 'edit_booking.html', {'form': form, 'current_workshop': workshop})
 
 
 def delete_booking(request, booking_id):
