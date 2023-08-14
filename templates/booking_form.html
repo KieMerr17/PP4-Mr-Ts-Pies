@@ -25,7 +25,7 @@
                             <select id="id_workshop" name="workshop" class="form-control text-center">
                                 <!-- List selection of workshops -->
                                 {% for value, label in form.fields.workshop.choices %}
-                                    <option value="{{ value }}">{{ label }}</option>
+                                    <option value="{{ value }}" {% if value == clicked_workshop %}selected{% endif %}>{{ label }}</option>
                                 {% endfor %}
                             </select>
                         </div>

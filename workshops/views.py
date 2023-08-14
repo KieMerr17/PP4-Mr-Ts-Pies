@@ -18,7 +18,10 @@ def book_workshop(request, workshop_id):
             return redirect('profile')
     else:
         form = BookingForm()
-    return render(request, 'booking_form.html', {'form': form})
+    return render(request, 'booking_form.html', {
+        'form': form,
+        'clicked_workshop': workshop.id,
+    })
 
 
 def edit_booking(request, booking_id):
