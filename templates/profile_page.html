@@ -42,29 +42,27 @@
                             <br>
                         </div>
                         <div class="col-12">
-                            <ul>
+                            <div>
                             {% for booking in user.bookings.all %}
-                                <li>
+                                <p>
                                     Workshop: <strong>{{ booking.workshop.title }}</strong>
                                     <br>
                                     Spaces: <strong>{{ booking.spaces }}</strong>
                                     <br>
                                     Dietary Requirements: <strong>{{ booking.get_dietary_requirements_display }}</strong>
                                     <br>
-                                    Approved: 
-                                    <strong>
-                                        {% if booking.approved %} 
-                                        Yes 
-                                        {% else %} 
-                                        No 
-                                        {% endif %}
-                                    </strong>
+                                    {% if booking.approved %} 
+                                        <div class="btn btn-success">Booking Approved</div>
+                                    {% else %} 
+                                        <div class="btn btn-danger">Awaiting Approval</div>
+
+                                    {% endif %}
                                     <br>
                                     <a href="{% url 'edit_booking' booking.id %}">Edit</a> | <a href="{% url 'delete_booking' booking.id %}">Delete</a>
-                                </li>
+                                </p>
                                 <hr>
                             {% endfor %}
-                            </ul>
+                            </div>
                             {% else %}
                                 <h4>You have no bookings</h4>
                                 <br>
