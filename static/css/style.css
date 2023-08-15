@@ -306,7 +306,7 @@ footer {
 }
 
 .featured-image img {
-    max-height: 200px;
+    height: 200px;
 }
 
 /*--------------------------------------------------------- Sign In/Out Notifications */
