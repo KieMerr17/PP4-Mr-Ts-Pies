@@ -291,6 +291,24 @@ footer {
     max-width: 800px;
 }
 
+/*--------------------------------------------------------- Profile Page */
+
+.left-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.featured-image {
+    max-height: 200px;
+    margin-left: 15px;
+}
+
+.featured-image img {
+    max-height: 200px;
+}
+
 /*--------------------------------------------------------- Sign In/Out Notifications */
 @keyframes fadeout {
     0% { opacity: 1; }
