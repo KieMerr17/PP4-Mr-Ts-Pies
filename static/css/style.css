@@ -293,6 +293,10 @@ footer {
 
 /*--------------------------------------------------------- Profile Page */
 
+#profile-card-outer {
+    max-width: 600px;
+}
+
 .left-image {
     display: flex;
     flex-direction: row;
@@ -317,10 +321,26 @@ footer {
 
 /*--------------------------------------------------------- Media Queries */
 
-/* Media queries for medium screen sizes 575px and smaller */
+/* Media queries for medium screen sizes 992px and smaller */
 @media screen and (max-width: 992px){
     #form-container {
         width: 75% !important;
+    }
+
+    #profile-card-outer {
+        max-width: 75%;
+    }
+}
+
+/* Media queries for medium screen sizes 767px and smaller */
+@media screen and (max-width: 767px){
+
+    #form-section {
+        display: grid;
+    }
+
+    #profile-card-outer {
+        max-width: 100%;
     }
 }
 
@@ -367,13 +387,5 @@ footer {
 
     #form-container-inner {
         margin: 1rem 0 1.5rem 0 !important;
-    }
-}
-
-/* Media queries for medium screen sizes 767px and smaller */
-@media screen and (max-width: 767px){
-
-    #form-section {
-        display: grid;
     }
 }
