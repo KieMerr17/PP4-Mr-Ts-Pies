@@ -41,33 +41,31 @@
                     <div class="card-body">
                         <div class="row">
                             <!-- Display existing comments -->
-                            <div class="col-md-6 offset-md-3">
+                            <div class="col-md-12">
                                 <h3>Comments</h3>
-                                {% for comment in comments %}
-                                <div class="comment">
-                                    <p><strong>{{ comment.name }}</strong></p>
-                                    <p>{{ comment.body }}</p>
+                                <div class="comments-scroll-box">
+                                    {% for comment in comments %}
+                                    <div class="comment">
+                                        <p><strong>{{ comment.name }}</strong></p>
+                                        <p>{{ comment.body }}</p>
+                                    </div>
+                                    {% endfor %}
                                 </div>
-                                {% endfor %}
                             </div>
                         </div>
+
+                        <!-- Comment form -->
                         <div class="row">
-                            <!-- Comment form -->
-                            <div class="col-md-6 offset-md-3">
+                            <div class="col-md-12">
                                 {% if user.is_authenticated %}
+                                <hr>
                                 <h3>Add a Comment</h3>
                                 <form method="post" action="{% url 'article_comment_add' article.slug %}">
                                     {% csrf_token %}
                                     {{ comment_form.as_p }}
                                     <button type="submit">Add Comment</button>
                                 </form>
-                                {% endif %}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <!-- Login prompt -->
-                            <div class="col-md-6 offset-md-3">
-                                {% if not user.is_authenticated %}
+                                {% else %}
                                 <p><strong>Please <a href="{% url 'account_login' %}">log in</a> to leave a comment.</strong></p>
                                 {% endif %}
                             </div>
