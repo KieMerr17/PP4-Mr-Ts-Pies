@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from .models import Article
+from .forms import CommentForm
 
 
 class ArticleList(generic.ListView):
@@ -20,11 +21,34 @@ class ArticleDetail(View):
         if article.likes.filter(id=self.request.user.id).exists():
             liked = True
 
+        comment_form = CommentForm()
+        comments = article.comments.all()
+
         return render(
             request,
             "news_detail.html",
             {
                 "article": article,
-                "liked": liked
+                "liked": liked,
+                "comment_form": comment_form,
+                "comments": comments,
             }
         )
+
+
+def ArticleComment(request, slug):
+
+    article = get_object_or_404(Article, slug=slug)
+
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.post = article
+            comment.save()
+            return redirect('news_detail', slug=slug)
+    else:
+        comment_form = CommentForm()
+
+    # Refresh page
+    return redirect('news_detail', slug=slug)
