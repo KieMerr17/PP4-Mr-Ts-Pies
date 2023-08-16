@@ -21,7 +21,7 @@ class ArticleDetail(View):
         if article.likes.filter(id=self.request.user.id).exists():
             liked = True
 
-        comment_form = CommentForm()
+        comment_form = CommentForm(initial={'name': request.user.username})
         comments = article.comments.all()
 
         return render(
