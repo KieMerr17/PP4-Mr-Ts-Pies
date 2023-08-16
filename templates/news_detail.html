@@ -46,7 +46,7 @@
                                 <h3>Comments</h3>
                                 {% for comment in comments %}
                                 <div class="comment">
-                                    <p><strong>{{ comment.name }}</strong> - {{ comment.created_on|date:"h:i , d M y" }}</p>
+                                    <p><strong>{{ comment.name }}</strong></p>
                                     <p>{{ comment.body }}</p>
                                 </div>
                                 {% endfor %}
