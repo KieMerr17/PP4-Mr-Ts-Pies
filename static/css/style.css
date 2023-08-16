@@ -312,6 +312,12 @@ footer {
 .featured-image img {
     height: 200px;
 }
+/*--------------------------------------------------------- News Articles */
+
+#comments-box {
+    margin-top: 0;
+    max-width: 600px;
+}
 
 /*--------------------------------------------------------- Sign In/Out Notifications */
 @keyframes fadeout {
