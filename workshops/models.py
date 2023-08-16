@@ -34,20 +34,6 @@ class Workshop(models.Model):
         return self.event_date > date.today()
 
 
-class Comment(models.Model):
-    post = models.ForeignKey(Workshop, on_delete=models.CASCADE, related_name="comments")
-    name = models.CharField(max_length=80)
-    email = models.EmailField()
-    body = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        ordering = ["created_on"]
-
-    def __str__(self):
-        return f"{self.name}: {self.body}"
-
-
 DIET = ((0, "No Special Requirement"), (1, "Vegetarian"), (2, "Pescetarian"), (3, "Vegan"), (4, "Nut Allergy"))
 
 class Booking(models.Model):
