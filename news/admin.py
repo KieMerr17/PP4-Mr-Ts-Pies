@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Article
+from .models import Article, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -11,3 +11,8 @@ class NewsAdmin(SummernoteModelAdmin):
     search_fields = ('title', 'content')
     summernote_fields = ('content')
 
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('name', 'post', 'body', 'created_on')
+    list_filter = ('post', 'created_on')
+    search_fields = ('name', 'email', 'body')
