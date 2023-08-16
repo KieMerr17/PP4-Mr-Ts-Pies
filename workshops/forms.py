@@ -1,5 +1,5 @@
 from django import forms
-from .models import Booking, Workshop, DIET
+from .models import Booking, Workshop, DIET, Comment
 from django.utils.safestring import mark_safe
 
 
@@ -20,3 +20,9 @@ class BookingForm(forms.ModelForm):
             raise forms.ValidationError(mark_safe(f'Only <strong>{ workshop.spaces }</strong> spaces remain on <br>"{ workshop }" '))
 
         return spaces
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['name', 'created_on', 'body']
