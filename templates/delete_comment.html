@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+</body>
+<!-- Re-open body tag to allow background image -->
+<body id="index-body" class="d-flex flex-column h-100 main-bg">
+
+<div class="container-fluid">
+    <div class="row">
+        
+        <!-- Title section -->
+        <div id="workshop-container" class="col-12 left">
+            <div class="row justify-content-center">
+            {% if user.is_authenticated %}
+                <h1>Welcome, {{ user.username }}</h1>
+            {% endif %}
+        </div>
+
+        <!-- Card detailed information -->
+        <section class="row">
+            <div class="col card mx-5 mb-4 mt-3 left top">
+                <div class="card-body h-100">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Delete Comment</h2>
+                            <p>Are you sure you want to delete your comment {{ booking.workshop.title }}?</p>
+                            
+                            <!-- Form link to current Comment -->
+                            <form method="post">
+                                {% csrf_token %}
+                                <button type="submit">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+              
+{%endblock%}
