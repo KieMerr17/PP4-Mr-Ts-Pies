@@ -48,7 +48,10 @@
                                     <div class="comment">
                                         <p><strong>{{ comment.name }}</strong></p>
                                         <p>{{ comment.body }}</p>
-                                        <a href="{% url 'delete_comment' comment.id %}">Delete</a>
+                                        {% if comment.name == request.user.username %}
+                                        <button>Edit</button>
+                                        <button>Delete</button>
+                                        {% endif %}
                                     </div>
                                     {% endfor %}
                                 </div>
