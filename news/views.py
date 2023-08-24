@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from .models import Article
 from .forms import CommentForm
+from .models import Comment
+
 
 
 class ArticleList(generic.ListView):
@@ -52,3 +54,13 @@ def ArticleComment(request, slug):
 
     # Refresh page
     return redirect('news_detail', slug=slug)
+
+
+def delete_comment(request, comment_id, slug):
+    article = get_object_or_404(Article, slug=slug)
+    comment = get_object_or_404(Comment, id=comment_id)
+
+    if request.method == 'POST':
+        comment.delete()
+        # Refresh page
+        return redirect('news_detail', slug=slug)
