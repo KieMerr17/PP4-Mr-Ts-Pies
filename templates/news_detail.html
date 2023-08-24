@@ -49,8 +49,10 @@
                                         <p><strong>{{ comment.name }}</strong></p>
                                         <p>{{ comment.body }}</p>
                                         {% if comment.name == request.user.username %}
-                                        <button>Edit</button>
-                                        <button>Delete</button>
+                                        <form method="post" action="{% url 'delete_comment' comment.id article.slug %}">
+                                            {% csrf_token %}
+                                            <button class="delete-comment">Delete</button>
+                                        </form>
                                         {% endif %}
                                     </div>
                                     {% endfor %}
