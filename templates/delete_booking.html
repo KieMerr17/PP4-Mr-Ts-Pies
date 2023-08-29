@@ -28,7 +28,8 @@
                             <!-- Form link to current booking ID -->
                             <form method="post">
                                 {% csrf_token %}
-                                <button type="submit">Delete</button>
+                                <a type="submit" class="text-success confirm-delete"><i class="fa-solid fa-check"></i></a>
+                                <a type="cancel" class="text-danger cancel-delete" href="{% url 'profile' %}"><i class="fa-solid fa-xmark"></i></a>
                             </form>
                         </div>
                     </div>
