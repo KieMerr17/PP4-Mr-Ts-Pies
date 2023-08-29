@@ -54,13 +54,13 @@
                                         <div class="delete-container">
                                             <form method="post" action="{% url 'delete_comment' comment.id article.slug %}" class="delete-form">
                                                 {% csrf_token %}
-                                                <button type="button" class="delete-comment">Delete</button>
+                                                <a class="text-danger delete-comment"><i class="fa-regular fa-trash-can"></i></a>
                                             </form>
                                             <!-- Confirmation of delete -->
                                             <div class="confirmation hidden">
                                                 <p>Are you sure you want to delete your comment?</p>
-                                                <button class="confirm-delete">Yes</button>
-                                                <button class="cancel-delete">No</button>
+                                                <a class="text-success confirm-delete"><i class="fa-solid fa-check"></i></a>
+                                                <a class="text-danger cancel-delete"><i class="fa-solid fa-xmark"></i></a>
                                             </div>
                                         </div>
                                         {% endif %}
