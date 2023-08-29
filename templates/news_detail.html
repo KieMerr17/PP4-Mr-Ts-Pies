@@ -28,7 +28,7 @@
                                 <p class="card-text">
                                     {{ article.content | safe }}
                                 </p>
-                                <p class="">{{ article.created_on }} | {{ article.likes }}</p>
+                                <p>{{ article.created_on }} | {{ article.likes }}</p>
                             </div>
                         </div>
                     </div>
@@ -40,6 +40,7 @@
                 <div id="comments-box" class="col card mx-5 mb-4">
                     <div class="card-body">
                         <div class="row">
+
                             <!-- Display existing comments -->
                             <div class="col-md-12">
                                 <h3>Comments</h3>
@@ -48,16 +49,27 @@
                                     <div class="comment">
                                         <p><strong>{{ comment.name }}</strong></p>
                                         <p>{{ comment.body }}</p>
+                                        <!-- Delete button present for users comments -->
                                         {% if comment.name == request.user.username %}
-                                        <form method="post" action="{% url 'delete_comment' comment.id article.slug %}">
-                                            {% csrf_token %}
-                                            <button class="delete-comment">Delete</button>
-                                        </form>
+                                        <div class="delete-container">
+                                            <form method="post" action="{% url 'delete_comment' comment.id article.slug %}" class="delete-form">
+                                                {% csrf_token %}
+                                                <button type="button" class="delete-comment">Delete</button>
+                                            </form>
+                                            <!-- Confirmation of delete -->
+                                            <div class="confirmation hidden">
+                                                <p>Are you sure you want to delete your comment?</p>
+                                                <button class="confirm-delete">Yes</button>
+                                                <button class="cancel-delete">No</button>
+                                            </div>
+                                        </div>
                                         {% endif %}
                                     </div>
-                                    {% endfor %}
+                                    <hr>
+                                {% endfor %}
                                 </div>
                             </div>
+
                         </div>
 
                         <!-- Comment form -->
@@ -82,5 +94,5 @@
 
         </div>
     </div>    
-
+    
 {% endblock content %}

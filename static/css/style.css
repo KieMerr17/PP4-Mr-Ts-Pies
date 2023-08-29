@@ -314,6 +314,10 @@ footer {
 }
 /*--------------------------------------------------------- News Articles */
 
+.hidden {
+    display: none;
+}
+
 #comments-box {
     margin-top: 0;
     max-width: 600px;
