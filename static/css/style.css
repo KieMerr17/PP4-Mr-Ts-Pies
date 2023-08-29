@@ -276,6 +276,10 @@ footer {
     object-fit: cover;
 }
 
+#workshop-book-now {
+    text-decoration: none;
+}
+
 /*--------------------------------------------------------- Booking Form */
 #form_spaces_error ul {
     list-style: none;
