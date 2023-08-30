@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'bootstrap_datepicker',
     'workshops',
     'news',
+    'menu',
 ]
 
 SITE_ID = 1
