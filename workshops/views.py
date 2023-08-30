@@ -57,7 +57,12 @@ def edit_booking(request, booking_id):
             else:
                 messages.error(request, 'Too many spaces requested.')
         else:
+            booking.name = new_name
+            booking.email = new_email
+            booking.phone_number = new_phone_number
+            booking.dietary_requirements = new_diet
             booking.spaces = new_spaces
+            
             if booking.spaces > available_spaces:
                 messages.error(request, 'Too many spaces requested.')
             else:
