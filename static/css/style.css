@@ -316,6 +316,14 @@ footer {
 .featured-image img {
     height: 200px;
 }
+
+.confirm-delete-button {
+    background: none;
+    border: none;
+    color: inherit;
+    text-decoration: none;
+}
+
 /*--------------------------------------------------------- News Articles */
 
 .hidden {
