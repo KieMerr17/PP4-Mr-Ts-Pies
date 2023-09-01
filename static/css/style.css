@@ -357,7 +357,7 @@ footer {
 }
 
 .pie-card {
-    height: 300px;
+    min-height: 300px;
     max-width: 450px;
     
 }
@@ -408,6 +408,7 @@ footer {
     }
 
     .pie-card {
+        min-height: 100px;
         width: 100%;
     }
 
