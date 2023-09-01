@@ -348,6 +348,21 @@ footer {
     100% { opacity: 0; display: none; }
 }
 
+/*--------------------------------------------------------- Pies */
+
+#pies-card-outer {
+    max-width: 800px;
+    background: url("https://res.cloudinary.com/dnyzrhjyz/image/upload/v1693595718/pexels-pixabay-235985_hfcfi5.jpg") no-repeat fixed;
+    background-size: cover;
+}
+
+.pie-card {
+    height: 400px;
+    width: 450px;
+    
+}
+
+
 /*--------------------------------------------------------- Media Queries */
 
 /* Media queries for medium screen sizes 992px and smaller */
