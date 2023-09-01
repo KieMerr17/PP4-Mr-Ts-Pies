@@ -26,7 +26,7 @@
                             <div class="col-12">
                                 <!-- loop through pies -->
                                 {% for pie in pie_list %}
-
+                                <h4>{{ pie.title }}</h4>
                                 <!-- Stagger layouts -->
                                 {% if forloop.counter|divisibleby:2 %}
                                 <div class="pie-item left-image">
@@ -42,9 +42,8 @@
                                     <!-- Pie details -->
                                     <div class="pie-card">
                                         <p>
-                                            Pie: <strong>{{ pie.title }}</strong>
-                                            <br>
-                                            Details: <strong>{{ pie.description|safe }}</strong>
+                                    
+                                            <strong>{{ pie.description|safe }}</strong>
                                             <br>
                                             Diet: <strong>{{ pie.get_diet_display }}</strong>
                                             <br>
@@ -68,9 +67,7 @@
                                     <!-- Pie details -->
                                     <div class="pie-card">
                                         <p>
-                                            Pie: <strong>{{ pie.title }}</strong>
-                                            <br>
-                                            Details: <strong>{{ pie.description|safe }}</strong>
+                                            <strong>{{ pie.description|safe }}</strong>
                                             <br>
                                             Diet: <strong>{{ pie.get_diet_display }}</strong>
                                             <br>
