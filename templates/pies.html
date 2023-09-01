@@ -26,73 +26,37 @@
                             <div class="col-12">
                                 <!-- loop through pies -->
                                 {% for pie in pie_list %}
-                                <h4>{{ pie.title }}</h4>
-                                <!-- Stagger layouts -->
-                                {% if forloop.counter|divisibleby:2 %}
-                                <div class="pie-item left-image">
-                                    <!-- Image -->
-                                    <div class="featured-image">
-                                        {% if "placeholder" in pie.featured_image.url %}
-                                                <img class="card-img-top fixed-height-img" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1689105522/pexels-klaus-nielsen-6287298_1_luafef.jpg">
-                                            {% else %}
-                                                <img class="card-img-top fixed-height-img" src="{{ pie.featured_image.url }}">
-                                            {% endif %}
+                                    <h4>{{ pie.title }}</h4>
+                                    <div class="pie-item left-image">
+                                        <!-- Image -->
+                                        <div class="featured-image">
+                                            {% if "placeholder" in pie.featured_image.url %}
+                                                    <img class="card-img-top fixed-height-img" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1689105522/pexels-klaus-nielsen-6287298_1_luafef.jpg">
+                                                {% else %}
+                                                    <img class="card-img-top fixed-height-img" src="{{ pie.featured_image.url }}">
+                                                {% endif %}
+                                        </div>
+                                        
+                                        <!-- Pie details -->
+                                        <div class="pie-card">
+                                            <p>
+                                        
+                                                <strong>{{ pie.description|safe }}</strong>
+                                                <br>
+                                                Diet: <strong>{{ pie.get_diet_display }}</strong>
+                                                <br>
+                                                Allergies: 
+                                                <strong>
+                                                    {% for allergy in pie.allergies.all %}
+                                                        {{ allergy }}
+                                                    {% empty %}
+                                                        No allergies
+                                                    {% endfor %}
+                                                </strong>
+                                            </p>
+                                        </div>
                                     </div>
-                                    
-                                    <!-- Pie details -->
-                                    <div class="pie-card">
-                                        <p>
-                                    
-                                            <strong>{{ pie.description|safe }}</strong>
-                                            <br>
-                                            Diet: <strong>{{ pie.get_diet_display }}</strong>
-                                            <br>
-                                            Allergies: 
-                                            <strong>
-                                                {% for allergy in pie.allergies.all %}
-                                                    {{ allergy }}
-                                                {% empty %}
-                                                    No allergies
-                                                {% endfor %}
-                                            </strong>
-                                        </p>
-                                    </div>
-                                </div>
-                                <hr>
-
-                                {% else %}
-
-                                <div class="pie-item left-image">
-
-                                    <!-- Pie details -->
-                                    <div class="pie-card">
-                                        <p>
-                                            <strong>{{ pie.description|safe }}</strong>
-                                            <br>
-                                            Diet: <strong>{{ pie.get_diet_display }}</strong>
-                                            <br>
-                                            Allergies: 
-                                            <strong>
-                                                {% for allergy in pie.allergies.all %}
-                                                    {{ allergy }}
-                                                {% empty %}
-                                                    No allergies
-                                                {% endfor %}
-                                            </strong>
-                                        </p>
-                                    </div>
-
-                                    <!-- Image -->
-                                    <div class="featured-image">
-                                        {% if "placeholder" in pie.featured_image.url %}
-                                                <img class="card-img-top fixed-height-img" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1689105522/pexels-klaus-nielsen-6287298_1_luafef.jpg">
-                                            {% else %}
-                                                <img class="card-img-top fixed-height-img" src="{{ pie.featured_image.url }}">
-                                            {% endif %}
-                                    </div>
-                                </div>
-                                <hr>
-                                {% endif %}
+                                    <hr>
                                 {% endfor %}
                             </div>
                         
