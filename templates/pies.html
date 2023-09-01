@@ -22,16 +22,24 @@
             <div id="pies-card-outer" class="col card mx-5 mb-4 mt-3 left top">
                 <div class="card-body h-100">
                     <div class="row">
-                        <!-- Validate if user has an current bookings -->
 
                             <div class="col-12">
+                                <!-- loop through pies -->
                                 {% for pie in pie_list %}
+
+                                <!-- Stagger layouts -->
+                                {% if forloop.counter|divisibleby:2 %}
                                 <div class="pie-item left-image">
+                                    <!-- Image -->
                                     <div class="featured-image">
-                                        {% if pie.featured_image %}
-                                            <img src="{{ pie.featured_image.url }}" alt="Featured Image">
-                                        {% endif %}
+                                        {% if "placeholder" in pie.featured_image.url %}
+                                                <img class="card-img-top fixed-height-img" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1689105522/pexels-klaus-nielsen-6287298_1_luafef.jpg">
+                                            {% else %}
+                                                <img class="card-img-top fixed-height-img" src="{{ pie.featured_image.url }}">
+                                            {% endif %}
                                     </div>
+                                    
+                                    <!-- Pie details -->
                                     <div class="pie-card">
                                         <p>
                                             Pie: <strong>{{ pie.title }}</strong>
@@ -41,19 +49,53 @@
                                             Diet: <strong>{{ pie.get_diet_display }}</strong>
                                             <br>
                                             Allergies: 
-                                                <strong>
-                                                    {% for allergy in pie.allergies.all %}
-                                                        {{ allergy }}
-                                                    {% empty %}
-                                                        No allergies
-                                                    {% endfor %}
-                                                </strong>
-
+                                            <strong>
+                                                {% for allergy in pie.allergies.all %}
+                                                    {{ allergy }}
+                                                {% empty %}
+                                                    No allergies
+                                                {% endfor %}
+                                            </strong>
                                         </p>
                                     </div>
-                                    
                                 </div>
                                 <hr>
+
+                                {% else %}
+
+                                <div class="pie-item left-image">
+
+                                    <!-- Pie details -->
+                                    <div class="pie-card">
+                                        <p>
+                                            Pie: <strong>{{ pie.title }}</strong>
+                                            <br>
+                                            Details: <strong>{{ pie.description|safe }}</strong>
+                                            <br>
+                                            Diet: <strong>{{ pie.get_diet_display }}</strong>
+                                            <br>
+                                            Allergies: 
+                                            <strong>
+                                                {% for allergy in pie.allergies.all %}
+                                                    {{ allergy }}
+                                                {% empty %}
+                                                    No allergies
+                                                {% endfor %}
+                                            </strong>
+                                        </p>
+                                    </div>
+
+                                    <!-- Image -->
+                                    <div class="featured-image">
+                                        {% if "placeholder" in pie.featured_image.url %}
+                                                <img class="card-img-top fixed-height-img" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1689105522/pexels-klaus-nielsen-6287298_1_luafef.jpg">
+                                            {% else %}
+                                                <img class="card-img-top fixed-height-img" src="{{ pie.featured_image.url }}">
+                                            {% endif %}
+                                    </div>
+                                </div>
+                                <hr>
+                                {% endif %}
                                 {% endfor %}
                             </div>
                         
