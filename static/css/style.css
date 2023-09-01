@@ -357,8 +357,8 @@ footer {
 }
 
 .pie-card {
-    height: 400px;
-    width: 450px;
+    height: 300px;
+    max-width: 450px;
     
 }
 
@@ -367,6 +367,7 @@ footer {
 
 /* Media queries for medium screen sizes 992px and smaller */
 @media screen and (max-width: 992px){
+
     #form-container {
         width: 75% !important;
     }
@@ -391,6 +392,24 @@ footer {
 
 /* Media queries for medium screen sizes 575px and smaller */
 @media screen and (max-width: 575px){
+
+    #pies-card-outer {
+        margin: 0 5px !important;
+        max-width: 100%;
+    }
+
+    .pie-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .featured-image {
+        margin: 5px 0;
+    }
+
+    .pie-card {
+        width: 100%;
+    }
 
     #contact-nav a {
         color: white;

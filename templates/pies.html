@@ -27,6 +27,11 @@
                             <div class="col-12">
                                 {% for pie in pie_list %}
                                 <div class="pie-item left-image">
+                                    <div class="featured-image">
+                                        {% if pie.featured_image %}
+                                            <img src="{{ pie.featured_image.url }}" alt="Featured Image">
+                                        {% endif %}
+                                    </div>
                                     <div class="pie-card">
                                         <p>
                                             Pie: <strong>{{ pie.title }}</strong>
@@ -46,11 +51,7 @@
 
                                         </p>
                                     </div>
-                                    <div class="featured-image">
-                                        {% if pie.featured_image %}
-                                            <img src="{{ pie.featured_image.url }}" alt="Featured Image">
-                                        {% endif %}
-                                    </div>
+                                    
                                 </div>
                                 <hr>
                                 {% endfor %}
