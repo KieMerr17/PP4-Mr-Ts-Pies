@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from django.views import generic
+from .models import Pie
 
-# Create your views here.
+
+class PieList(generic.ListView):
+    model = Pie
+    template_name = 'pies.html'

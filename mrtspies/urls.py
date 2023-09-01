@@ -27,4 +27,6 @@ urlpatterns = [
     path('news/', include('news.urls'), name='news_urls'),
     path('accounts/', include('allauth.urls')),
     path('profile/', TemplateView.as_view(template_name='profile_page.html'), name='profile'),
+    path('pies/', include('menu.urls'), name='menu_urls'),
+
 ]
