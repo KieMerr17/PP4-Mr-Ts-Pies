@@ -12,7 +12,7 @@
         <div id="workshop-container" class="col-12 left">
             <div class="row justify-content-center">
                 <h1>News</h1>
-                <div class="row row-cols-1 row-cols-lg-3 g-4">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
                     {% for article in article_list %}
                     <div class="col">
                         <a href="{% url 'news_detail' article.slug %}" class="post-link text-decoration-none">
