@@ -362,6 +362,80 @@ footer {
     
 }
 
+/*--------------------------------------------------------- Contact Page */
+
+#form-section{
+    background: url('../images/signup-1.webp') no-repeat center center;
+    min-height: 850px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form {
+    border-radius: 50px;
+    margin-top: 50px;
+    color: white;
+    background-color: rgba(39, 39, 39, .9);
+    min-height: 550px;
+    max-width: 500px;
+    min-width: 200px;
+    margin: 20px;
+    padding: 30px 30px 10px;
+}
+
+.text-input {
+    height: 25px;
+}
+
+.textarea-input {
+    width: 100%;
+    text-align: center;
+    letter-spacing: 4px;
+    color: white;
+    background: transparent;
+    margin: 5px 0 20px 0;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.textarea-input:hover {
+    border-color: #f05f40;
+}
+
+form label {
+    letter-spacing: 2px;
+}
+
+#alt-contact {
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+#wa-logo {
+    color: #25D366;
+}
+
+.loading-dots::after {
+    content: "";
+    animation: loading-dots 1s infinite;
+}
+  
+  @keyframes loading-dots {
+    0% {
+      content: ".";
+    }
+    33% {
+      content: "..";
+    }
+    66% {
+      content: "...";
+    }
+    100% {
+      content: ".";
+    }
+}
+
 
 /*--------------------------------------------------------- Media Queries */
 
@@ -451,5 +525,9 @@ footer {
 
     #form-container-inner {
         margin: 1rem 0 1.5rem 0 !important;
+    }
+
+    #contact-form {
+        padding: 30px 10px 10px !important;
     }
 }
