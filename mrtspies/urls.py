@@ -28,5 +28,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('profile/', TemplateView.as_view(template_name='profile_page.html'), name='profile'),
     path('pies/', include('menu.urls'), name='menu_urls'),
-
+    path('contact/', TemplateView.as_view(template_name='contact.html'), name='contact'),
 ]
