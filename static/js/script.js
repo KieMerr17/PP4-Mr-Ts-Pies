@@ -1,7 +1,6 @@
 /**Background Opacity Scrolling function
  * Adjust the opacity shadowed over the background image in index.html */ 
 const marketItems = document.getElementById('markets');
-const marketScrollWidth = marketItems.scrollWidth;
 
 $(window).scroll(function() {
     var scrollTop = $(this).scrollTop();

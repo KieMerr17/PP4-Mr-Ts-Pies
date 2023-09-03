@@ -365,7 +365,6 @@ footer {
 /*--------------------------------------------------------- Contact Page */
 
 #form-section{
-    background: url('../images/signup-1.webp') no-repeat center center;
     min-height: 850px;
     display: flex;
     justify-content: center;
