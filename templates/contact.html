@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+</body>
+<!-- Re-open body tag to allow background image -->
+<body id="index-body" class="d-flex flex-column h-100 main-bg">
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!--Contact Form-->
+        <section id="form-section">
+            <div class="d-inline">
+                <form id="contact-form">
+                    <input type="hidden" name="contact_number" >
+
+                    <h2 class="text-white mb-4">Get in touch!</h2>
+
+                    <label for="firstname">Full Name</label>
+                    <input id="firstname" type="text" class="textarea-input" name="user_name" required>
+                    <br>
+
+                    <label for="email">Email Address</label>
+                    <input id="email" type="email" class="textarea-input" name="user_email" required>
+                    <br>
+
+                    <label for="telephone_number">Telephone Number</label>
+                    <input id="telephone_number" type="number" class="textarea-input" name="telephone_number" required>
+                    <br>
+
+                    <label for="comments">Comments</label>
+                    <textarea name="message" cols="40" rows="8" class="textarea-input"></textarea>
+                    <br>
+
+                    <input id="form-submit" type="submit" class="btn btn--cta btn--red" value="SUBMIT">
+                    <span id="submitting" style="display: none;">Submitting<span class="loading-dots"></span></span>
+                    <br>
+                    <br>
+
+                    <div>
+                        <!-- Social platform contact options -->
+                        <p id="alt-contact">
+                            <a href="https://m.me/mrtpies" target="_blank" rel="noopener" aria-label="Chat with us on Facebook Messenger (Opens in new tab)">
+                                <i class="fa-brands fa-facebook-messenger m-1"></i></a>
+
+                            <a id="wa-logo" href="https://wa.me/447814998352" target="_blank" rel="noopener" aria-label="Chat with us on Whatsapp (Opens in new tab)">
+                                <i class="fa-brands fa-whatsapp m-1"></i></a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </div>
+    {%endblock%}
