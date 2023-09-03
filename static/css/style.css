@@ -147,6 +147,10 @@ body {
     color: white;
 }
 
+.nav-prev {
+    margin-right: 20px !important;
+}
+
 /*--------------------------------------------------------- Page Headers */
 
 #btn-locate {
