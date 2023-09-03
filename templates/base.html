@@ -86,7 +86,7 @@
                     {% endif %}
 
                     <li id="contact-nav" class="d-sm-none nav-item" data-toggle="collapse" data-target="#navbarNavDropdown">
-                        <a class="nav-link" href="#">Get In Touch</a>
+                        <a class="nav-link" href="{% url 'contact' %}">Get In Touch</a>
                     </li>
                 </ul>
             </div>
@@ -94,7 +94,7 @@
             <!-- Right side nav bar -->
             <div class="d-none d-sm-block">
                 <p class="d-none d-lg-inline navbar-text my-auto me-2"><i>Great pies just when you need them!</i></p>
-                <a href="#" class="d-md-inline btn btn--cta btn--red">Get in Touch</a>
+                <a href="{% url 'contact' %}" class="d-md-inline btn btn--cta btn--red">Get in Touch</a>
             </div>
         </nav>
     </div>
