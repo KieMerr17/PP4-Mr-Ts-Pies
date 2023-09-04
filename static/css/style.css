@@ -387,6 +387,14 @@ footer {
     padding-right: 15px;
 }
 
+.card-img-shrink {
+    transition: height 0.3s;
+}
+
+.card:hover .card-img-shrink {
+    height: 250px;
+}
+
 /*--------------------------------------------------------- Sign In/Out Notifications */
 @keyframes fadeout {
     0% { opacity: 1; }

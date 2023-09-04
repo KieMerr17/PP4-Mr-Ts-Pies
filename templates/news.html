@@ -18,11 +18,11 @@
                         <div class="card h-100">
                             {% if "placeholder" in article.featured_image.url %}
                                 <a href="{% url 'news_detail' article.slug %}">
-                                    <img class="card-img-top fixed-height-img" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1689102979/yjdzd1iiqsdundx3xmk3.jpg">
+                                    <img class="card-img-top fixed-height-img card-img-shrink" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1689102979/yjdzd1iiqsdundx3xmk3.jpg">
                                 </a>
                             {% else %}
                                 <a href="{% url 'news_detail' article.slug %}">
-                                    <img class="card-img-top fixed-height-img" src="{{ article.featured_image.url }}">
+                                    <img class="card-img-top fixed-height-img card-img-shrink" src="{{ article.featured_image.url }}">
                                 </a>
                             {% endif %}
                             <div class="card-body text-start">
