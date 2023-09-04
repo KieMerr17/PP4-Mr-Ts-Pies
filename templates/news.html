@@ -16,18 +16,15 @@
                     {% for article in article_list %}
                     <div class="col">
                         <div class="card h-100">
-                                {% if "placeholder" in article.featured_image.url %}
-                                    <a href="{% url 'news_detail' article.slug %}">
-                                        <img class="card-img-top fixed-height-img" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1689102979/yjdzd1iiqsdundx3xmk3.jpg">
-                                    </a>
-                                {% else %}
-                                    <a href="{% url 'news_detail' article.slug %}">
-                                        <img class="card-img-top fixed-height-img" src="{{ article.featured_image.url }}">
-                                    </a>
-                                {% endif %}
-                            <div class="image-flash">
-                                <p class="author"></p>
-                            </div>
+                            {% if "placeholder" in article.featured_image.url %}
+                                <a href="{% url 'news_detail' article.slug %}">
+                                    <img class="card-img-top fixed-height-img" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1689102979/yjdzd1iiqsdundx3xmk3.jpg">
+                                </a>
+                            {% else %}
+                                <a href="{% url 'news_detail' article.slug %}">
+                                    <img class="card-img-top fixed-height-img" src="{{ article.featured_image.url }}">
+                                </a>
+                            {% endif %}
                             <div class="card-body">                            
                                 <h5 class="card-title">{{ article.title }}</h5>
                                 <div>

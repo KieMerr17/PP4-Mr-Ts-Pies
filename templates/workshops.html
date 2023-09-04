@@ -14,20 +14,22 @@
                 <h1>Workshops</h1>
 
                 <!-- Start of workshop cards -->
-                <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 mb-4">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 mb-2 mt-0">
                     {% for workshop in workshop_list %}
                         <!-- Hide past workshops, including todays date -->
                         {% if workshop.future_event %}
-                            <div class="col">
+                            <div class="col mb-4">
                                 <a href="{% url 'workshop_detail' workshop.slug %}" class="post-link text-decoration-none">
                                     <div class="card h-100">
+                                        <div id="image-container">
                                             {% if "placeholder" in workshop.featured_image.url %}
                                                 <img class="card-img-top fixed-height-img" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1689105522/pexels-klaus-nielsen-6287298_1_luafef.jpg">
                                             {% else %}
                                                 <img class="card-img-top fixed-height-img" src="{{ workshop.featured_image.url }}">
                                             {% endif %}
-                                        <div class="image-flash">
-                                            <p class="author">Chef: {{ workshop.chef }}</p>
+                                            <div class="image-flash pt-1">
+                                                <p class="author">Chef: {{ workshop.chef }}</p>
+                                            </div>
                                         </div>
                                         <div class="card-body">                            
                                             <h3 class="card-title">{{ workshop.title }}</h3>
@@ -35,17 +37,22 @@
                                         <!-- Display number of spaces or sold out -->
                                         <div class="card-footer">
                                             <small class="text-body-secondary">
-                                                {{ workshop.event_date }} |
-                                                {% if workshop.spaces == 0 %}
+                                                <span class="px-2">
+                                                    {{ workshop.event_date }}
+                                                </span> 
+                                                |
+                                                <span class="px-2"></span>
+                                                    {% if workshop.spaces == 0 %}
                                                     <strong> SOLD OUT</strong>
-                                                {% else %}
-                                                    {{ workshop.spaces }}
-                                                    {% if workshop.spaces == 1 %}
-                                                        Space
                                                     {% else %}
-                                                        Spaces
+                                                        {{ workshop.spaces }}
+                                                        {% if workshop.spaces == 1 %}
+                                                            Space
+                                                        {% else %}
+                                                            Spaces
+                                                        {% endif %}
                                                     {% endif %}
-                                                {% endif %}
+                                                </span>
                                             </small>
                                         </div>
                                     </div>
