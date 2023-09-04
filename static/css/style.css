@@ -362,6 +362,10 @@ footer {
 
 /*--------------------------------------------------------- News Articles */
 
+.card-body {
+    text-align: left;
+}
+
 .hidden {
     display: none;
 }

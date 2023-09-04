@@ -31,7 +31,7 @@
                                                 <p class="author">Chef: {{ workshop.chef }}</p>
                                             </div>
                                         </div>
-                                        <div class="card-body">                            
+                                        <div class="card-body text-center">                            
                                             <h3 class="card-title">{{ workshop.title }}</h3>
                                         </div>
                                         <!-- Display number of spaces or sold out -->
@@ -40,7 +40,7 @@
                                                 {{ workshop.event_date }}
                                             </span> 
                                             |
-                                            <span class="px-2"></span>
+                                            <span class="px-2">
                                                 {% if workshop.spaces == 0 %}
                                                 <strong> SOLD OUT</strong>
                                                 {% else %}
