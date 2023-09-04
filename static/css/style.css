@@ -301,19 +301,24 @@ footer {
 }
 
 .fixed-height-img {
-    height: 350px; /* Adjust the desired height here */
+    height: 350px;
     width: auto;
     object-fit: cover;
 }
 
 .fixed-height-img-detail {
-    height: 700px; /* Adjust the desired height here */
+    height: 700px;
     width: auto;
     object-fit: cover;
 }
 
 #workshop-book-now {
     text-decoration: none;
+}
+
+.workshop-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
 }
 
 /*--------------------------------------------------------- Booking Form */

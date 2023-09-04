@@ -20,7 +20,7 @@
                         {% if workshop.future_event %}
                             <div class="col mb-4">
                                 <a href="{% url 'workshop_detail' workshop.slug %}" class="post-link text-decoration-none">
-                                    <div class="card h-100">
+                                    <div class="card h-100 workshop-card">
                                         <div id="image-container">
                                             {% if "placeholder" in workshop.featured_image.url %}
                                                 <img class="card-img-top fixed-height-img" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1689105522/pexels-klaus-nielsen-6287298_1_luafef.jpg">
