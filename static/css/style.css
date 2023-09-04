@@ -392,7 +392,13 @@ footer {
 }
 
 .card:hover .card-img-shrink {
-    height: 250px;
+    height: 150px;
+}
+
+.news-content-outer {
+    overflow-y: hidden;
+    height: 210px;
+    backdrop-filter: blur(5px);
 }
 
 /*--------------------------------------------------------- Sign In/Out Notifications */

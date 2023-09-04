@@ -25,14 +25,17 @@
                                     <img class="card-img-top fixed-height-img card-img-shrink" src="{{ article.featured_image.url }}">
                                 </a>
                             {% endif %}
-                            <div class="card-body text-start">
+                            <div class="card-body text-start news-content-outer">
                                 <div class="text-center">                          
                                     <h3 class="card-title">{{ article.title }}</h3>
                                 </div> 
                                 <hr class="mx-5">
-                                <div>
+                                <div class="news-content">
                                     <p class="card-text">{{ article.excerpt }}
                                     </p>
+                                    <div class="description-text">
+                                        {{ article.content | safe }}
+                                    </div>
                                 </div>
                                 
                             </div>
