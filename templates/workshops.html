@@ -36,24 +36,22 @@
                                         </div>
                                         <!-- Display number of spaces or sold out -->
                                         <div class="card-footer">
-                                            <small class="text-body-secondary">
-                                                <span class="px-2">
-                                                    {{ workshop.event_date }}
-                                                </span> 
-                                                |
-                                                <span class="px-2"></span>
-                                                    {% if workshop.spaces == 0 %}
-                                                    <strong> SOLD OUT</strong>
+                                            <span class="px-2">
+                                                {{ workshop.event_date }}
+                                            </span> 
+                                            |
+                                            <span class="px-2"></span>
+                                                {% if workshop.spaces == 0 %}
+                                                <strong> SOLD OUT</strong>
+                                                {% else %}
+                                                    {{ workshop.spaces }}
+                                                    {% if workshop.spaces == 1 %}
+                                                        Space
                                                     {% else %}
-                                                        {{ workshop.spaces }}
-                                                        {% if workshop.spaces == 1 %}
-                                                            Space
-                                                        {% else %}
-                                                            Spaces
-                                                        {% endif %}
+                                                        Spaces
                                                     {% endif %}
-                                                </span>
-                                            </small>
+                                                {% endif %}
+                                            </span>
                                         </div>
                                     </div>
                                 </a>
