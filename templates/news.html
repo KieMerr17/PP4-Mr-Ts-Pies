@@ -16,15 +16,20 @@
                     {% for article in article_list %}
                     <div class="col mb-4">
                         <div class="card h-100">
-                            {% if "placeholder" in article.featured_image.url %}
-                                <a href="{% url 'news_detail' article.slug %}">
-                                    <img class="card-img-top fixed-height-img card-img-shrink" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1689102979/yjdzd1iiqsdundx3xmk3.jpg">
-                                </a>
-                            {% else %}
-                                <a href="{% url 'news_detail' article.slug %}">
-                                    <img class="card-img-top fixed-height-img card-img-shrink" src="{{ article.featured_image.url }}">
-                                </a>
-                            {% endif %}
+                                {% if "placeholder" in article.featured_image.url %}
+                                    <a href="{% url 'news_detail' article.slug %}">
+                                        <img class="card-img-top fixed-height-img card-img-shrink" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1689102979/yjdzd1iiqsdundx3xmk3.jpg">
+                                    </a>
+                                {% else %}
+                                    <a href="{% url 'news_detail' article.slug %}">
+                                        <img class="card-img-top fixed-height-img card-img-shrink" src="{{ article.featured_image.url }}">
+                                    </a>
+                                {% endif %}
+                                <div class="news-image-flash pt-1">
+                                    <p class="news-date author">{{ article.created_on|date:"M" }}</p>
+                                    <p class="news-date author">{{ article.created_on|date:"j" }}</p>
+
+                                </div>
                             <div class="card-body text-start news-content-outer">
                                 <div class="text-center">                          
                                     <h3 class="card-title">{{ article.title }}</h3>
