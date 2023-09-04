@@ -267,6 +267,11 @@ footer {
 
 /*--------------------------------------------------------- Workshops */
 
+.card {
+    color: #fff;
+    border: 0.5px solid grey !important;
+    background-color: #444 !important; 
+}
 
 .fixed-height-img {
     height: 350px; /* Adjust the desired height here */
@@ -376,10 +381,11 @@ footer {
 }
 
 .contact-form {
+    border: 0.5px solid grey;
     border-radius: 50px;
     margin-top: 50px;
     color: white;
-    background-color: rgba(39, 39, 39, .9);
+    background-color: #444;
     min-height: 550px;
     max-width: 500px;
     min-width: 200px;
