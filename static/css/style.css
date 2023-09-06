@@ -321,6 +321,21 @@ footer {
     transition: transform 0.3s;
 }
 
+.workshop-image-flash {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 5%;
+    right: 10px;
+    background-color: #df4929;
+}
+
+.workshop-date {
+    margin: 0;
+    font-size: x-large;
+}
+
 /*--------------------------------------------------------- Booking Form */
 #form_spaces_error ul {
     list-style: none;
@@ -398,21 +413,6 @@ footer {
 .news-content-outer {
     overflow-y: hidden;
     height: 210px;
-}
-
-.news-image-flash {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 5%;
-    right: 10px;
-    background-color: #df4929;
-}
-
-.news-date {
-    margin: 0;
-    font-size: xx-large;
 }
 
 /*--------------------------------------------------------- Sign In/Out Notifications */
