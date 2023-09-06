@@ -8,13 +8,13 @@
     <!-- News Column -->
     <div id="workshop-container" class="col-12 left">
         <div class="row">
-            <div class="col card mx-5 mb-4  mt-3 left top">
+            <div id="article-container" class="col card mb-4 mt-3 left top col-md-12">
                 <div class="card-body">
 
                     <!-- Post title -->
                     <h2 class="col-12">{{ article.title }}</h2>
                     <div class="row">
-                        <div class="d-block col-12 col-lg-6">
+                        <div class="d-block col-12">
                             <!-- The featured image -->
                             {% if "placeholder" in article.featured_image.url %}
                                 <img class="rounded-3 card-img-top fixed-height-img-detail" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1688574410/pie-2_mbcs4v.jpg">
@@ -22,76 +22,80 @@
                                 <img class="rounded-3 card-img-top fixed-height-img-detail" src="{{ article.featured_image.url }}">
                             {% endif %}
                         </div>
-                        <div class="d-flex align-items-center col-12 col-lg-6 pt-2">
+                        <div class="d-flex align-items-center col-12 pt-2">
                             <div>
                                 <h5 class="d-block d-md-none py-2 col-12">{{ workshop.title }}</h5>
-                                <p class="card-text">
+                                <p class="card-text pt-3">
                                     {{ article.content | safe }}
                                 </p>
-                                <p>{{ article.created_on }} | {{ article.likes }}</p>
+                                <p class="pt-3">
+                                    {{ article.created_on }} | {{ article.likes }}
+                                </p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Start of Comments Section -->
-            <div class="row justify-content-center">
-                <div id="comments-box" class="col card mx-5 mb-4">
-                    <div class="card-body">
-                        <div class="row">
+                        <!-- Start of Comments Section -->
+                        <div class="row justify-content-center">
+                            <div id="comments-box" class="col card mx-5 mb-4">
+                                <div class="card-body">
+                                    <div class="row">
 
-                            <!-- Display existing comments -->
-                            <div class="col-md-12">
-                                <h3>Comments</h3>
-                                <div class="comments-scroll-box">
-                                    {% for comment in comments.reverse %}
-                                    <div class="comment">
-                                        <p><strong>{{ comment.name }}</strong></p>
-                                        <p>{{ comment.body }}</p>
-                                        <!-- Delete button present for users comments -->
-                                        {% if comment.name == request.user.username %}
-                                        <div class="delete-container">
-                                            <form method="post" action="{% url 'delete_comment' comment.id article.slug %}" class="delete-form">
-                                                {% csrf_token %}
-                                                <a class="text-danger delete-comment"><i class="fa-regular fa-trash-can"></i></a>
-                                            </form>
-                                            <!-- Confirmation of delete -->
-                                            <div class="confirmation hidden">
-                                                <p>Are you sure you want to delete your comment?</p>
-                                                <a class="text-success confirm-delete"><i class="fa-solid fa-check"></i></a>
-                                                <a class="text-danger cancel-delete"><i class="fa-solid fa-xmark"></i></a>
+                                        <!-- Display existing comments -->
+                                        <div class="col-md-12">
+                                            <h3>Comments</h3>
+                                            <div class="comments-scroll-box">
+                                                {% for comment in comments.reverse %}
+                                                <div class="comment">
+                                                    <p><strong>{{ comment.name }}</strong></p>
+                                                    <p>{{ comment.body }}</p>
+                                                    <!-- Delete button present for users comments -->
+                                                    {% if comment.name == request.user.username %}
+                                                    <div class="delete-container">
+                                                        <form method="post" action="{% url 'delete_comment' comment.id article.slug %}" class="delete-form">
+                                                            {% csrf_token %}
+                                                            <a class="text-danger delete-comment"><i class="fa-regular fa-trash-can"></i></a>
+                                                        </form>
+                                                        <!-- Confirmation of delete -->
+                                                        <div class="confirmation hidden">
+                                                            <p>Are you sure you want to delete your comment?</p>
+                                                            <a class="text-success confirm-delete"><i class="fa-solid fa-check"></i></a>
+                                                            <a class="text-danger cancel-delete"><i class="fa-solid fa-xmark"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    {% endif %}
+                                                </div>
+                                                <hr>
+                                            {% endfor %}
                                             </div>
                                         </div>
-                                        {% endif %}
+
                                     </div>
-                                    <hr>
-                                {% endfor %}
+
+                                    <!-- Comment form -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            {% if user.is_authenticated %}
+                                            <hr>
+                                            <h3>Add a Comment</h3>
+                                            <form method="post" action="{% url 'article_comment_add' article.slug %}">
+                                                {% csrf_token %}
+                                                {{ comment_form.as_p }}
+                                                <button type="submit">Add Comment</button>
+                                            </form>
+                                            {% else %}
+                                            <p><strong>Please <a href="{% url 'account_login' %}">log in</a> to leave a comment.</strong></p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
 
-                        <!-- Comment form -->
-                        <div class="row">
-                            <div class="col-md-12">
-                                {% if user.is_authenticated %}
-                                <hr>
-                                <h3>Add a Comment</h3>
-                                <form method="post" action="{% url 'article_comment_add' article.slug %}">
-                                    {% csrf_token %}
-                                    {{ comment_form.as_p }}
-                                    <button type="submit">Add Comment</button>
-                                </form>
-                                {% else %}
-                                <p><strong>Please <a href="{% url 'account_login' %}">log in</a> to leave a comment.</strong></p>
-                                {% endif %}
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
 
+            
         </div>
     </div>    
     

@@ -416,6 +416,11 @@ footer {
     height: 210px;
 }
 
+#article-container {
+    width: 800px;
+    margin: 0 auto;
+}
+
 /*--------------------------------------------------------- Sign In/Out Notifications */
 @keyframes fadeout {
     0% { opacity: 1; }
@@ -540,6 +545,11 @@ form label {
 
 /* Media queries for medium screen sizes 575px and smaller */
 @media screen and (max-width: 575px){
+
+    #article-container {
+        margin-left: 5px !important;
+        margin-right: 5px !important;
+    }
 
     #pies-card-outer {
         margin: 0 5px !important;
