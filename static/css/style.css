@@ -392,6 +392,7 @@ footer {
 }
 
 #comments-box {
+    display: none;
     margin-top: 0;
     max-width: 600px;
 }
@@ -401,6 +402,10 @@ footer {
     max-height: 300px;
     overflow-y: auto;
     padding-right: 15px;
+}
+
+.comment {
+    text-align: left !important;
 }
 
 .card-img-shrink {

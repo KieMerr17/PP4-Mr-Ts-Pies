@@ -17,3 +17,16 @@ $(window).scroll(function() {
 });
 
 
+/** Function to display and hide the comments in the news detail */
+
+document.getElementById('toggle-comments').addEventListener('click', function () {
+  var commentsBox = document.getElementById('comments-box');
+
+  if (commentsBox.style.display === 'none') {
+      commentsBox.style.display = 'block';
+      this.innerText = 'Hide Comments';
+  } else {
+      commentsBox.style.display = 'none';
+      this.innerText = 'View Comments';
+  }
+});
