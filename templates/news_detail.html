@@ -13,7 +13,7 @@
 
                     <!-- Post title -->
                     <h2 class="col-12">{{ article.title }}</h2>
-                    <div class="row">
+                    <div>
                         <div class="d-block col-12">
                             <!-- The featured image -->
                             {% if "placeholder" in article.featured_image.url %}
@@ -79,7 +79,9 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             {% if user.is_authenticated %}
-                                            <hr>
+                                            <button id="toggle-add-comments" class="btn btn-primary">
+                                                Add a comment
+                                            </button>
                                             <h3>Add a Comment</h3>
                                             <form method="post" action="{% url 'article_comment_add' article.slug %}">
                                                 {% csrf_token %}

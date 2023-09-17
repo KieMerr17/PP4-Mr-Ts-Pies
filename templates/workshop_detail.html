@@ -8,14 +8,14 @@
     <!-- Workshops Column -->
     <div id="workshop-container" class="col-12 left">
         <div class="row">
-            <div class="col card mx-5 mb-4  mt-3 left top">
+            <div id="workshop-inner-container" class="col card">
                 <div class="card-body h-100">
                     <!-- Post title -->
                     <h2 class="col-12">{{ workshop.title }}</h2>
                     <!-- Workshop Date goes before the | the post's created date goes after -->
                     <p class="">{{ workshop.event_date }}</p>    
                     <div class="row">
-                        <div class="d-block col-12 col-lg-6">
+                        <div class="d-block col-12">
                             <!-- The featured image -->
                             {% if "placeholder" in workshop.featured_image.url %}
                                 <img class="rounded-3 card-img-top fixed-height-img-detail" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1688574410/pie-2_mbcs4v.jpg">
@@ -53,9 +53,10 @@
                                 <!-- Check user is logged-in first -->
                                 {% if user.is_authenticated %}
                                 <!-- Link book now button to the booking form url -->
-                                <strong class="btn btn-primary"><a id="workshop-book-now" class="text-white" href="{% url 'book_workshop' workshop.id %}">Book On!</a></strong>
+                                <strong class="btn btn-outline-secondary"><a id="workshop-book-now" class="text-white" href="{% url 'book_workshop' workshop.id %}">Book On!</a></strong>
                                 <br>
                                 {% else %}
+                                    <hr>
                                     <p><strong>
                                         Please <a href="{% url 'account_login' %}">log in</a>
                                         or <a href="{% url 'account_signup' %}">sign up</a>

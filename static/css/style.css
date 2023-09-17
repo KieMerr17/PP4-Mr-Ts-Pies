@@ -281,6 +281,11 @@ footer {
 
 /*--------------------------------------------------------- Workshops */
 
+#workshop-inner-container {
+    margin: 30px auto !important;
+    max-width: 800px;
+}
+
 #image-container {
     position: relative;
 }
@@ -550,6 +555,10 @@ form label {
 
 /* Media queries for medium screen sizes 575px and smaller */
 @media screen and (max-width: 575px){
+
+    #comments-box {
+        margin: 20px auto !important;
+    }
 
     #article-container {
         margin-left: 5px !important;
