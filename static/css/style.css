@@ -431,6 +431,17 @@ footer {
     margin: 0 auto;
 }
 
+/*--------------------------------------------------------- About us page */
+
+#about-us-card {
+    margin: 30px auto !important;
+    max-width: 800px;
+}
+
+#about-us-img {
+    filter: grayscale(100%);
+}
+
 /*--------------------------------------------------------- Sign In/Out Notifications */
 @keyframes fadeout {
     0% { opacity: 1; }
