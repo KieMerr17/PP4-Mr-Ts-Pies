@@ -67,7 +67,7 @@
                                             <div class="comments-scroll-box">
                                                 {% for comment in comments.reverse %}
                                                 <div class="comment">
-                                                    <p><strong>{{ comment.name }}</strong></p>
+                                                    <p><strong>{{ comment.name }}:</strong></p>
                                                     <p>{{ comment.body }}</p>
                                                     <!-- Delete button present for users comments -->
                                                     {% if comment.name == request.user.username %}

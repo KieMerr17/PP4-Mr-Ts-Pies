@@ -48,12 +48,13 @@ def ArticleComment(request, slug):
             comment = comment_form.save(commit=False)
             comment.post = article
             comment.save()
-            return redirect('news_detail', slug=slug)
+            url = reverse('news_detail', kwargs={'slug': slug}) + '#comments-box'
+            return redirect(url)
     else:
         comment_form = CommentForm()
 
-    # Refresh page
-    return redirect('news_detail', slug=slug)
+    url = reverse('news_detail', kwargs={'slug': slug}) + '#comments-box'
+    return redirect(url)
 
 
 def delete_comment(request, comment_id, slug):
@@ -63,7 +64,8 @@ def delete_comment(request, comment_id, slug):
     if request.method == 'POST':
         comment.delete()
         # Refresh page
-        return redirect('news_detail', slug=slug)
+        url = reverse('news_detail', kwargs={'slug': slug}) + '#comments-box'
+        return redirect(url)
 
 
 class ArticleLike(View):
