@@ -370,10 +370,6 @@ footer {
     color: #444;
 }
 
-select#id_workshop {
-    appearance: none;
-}
-
 /*--------------------------------------------------------- Profile Page */
 
 #profile-card-outer {
@@ -601,6 +597,10 @@ form label {
 
 /* Media queries for medium screen sizes 575px and smaller */
 @media screen and (max-width: 575px){
+    #profile-card-outer {
+        margin-left: 5px !important;
+        margin-right: 5px !important;
+    }
 
     #signup_container {
         margin: 16px 5px 0px !important;

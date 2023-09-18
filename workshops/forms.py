@@ -1,9 +1,16 @@
 from django import forms
 from .models import Booking, Workshop, DIET
 from django.utils.safestring import mark_safe
+from datetime import date
 
 
 class BookingForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        # Filter the workshops to show only future events
+        self.fields['workshop'].queryset = Workshop.objects.filter(event_date__gt=date.today())
+
     class Meta:
         model = Booking
         fields = ['workshop', 'name', 'email', 'phone_number', 'spaces', 'dietary_requirements']

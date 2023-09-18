@@ -22,7 +22,7 @@
                         {% csrf_token %}
                         <div class="form-group">
                             <label for="id_workshop">Workshop:</label>
-                            <select id="id_workshop" name="workshop" class="textarea-input p-1" disabled>
+                            <select id="id_workshop" name="workshop" class="textarea-input p-1">
                                 <!-- List selection of workshops, skipping the first option -->
                                 {% for value, label in form.fields.workshop.choices %}
                                     {% if forloop.counter > 1 %}
