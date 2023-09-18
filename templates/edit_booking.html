@@ -18,14 +18,6 @@
 
         <!-- Card detailed information -->
         <section class="row">
-            <!-- Display error messages -->
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="alert alert-success">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endif %}
 
             <div id="form-container" class="row mx-auto w-50">
                 <div id="form-container-inner" class="col card mx-5 mb-4 mt-3 left top">
@@ -75,8 +67,17 @@
                                     <div id="form_spaces_error" class="text-danger">{{ form.errors.spaces }}</div>
                                 {% endif %}
                             </div>
-    
                             <br>
+
+                            <!-- Display error messages -->
+                            {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-danger">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+
     
                             <button type="submit" class="btn btn--red">Submit Changes</button>             
                         {% else %}

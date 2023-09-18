@@ -44,13 +44,19 @@
                             <div class="col-12">
                                 {% for booking in user.bookings.all %}
                                 <div class="booking-item left-image">
-                                    <div class="booking-details">
+                                    <div class="featured-image">
+                                        {% if booking.workshop.featured_image %}
+                                            <img src="{{ booking.workshop.featured_image.url }}" alt="Featured Image">
+                                        {% endif %}
+                                    </div>
+                                    <div class="booking-details text-center">
                                         <p>
-                                            Workshop: <strong>{{ booking.workshop.title }}</strong>
+                                            <strong>{{ booking.workshop.title }}</strong>
                                             <br>
                                             Spaces: <strong>{{ booking.spaces }}</strong>
                                             <br>
-                                            Dietary Requirements: <strong>{{ booking.get_dietary_requirements_display }}</strong>
+                                            Dietary Requirements:
+                                            <br><strong>{{ booking.get_dietary_requirements_display }}</strong>
                                             <br>
                                             {% if booking.approved %} 
                                                 <div class="btn btn-success">Booking Approved</div>
@@ -60,11 +66,6 @@
                                             <br>
                                             <a class="text-success" href="{% url 'edit_booking' booking.id %}"><i class="fa-solid fa-pencil"></i></a> . <a class="text-danger" href="{% url 'delete_booking' booking.id %}"><i class="fa-regular fa-trash-can"></i></a>
                                         </p>
-                                    </div>
-                                    <div class="featured-image">
-                                        {% if booking.workshop.featured_image %}
-                                            <img src="{{ booking.workshop.featured_image.url }}" alt="Featured Image">
-                                        {% endif %}
                                     </div>
                                 </div>
                                 <hr>

@@ -372,8 +372,7 @@ footer {
 .left-image {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .featured-image {
@@ -452,6 +451,7 @@ footer {
 }
 
 /*--------------------------------------------------------- Sign In/Out Notifications */
+
 @keyframes fadeout {
     0% { opacity: 1; }
     100% { opacity: 0; display: none; }
@@ -573,6 +573,10 @@ form label {
 
 /* Media queries for medium screen sizes 575px and smaller */
 @media screen and (max-width: 575px){
+
+    .left-image {
+        display: inline-block;
+    }
 
     #comments-box {
         margin: 20px auto !important;
