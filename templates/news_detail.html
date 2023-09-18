@@ -34,7 +34,7 @@
                                     <form class="d-inline" action="{% url 'article_like' article.slug %}" method="POST">
                                         {% csrf_token %}
                                         {% if liked %}
-                                            <button type="submit" name="artcile_id" value="{{article.slug}}" class="btn-like p-0">
+                                            <button type="submit" name="artcile_id" value="{{article.slug}}" class="btn-like p-0 text-danger">
                                                 <i class="fas fa-heart"></i>
                                             </button>
                                         {% else %}
