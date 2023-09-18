@@ -451,15 +451,13 @@ footer {
 /*--------------------------------------------------------- Pies */
 
 #pies-card-outer {
-    max-width: 800px;
-    background: url("https://res.cloudinary.com/dnyzrhjyz/image/upload/v1693595718/pexels-pixabay-235985_hfcfi5.jpg") no-repeat fixed;
-    background-size: cover;
+    max-width: 1000px;
 }
 
 .pie-card {
-    min-height: 300px;
     width: 300px;
-    
+    min-height: 300px;
+    margin: 10px;
 }
 
 /*--------------------------------------------------------- Contact Page */

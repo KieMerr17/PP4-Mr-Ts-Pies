@@ -26,8 +26,10 @@
                             <div class="col-12">
                                 <!-- loop through pies -->
                                 {% for pie in pie_list %}
+
                                     <h4>{{ pie.title }}</h4>
                                     <div class="pie-item left-image">
+
                                         <!-- Image -->
                                         <div class="featured-image">
                                             {% if "placeholder" in pie.featured_image.url %}
@@ -40,12 +42,22 @@
                                         <!-- Pie details -->
                                         <div class="pie-card">
                                             <p>
-                                        
                                                 <strong>{{ pie.description|safe }}</strong>
+                                            </p>
+                                        </div>
+
+                                        <!-- Pie Allergy -->
+                                        <div class="pie-card">
+                                            <p>
+                                                Diet:
                                                 <br>
-                                                Diet: <strong>{{ pie.get_diet_display }}</strong>
+                                                <strong>
+                                                    {{ pie.get_diet_display }}
+                                                </strong>
                                                 <br>
-                                                Allergies: 
+                                                <br>
+                                                Allergies:
+                                                <br>
                                                 <strong>
                                                     {% for allergy in pie.allergies.all %}
                                                         {{ allergy }}
@@ -55,6 +67,7 @@
                                                 </strong>
                                             </p>
                                         </div>
+
                                     </div>
                                     <hr>
                                 {% endfor %}
