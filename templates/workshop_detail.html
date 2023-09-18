@@ -53,7 +53,7 @@
                                 <!-- Check user is logged-in first -->
                                 {% if user.is_authenticated %}
                                 <!-- Link book now button to the booking form url -->
-                                <strong class="btn btn-outline-secondary"><a id="workshop-book-now" class="text-white" href="{% url 'book_workshop' workshop.id %}">Book On!</a></strong>
+                                <strong class="btn btn--red"><a id="workshop-book-now" class="text-white" href="{% url 'book_workshop' workshop.id %}">Book On!</a></strong>
                                 <br>
                                 {% else %}
                                     <hr>

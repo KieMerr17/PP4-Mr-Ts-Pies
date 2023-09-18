@@ -361,13 +361,17 @@ footer {
 }
 
 #id_workshop option {
-        background-color: #fff;
-        color: #444;
+    background-color: #fff;
+    color: #444;
 }
 
 #dietary_requirements option {
     background-color: #fff;
     color: #444;
+}
+
+select#id_workshop {
+    appearance: none;
 }
 
 /*--------------------------------------------------------- Profile Page */
@@ -471,6 +475,7 @@ footer {
 }
 
 .signin-input input {
+    padding: 5px;
     width: 100%;
     border: none;
     text-align: center;

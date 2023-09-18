@@ -21,8 +21,8 @@
 
                         {% csrf_token %}
                         <div class="form-group">
-                            <label for="workshop">Workshop:</label>
-                            <select id="id_workshop" name="workshop" class="textarea-input">
+                            <label for="id_workshop">Workshop:</label>
+                            <select id="id_workshop" name="workshop" class="textarea-input p-1" disabled>
                                 <!-- List selection of workshops, skipping the first option -->
                                 {% for value, label in form.fields.workshop.choices %}
                                     {% if forloop.counter > 1 %}
@@ -34,22 +34,22 @@
 
                         <div class="form-group">
                             <label for="id_name">Name:</label>
-                            <input type="text" id="id_name" name="name" class="textarea-input" required>
+                            <input type="text" id="id_name" name="name" class="textarea-input p-1" required>
                         </div>
 
                         <div class="form-group">
                             <label for="id_email">Email:</label>
-                            <input type="email" id="id_email" name="email" class="textarea-input" required>
+                            <input type="email" id="id_email" name="email" class="textarea-input p-1" required>
                         </div>
 
                         <div class="form-group">
                             <label for="id_phone_number">Phone Number:</label>
-                            <input type="tel" id="id_phone_number" name="phone_number" class="textarea-input" required>
+                            <input type="tel" id="id_phone_number" name="phone_number" class="textarea-input p-1" required>
                         </div>
 
                         <div class="form-group">
                             <label for="dietary_requirements">Dietary Requirements:</label>
-                            <select id="dietary_requirements" name="dietary_requirements" class="textarea-input">
+                            <select id="dietary_requirements" name="dietary_requirements" class="textarea-input p-1">
                                 <!-- List selection of diets -->
                                 {% for value, label in form.fields.dietary_requirements.choices %}
                                     <option value="{{ value }}">{{ label }}</option>
@@ -59,7 +59,7 @@
 
                         <div class="form-group">
                             <label for="id_spaces">Number of Spaces:</label>
-                            <input type="number" id="id_spaces" name="spaces" class="textarea-input" min="1" max="{{ workshop.spaces }}" required>
+                            <input type="number" id="id_spaces" name="spaces" class="textarea-input p-1" min="1" max="{{ workshop.spaces }}" required>
                             <!-- Raise error if spaces requested are higher than available -->
                             {% if form.errors.spaces %}
                                 <div id="form_spaces_error" class="text-danger">{{ form.errors.spaces }}</div>
