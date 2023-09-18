@@ -100,7 +100,9 @@
                                             <h3>Add a Comment</h3>
                                             <form method="post" action="{% url 'article_comment_add' article.slug %}">
                                                 {% csrf_token %}
-                                                {{ comment_form.as_p }}
+                                                <p class="d-none">{{ comment_form.name }}</p>
+                                                <p>{{ comment_form.body }}</p>
+
                                                 <button type="submit" class="btn btn--red">Add Comment</button>
                                             </form>
                                             {% else %}
