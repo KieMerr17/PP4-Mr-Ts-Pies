@@ -398,6 +398,10 @@ footer {
     text-decoration: none;
 }
 
+.fa-trash-can {
+    margin: 15px 10px;
+}
+
 /*--------------------------------------------------------- News Articles */
 
 #id_body {
