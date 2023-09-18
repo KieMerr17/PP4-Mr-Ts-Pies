@@ -360,6 +360,16 @@ footer {
     max-width: 800px;
 }
 
+#id_workshop option {
+        background-color: #fff;
+        color: #444;
+}
+
+#dietary_requirements option {
+    background-color: #fff;
+    color: #444;
+}
+
 /*--------------------------------------------------------- Profile Page */
 
 #profile-card-outer {
