@@ -46,6 +46,7 @@
                                         <a href="{% url 'news_detail' article.slug %}">read more</a>
                                     </span>
                                 </p>
+                                <p><i class="fas fa-heart"></i> {{ article.likes.count }}</p>
                             </div>
                         </div>
                     </div>

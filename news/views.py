@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
+from django.http import HttpResponseRedirect, JsonResponse
 from .models import Article, Comment
 from .forms import CommentForm
 
@@ -63,3 +64,18 @@ def delete_comment(request, comment_id, slug):
         comment.delete()
         # Refresh page
         return redirect('news_detail', slug=slug)
+
+
+class ArticleLike(View):
+
+    def post(self, request, slug):
+        article = get_object_or_404(Article, slug=slug)
+        if article.likes.filter(id=request.user.id).exists():
+            article.likes.remove(request.user)
+            liked = False
+        else:
+            article.likes.add(request.user)
+            liked = True
+
+        url = reverse('news_detail', kwargs={'slug': slug}) + '#like_count'
+        return redirect(url)

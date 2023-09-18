@@ -7,4 +7,5 @@ urlpatterns = [
     path('<slug:slug>/', views.ArticleDetail.as_view(), name='news_detail'),
     path('article/<slug:slug>/add_comment/', views.ArticleComment, name='article_comment_add'),
     path('delete_comment/<int:comment_id>/<slug:slug>/', views.delete_comment, name='delete_comment'),
+    path('like/<slug:slug>', views.ArticleLike.as_view(), name='article_like'),
 ]
