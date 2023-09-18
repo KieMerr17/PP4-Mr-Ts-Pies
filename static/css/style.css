@@ -131,13 +131,10 @@ body {
     display: inline-block;
     width: 95px;
     margin: 0 auto;
-    background-color: #b8b8b8;
-    color: black;
-    border-radius: 20px;
 }
 
 .article-button a {
-    color: black;
+    color: #f05f40;
     text-decoration: none;
 }
 
