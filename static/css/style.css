@@ -404,6 +404,10 @@ footer {
 
 /*--------------------------------------------------------- News Articles */
 
+#news-card-outer {
+    height: 650px;
+}
+
 #id_body {
     width: -webkit-fill-available;
 }

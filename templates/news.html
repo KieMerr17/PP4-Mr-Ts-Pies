@@ -15,7 +15,7 @@
                 <div class="row row-cols-1 row-cols-lg-3 g-4 mt-0">
                     {% for article in article_list %}
                     <div class="col mb-4">
-                        <div class="card h-100">
+                        <div id="news-card-outer" class="card">
                                 {% if "placeholder" in article.featured_image.url %}
                                     <a href="{% url 'news_detail' article.slug %}">
                                         <img class="card-img-top fixed-height-img card-img-shrink" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1689102979/yjdzd1iiqsdundx3xmk3.jpg">
