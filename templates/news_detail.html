@@ -28,7 +28,7 @@
                                 <p class="card-text pt-3">
                                     {{ article.content | safe }}
                                 </p>
-                                <p class="pt-3">
+                                <p id="like_count" class="pt-3">
                                     {{ article.created_on }}
                                     {% if user.is_authenticated %}
                                     <form class="d-inline" action="{% url 'article_like' article.slug %}" method="POST">
@@ -42,7 +42,7 @@
                                             <i class="far fa-heart"></i>
                                         </button>
                                         {% endif %}
-                                        <span id="like_count">{{ article.likes.count }}</span>
+                                        <span>{{ article.likes.count }}</span>
                                     </form>
                                     {% else %}
                                     <p><i class="fas fa-heart"></i>

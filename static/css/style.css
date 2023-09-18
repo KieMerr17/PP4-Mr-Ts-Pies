@@ -394,6 +394,10 @@ footer {
 
 /*--------------------------------------------------------- News Articles */
 
+#id_body {
+    width: -webkit-fill-available;
+}
+
 .card-body {
     text-align: center;
 }
