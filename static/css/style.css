@@ -498,12 +498,12 @@ footer {
     color: white;
     background: transparent;
     margin: 5px 0 20px 0;
-    border: 1px solid white;
+    border: 1px solid rgb(177, 177, 177);
     border-radius: 10px;
 }
 
 .textarea-input:hover {
-    border-color: #f05f40;
+    border-color: #fff;
 }
 
 form label {

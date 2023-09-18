@@ -101,7 +101,7 @@
                                             <form method="post" action="{% url 'article_comment_add' article.slug %}">
                                                 {% csrf_token %}
                                                 {{ comment_form.as_p }}
-                                                <button type="submit">Add Comment</button>
+                                                <button type="submit" class="btn btn--red">Add Comment</button>
                                             </form>
                                             {% else %}
                                             <p><strong>Please <a href="{% url 'account_login' %}">log in</a> to leave a comment.</strong></p>
