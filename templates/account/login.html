@@ -14,25 +14,41 @@
     <!-- Workshops Column -->
     <div id="workshop-container" class="col-12 left">
         <div class="row">
-            <div class="col card mx-5 mb-4  mt-3 left top">
+            <div id="signup_outer" class="col-12 card">
                 <div class="card-body h-100">
 
                     <h2>{% trans "Sign In" %}</h2>
+                    <br>
+
+                    <form class="login" method="POST" action="{% url 'account_login' %}">
+                        {% csrf_token %}
+                            {% for field in form %}
+                                <!-- Labels for input fields -->
+                                <label for="{{ field.id_for_label }}" class="custom-label">
+                                    {% if field.field.required %}<span class="required"></span>{% endif %}
+                                    {{ field.label }}
+                                </label>
+                                <!-- Input fields -->
+                                <p class="{% if field.field.widget.input_type != 'checkbox' %}textarea-input {% endif %}signin-input">
+                                    {{ field }}
+                                    <!-- Remove placeholder with inline script for input elements -->
+                                    {% if field.field.widget.input_type != 'checkbox' %}
+                                    <script>
+                                        document.getElementById("{{ field.id_for_label }}").placeholder = "";
+                                    </script>
+                                {% endif %}
+                                </p>
+                            {% endfor %}
+                        {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                        {% endif %}
+                        <button class="primaryAction btn btn--red" type="submit">{% trans "Sign In" %}</button>
+                    </form>
 
                     <h2>{% blocktrans %}</h2>
                     <br>
                     <p>If you do not have an account, then please
                       <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-
-
-                    <form class="login" method="POST" action="{% url 'account_login' %}">
-                      {% csrf_token %}
-                      {{ form.as_p }}
-                      {% if redirect_field_value %}
-                      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                      {% endif %}
-                      <button class="primaryAction btn btn--red" type="submit">{% trans "Sign In" %}</button>
-                    </form>
                   
                 </div>
             </div>

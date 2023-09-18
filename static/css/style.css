@@ -454,6 +454,22 @@ footer {
     100% { opacity: 0; display: none; }
 }
 
+#signup_outer {
+    border-radius: 50px;
+    margin: 70px auto;
+    max-width: 500px;
+}
+
+.signin-input input {
+    width: 100%;
+    border: none;
+    text-align: center;
+    letter-spacing: 4px;
+    color: white;
+    background: transparent;
+    border-radius: 10px;
+}
+
 /*--------------------------------------------------------- Pies */
 
 #pies-card-outer {
@@ -570,6 +586,10 @@ form label {
 
 /* Media queries for medium screen sizes 575px and smaller */
 @media screen and (max-width: 575px){
+
+    #signup_container {
+        margin: 16px 5px 0px !important;
+    }
 
     .left-image {
         display: inline-block;
