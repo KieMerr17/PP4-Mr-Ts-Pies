@@ -510,7 +510,7 @@ footer {
 
 .pies-image {
     border: 1px solid #fff;
-    height: 300px;
+    height: 250px;
     object-fit: cover;
     box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
 }
@@ -699,7 +699,7 @@ form label {
     }
 
     #pies-card-outer {
-        margin: 0 5px !important;
+        margin: 0 5px 10px !important;
         max-width: 100%;
     }
 

@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from django.contrib import messages
+from django.utils import timezone
 from .models import Workshop, Booking
 from .forms import BookingForm
 from django.db.models import F
@@ -95,6 +96,10 @@ class WorkshopList(generic.ListView):
     queryset = Workshop.objects.filter(status=1).order_by('event_date')
     template_name = 'workshops.html'
     paginate_by = 4
+
+    # Update the status of past workshops to 0
+    past_workshops = Workshop.objects.filter(event_date__lt=timezone.now())
+    past_workshops.update(status=0)
 
 
 class WorkshopDetail(View):
