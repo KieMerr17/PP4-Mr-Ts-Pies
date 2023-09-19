@@ -60,13 +60,36 @@
                                 </ul>
                             </div>
                             <div class="allergy">
-                                <p><span>Contains:</span>{% for allergy in pie.allergies.all %}
+                                <p><span>Contains:</span>
+                                {% for allergy in pie.allergies.all %}
                                     {{ allergy }}
                                 {% empty %}
                                     No allergies
                                 {% endfor %}</p>
                             </div>
-                            <button class="btn btn--red">Like</button>
+                            <div class="likes">
+                                <!-- Check if logged in user has already liked the pie -->
+                                {% if user.is_authenticated %}
+                                    <form class="d-inline" action="{% url 'pie_like' pie.slug %}" method="POST">
+                                        {% csrf_token %}
+                                        {% if request.user in pie.likes.all %}
+                                            <button type="submit" name="pie_id" value="{{pie.slug}}" class="btn-like p-0 text-danger">
+                                                <i class="fas fa-heart"></i>
+                                            </button>
+                                        {% else %}
+                                        <button type="submit" name="pie_id" value="{{pie.slug}}" class="btn-like p-0">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        {% endif %}
+                                        <span>{{ pie.likes.count }}</span>
+                                    </form>
+                                {% else %}
+                                    <!-- if not logged in, display total number of likes -->
+                                    <p><i class="fas fa-heart"></i>
+                                        <span id="like_count"> {{ pie.likes.count }}</span>
+                                    </p>
+                                {% endif %}          
+                            </div>
                         </div>
                     </section>
                     <hr>
