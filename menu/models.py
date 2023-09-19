@@ -21,6 +21,10 @@ class Pie(models.Model):
     excerpt = models.TextField(blank=True)
     diet = models.IntegerField(choices=DIET, default=0)
     allergies = models.ManyToManyField(Allergy, blank=True)
+    likes = models.ManyToManyField(User, related_name='pie_likes', blank=True)
 
     def __str__(self):
         return self.title
+
+    def number_of_likes(self):
+        return self.likes.count()
