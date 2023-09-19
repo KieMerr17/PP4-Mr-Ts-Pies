@@ -128,7 +128,7 @@ body {
 /*--------------------------------------------------------- Buttons */
 
 .likes {
-    font-size: x-large;
+    font-size: large;
 }
 
 .article-button {
@@ -509,7 +509,7 @@ footer {
 }
 
 .pies-image {
-    height: 440px;
+    height: 100%;
     object-fit: cover;
     box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
 
@@ -651,6 +651,18 @@ form label {
 /* Media queries for medium screen sizes 767px and smaller */
 @media screen and (max-width: 767px){
 
+    .product {
+        grid-template-columns: 1fr;
+    }
+    .photo-container {
+        position: relative;
+        left: 0;
+    }
+
+    .product-info {
+        margin-top: 20px;
+    }
+
     #form-section {
         display: grid;
     }
@@ -663,10 +675,6 @@ form label {
 
 /* Media queries for medium screen sizes 575px and smaller */
 @media screen and (max-width: 575px){
-    #profile-card-outer {
-        margin-left: 5px !important;
-        margin-right: 5px !important;
-    }
 
     #signup_container {
         margin: 16px 5px 0px !important;
