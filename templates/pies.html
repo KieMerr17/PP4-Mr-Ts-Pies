@@ -20,60 +20,59 @@
         <section class="row justify-content-center">
 
             <div id="pies-card-outer" class="col card mx-5 mb-4 mt-3 left top">
-                <div class="card-body h-100">
-                    <div class="row">
+                <div class="row">
 
-                            <div class="col-12">
-                                <!-- loop through pies -->
-                                {% for pie in pie_list %}
-
-                                    <h4>{{ pie.title }}</h4>
-                                    <div class="pie-item left-image">
-
-                                        <!-- Image -->
-                                        <div class="featured-image">
-                                            {% if "placeholder" in pie.featured_image.url %}
-                                                    <img class="card-img-top fixed-height-img" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1689105522/pexels-klaus-nielsen-6287298_1_luafef.jpg">
-                                                {% else %}
-                                                    <img class="card-img-top fixed-height-img" src="{{ pie.featured_image.url }}">
-                                                {% endif %}
-                                        </div>
-                                        
-                                        <!-- Pie details -->
-                                        <div class="pie-card">
-                                            <p>
-                                                <strong>{{ pie.description|safe }}</strong>
-                                            </p>
-                                        </div>
-
-                                        <!-- Pie Allergy -->
-                                        <div class="pie-card">
-                                            <p>
-                                                Diet:
-                                                <br>
-                                                <strong>
-                                                    {{ pie.get_diet_display }}
-                                                </strong>
-                                                <br>
-                                                <br>
-                                                Allergies:
-                                                <br>
-                                                <strong>
-                                                    {% for allergy in pie.allergies.all %}
-                                                        {{ allergy }}
-                                                    {% empty %}
-                                                        No allergies
-                                                    {% endfor %}
-                                                </strong>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                {% endfor %}
+                    <!-- loop through pies -->
+                    {% for pie in pie_list %}
+                    <section class="product">
+                        <div class="product-photo">
+                            <div class="photo-container">
+                                <div class="photo-main">
+                                    
+                                    <!-- Image -->
+                                    {% if "placeholder" in pie.featured_image.url %}
+                                        <img class="pies-image card-img-top" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1689105522/pexels-klaus-nielsen-6287298_1_luafef.jpg">
+                                    {% else %}
+                                        <img class="pies-image card-img-top" src="{{ pie.featured_image.url }}">
+                                    {% endif %}
+                                </div>
+                                
                             </div>
+                        </div>
                         
-                    </div>
-                </div>
+                        <!-- Product info section -->
+                        <div class="product-info">
+                            <div class="title">
+                                <h4>{{ pie.title }}</h4>
+                            </div>
+                            <div class="description">
+                                <span>{{ pie.description|safe }} Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Voluptates provident corrupti nesciunt ipsum consequatur culpa blanditiis exercitationem 
+                                    ssumenda soluta voluptate eaque molestiae natus sapiente dolore qui, illo nisi officia ea.</span>
+                            </div>
+                            <div class="ingredients">
+                                <h6>Ingredients</h6>
+                                <ul>
+                                    <li>Shropshire grazed beef</li>
+                                    <li>Locally sourced milk</li>
+                                    <li>Welsh harvested leeks</li>
+                                    <li>Home grown carrots</li>
+                                </ul>
+                            </div>
+                            <div class="allergy">
+                                <p><span>Contains:</span>{% for allergy in pie.allergies.all %}
+                                    {{ allergy }}
+                                {% empty %}
+                                    No allergies
+                                {% endfor %}</p>
+                            </div>
+                            <button class="btn btn--red">Like</button>
+                        </div>
+                    </section>
+                    <hr>
+                    {% endfor %}
+
+                </div>         
             </div>
         </section>
 
