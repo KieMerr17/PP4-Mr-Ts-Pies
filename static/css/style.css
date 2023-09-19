@@ -127,6 +127,10 @@ body {
 
 /*--------------------------------------------------------- Buttons */
 
+.likes {
+    font-size: x-large;
+}
+
 .article-button {
     display: inline-block;
     width: 95px;
