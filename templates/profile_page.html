@@ -45,11 +45,13 @@
                                 {% for booking in user.bookings.all %}
                                 <div class="booking-item left-image">
                                     <div class="featured-image">
-                                        {% if booking.workshop.featured_image %}
+                                        {% if "placeholder" in booking.workshop.featured_image.url %}
+                                            <img src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1689105522/pexels-klaus-nielsen-6287298_1_luafef.jpg">
+                                        {% else %}
                                             <img src="{{ booking.workshop.featured_image.url }}" alt="Featured Image">
                                         {% endif %}
                                     </div>
-                                    <div class="booking-details text-center">
+                                    <div class="booking-details text-center ms-4">
                                         <p>
                                             <strong>{{ booking.workshop.title }}</strong>
                                             <br>

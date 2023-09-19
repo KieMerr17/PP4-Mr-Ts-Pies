@@ -387,12 +387,13 @@ footer {
 }
 
 .featured-image {
-    max-height: 200px;
+    max-width: 50%;
     margin-left: 15px;
 }
 
 .featured-image img {
-    height: 200px;
+    max-width: 100%;
+    height: auto;
 }
 
 .confirm-delete-button {
@@ -643,14 +644,18 @@ form label {
     #form-container {
         width: 75% !important;
     }
-
-    #profile-card-outer {
-        max-width: 75%;
-    }
 }
 
 /* Media queries for medium screen sizes 767px and smaller */
 @media screen and (max-width: 767px){
+
+    .featured-image {
+        max-width: 100%;
+    }
+
+    .left-image {
+        display: inline-block;
+    }
 
     .pies-image {
         border: none;
@@ -673,6 +678,7 @@ form label {
     }
 
     #profile-card-outer {
+        margin: 16px 50px;
         max-width: 100%;
     }
 }
@@ -681,12 +687,12 @@ form label {
 /* Media queries for medium screen sizes 575px and smaller */
 @media screen and (max-width: 575px){
 
-    #signup_container {
-        margin: 16px 5px 0px !important;
+    #profile-card-outer {
+        margin: 16px !important;
     }
 
-    .left-image {
-        display: inline-block;
+    #signup_container {
+        margin: 16px 5px 0px !important;
     }
 
     #comments-box {
@@ -706,10 +712,6 @@ form label {
     .pie-item {
         flex-direction: column;
         text-align: center;
-    }
-
-    .featured-image {
-        margin: 5px 0;
     }
 
     .pie-card {
