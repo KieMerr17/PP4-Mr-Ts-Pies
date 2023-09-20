@@ -3,7 +3,7 @@ body {
 }
 
 #index-body {
-    background: url('../images/pies-1.jpg') no-repeat bottom left fixed;
+    background: url('https://res.cloudinary.com/dnyzrhjyz/image/upload/v1695226447/static/images/pies-1.b2a98d06f3f3.jpg') no-repeat bottom left fixed;
     background-size: cover;
 }
 
