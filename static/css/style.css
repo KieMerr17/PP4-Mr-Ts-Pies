@@ -761,6 +761,7 @@ form label {
     }
 
     #contact-form {
+        margin: 0px !important;
         padding: 30px 10px 10px !important;
     }
 }
