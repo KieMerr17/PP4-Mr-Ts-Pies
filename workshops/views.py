@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from django.contrib import messages
 from django.utils import timezone
+from datetime import date
 from .models import Workshop, Booking
 from .forms import BookingForm
 from django.db.models import F
@@ -93,13 +94,18 @@ def delete_booking(request, booking_id):
 
 class WorkshopList(generic.ListView):
     model = Workshop
-    queryset = Workshop.objects.filter(status=1).order_by('event_date')
     template_name = 'workshops.html'
     paginate_by = 4
 
-    # Update the status of past workshops to 0
-    past_workshops = Workshop.objects.filter(event_date__lt=timezone.now())
-    past_workshops.update(status=0)
+    def get_queryset(self):
+        # Only show future events
+        queryset = Workshop.objects.filter(event_date__gt=date.today()).order_by('event_date')
+
+        # Update the status of past workshops to 0
+        past_workshops = Workshop.objects.filter(event_date__lt=timezone.now())
+        past_workshops.update(status=0)
+
+        return queryset
 
 
 class WorkshopDetail(View):
