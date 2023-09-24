@@ -105,18 +105,182 @@ Mr Ts Pies is a website designed to help promote a local pie making business, sh
 
 <details><summary>User Stories</summary>
 
-![User stories](/docs/features/user-stories.png)
+![User stories](docs/features/user-stories.png)
 
 </details>
 
 <details><summary>Kanban</summary>
 
-![Kanban mid](/docs/features/kanban-in-progress.png)
-![Kanban finish](/docs/features/kanban-complete.png)
+![Kanban mid](docs/features/kanban-in-progress.png)
+![Kanban finish](docs/features/kanban-complete.png)
 
 </details>
 
 
 ##### Back to [top](#table-of-contents)<hr>
 
+
+## Design
+
+### Colours
+
+I chose dark colours, mainly black and white with other colours which are slight variations as the company colours are predominately black and white. I added in the colour orange to buttons to give it a warmer feeling and to add some modernness to it.
+
+The colors I wanted to stay close to  [Coolors.co](https://coolors.co/)
+<details><summary>See colour pallet</summary>
+<img src="docs/features/colour-pallette.png">
+</details>
+
+### Fonts
+
+ The fonts selected were from Google Fonts, Roboto with sans-serif as a backup font.
+
+### Structure
+
+#### Website pages
+
+The site was designed for the user to be familiar with the layout such as a navigation bar along the top of the pages and a hamburger menu button for smaller screen.
+
+The footer contains all relevant social media links that the business has so the user can visit any social media site and follow the business there to expand the businesses followers, likes and shares.
+
+- The site consists of the following pages:
+  - Homepage with information about the 2 chefs, and also the current markets they operate at.
+  - About:
+    - About Us page to give the customer information about the company, how it came to be and more detailed information about where the pies are made and they source the ingredients.
+    - News page where the user can find current articles written by the company to highlight their most current and up to date acheivements and things which may be happening in the business.
+  - Pies page is where a list of all the pies the company make are displayed along with the ingredients and all associated allegies
+  - Events:
+    - Markets this section displays a list of the current markets they operate at, information about the area along with a Google map link to get directions straight to its location
+    - Workshops here is displayed the up coming list of workshops the company are hosting along with available spaces should a visiting customer wish to sign up and book on.
+  - Register is a page where the user can sign up to the website, this will allow them to be able to leave comments and likes on news articles, like pies and book onto workshops
+  - Login / Logout here a authenticated user can choose to log into their profile or log out should they wish to.
+  - Profile page is a area where the logged in user can read, update and delete any of their current and upcoming bookings.
+  - Get In Touch this page is where the visiting customer can contact the business through a form or through a link to their Facebook Messenger or Whatsapp details
+  - 404 error page to display if a 404 error is raised
+
+#### Database
+
+- Built with Python and the Django framework with a database of a Postgres for the deployed Heroku version(production)
+
+<details><summary>Show diagram</summary>
+<img src="">
+</details>
+
+
+##### User Model
+The User Model contains the following:
+- user_id
+- password
+- last_login
+- is_superuser
+- username
+- first_name
+- last_name
+- email
+- is_staff
+- is_active
+- date_joined
+
+##### Workshop Model
+The Workshop Model contains the following:
+- title
+- slug
+- event_date
+- spaces
+- chef
+- content
+- featured_image
+- excerpt
+- created_on
+- status
+- likes
+
+##### Booking Model
+The Booking Model contains the following:
+- user
+- workshop
+- name
+- email
+- phone_number
+- spaces
+- dietary_requirements
+- booked_on
+- approved
+
+##### Article Model
+The Article Model contains the following:
+- title
+- slug
+- author
+- content
+- featured_image
+- excerpt
+- created_on
+- status
+- likes
+
+
+##### Comment Model
+The Comment Model contains the following:
+- post
+- name
+- email
+- body 
+- created_on
+
+##### Pie Model
+The Pie Model contains the following:
+- title
+- slug
+- description
+- featured_image
+- excerpt
+- diet
+- allergies
+- likes
+
+
+### Wireframes
+The wireframes were created using Balsamiq
+<details><summary></summary>
+<img src="">
+</details>
+
+
+## Technologies Used
+
+### Languages & Frameworks
+
+- HTML
+- CSS
+- Javascript
+- Python
+- Django
+
+
+### Libraries & Tools
+
+- [Am I Responsive](http://ami.responsivedesign.is/)
+- [Balsamiq](https://balsamiq.com/)
+- [Bootstrap v5.2](https://getbootstrap.com/)
+- [Cloudinary](https://cloudinary.com/)
+- [Favicon.io](https://favicon.io)
+- [Chrome dev tools](https://developers.google.com/web/tools/chrome-devtools/)
+- [Font Awesome](https://fontawesome.com/)
+- [Git](https://git-scm.com/)
+- [GitHub](https://github.com/)
+- [Google Fonts](https://fonts.google.com/)
+- [Heroku Platform](https://id.heroku.com/login)
+- [jQuery](https://jquery.com)
+- [Postgres](https://www.postgresql.org/)
+- [Summernote](https://summernote.org/)
+- Validation:
+  - [WC3 Validator](https://validator.w3.org/)
+  - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/)
+  - [JShint](https://jshint.com/)
+  - [Pycodestyle(PEP8)](https://pypi.org/project/pycodestyle/)
+  - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+  - [Wave Validator](https://wave.webaim.org/)
+
+##### Back to [top](#table-of-contents)
 
