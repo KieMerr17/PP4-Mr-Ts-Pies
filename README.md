@@ -15,6 +15,15 @@
   - [Site Owner Goals](#site-owner-goals)
   - [User Experience](#user-experience)
   - [User Stories](#user-stories)
+  - [Design](#design)
+    - [Colours](#colours)
+    - [Fonts](#fonts)
+    - [Structure](#structure)
+      - [Website pages](#website-pages)
+      - [Database](#database)
+    - [Wireframes](#wireframes)
+  - [Technologies Used](#technologies-used)
+  - [Features](#features)
 
 ### About
 
@@ -266,6 +275,7 @@ The wireframes were created using Balsamiq
 - [Cloudinary](https://cloudinary.com/)
 - [Favicon.io](https://favicon.io)
 - [Chrome dev tools](https://developers.google.com/web/tools/chrome-devtools/)
+- [EmailJS](https://www.emailjs.com/)
 - [Font Awesome](https://fontawesome.com/)
 - [Git](https://git-scm.com/)
 - [GitHub](https://github.com/)
@@ -284,3 +294,222 @@ The wireframes were created using Balsamiq
 
 ##### Back to [top](#table-of-contents)
 
+## Features
+
+### Home page
+- Home page includes nav bar, main body and a footer
+
+<details><summary>See feature images</summary>
+
+![Home Page](docs/features/home-page.png)
+
+</details>
+
+
+### Logo & Navigation
+- Display business logo
+- Fully Responsive
+- On small screens switches to hamburger menu
+- Indicates login/logout in status
+- displayed on all pages
+
+<details><summary>See feature images</summary>
+
+![Footer](docs/features/home-page-logo.png)
+![Footer](docs/features/home-page-register.png)
+![Footer](docs/features/profile-page-1.png)
+![Footer](docs/features/home-page-hamburger.png)
+</details>
+
+
+### Footer
+- Contains social media links
+- displayed across all pages
+
+<details><summary>See feature images</summary>
+
+![Footer](docs/features/home-page-footer.png)
+</details>
+
+### About -> About Us
+- This displays a picture of the owner and employees and a description of the business
+  
+<details><summary>See feature images</summary>
+
+![About Us](docs/features/about-us-1.png)
+![About Us](docs/features/about-us-2.png)
+
+</details>
+
+### About -> News
+- The news displays each post made by a staff member
+- Paginations is used to display 3 posts per page
+- A 'read more' link is present to encourage the reader to read further into the article.
+- Number of likes given to the post is displayed
+- A section to allow logged in users to like or leave comments, prompted to signup or log in if not currently so
+  
+<details><summary>See feature images</summary>
+
+![News](docs/features/news-1.png)
+![News](docs/features/news-2.png)
+![News](docs/features/news-3.png)
+![News](docs/features/news-4.png)
+![News](docs/features/news-5.png)
+![News](docs/features/news-6.png)
+
+</details>
+
+### Comments
+- Logged in users may leave comments on articles to communicate their thoughts about the article to the company owner.
+- The user may delete their comment should they wish to and are notified to ensure this is the action they wish to take
+  
+<details><summary>See feature images</summary>
+
+![Pies Menu](docs/features/comments-1.png)
+![Pies Menu](docs/features/comments-2.png)
+![Pies Menu](docs/features/comments-3.png)
+
+</details>
+
+### Pies Menu
+- The Pies page displays all the current pies sold by the company.
+- All items are updated in the Admin panel by Staff and superusers ONLY
+- Each Pie displays the details and also allows logged in users to like/unlike pies as they feel.
+  
+<details><summary>See feature images</summary>
+
+![Pies Menu](docs/features/pies-page-1.png)
+![Pies Menu](docs/features/pies-page-2.png)
+
+</details>
+
+### Events -> Markets
+- Clicking this navigates to a lateral scrolling list of all markets the company currently do.
+- Details of times and when they are there are also given
+- A link to to a google location for each market is used by clicking the 'Visit Us' button.
+- Map directions open in a seperate page
+  
+<details><summary>See feature images</summary>
+
+![Markets](docs/features/markets-1.png)
+![Markets](docs/features/markets-2.png)
+![Markets](docs/features/markets-3.png)
+
+</details>
+
+### Events -> Workshops
+- Here is displayed a current list of workshops the company offer and the number of available spaces, it is paginated by 4 to save overfilling the page.
+- Users can click to get more detail and if logged in, book spaces for themselves
+- If not logged in, users are directed to login or sign up to book on.
+  
+<details><summary>See feature images</summary>
+
+![Markets](docs/features/workshops-1.png)
+![Markets](docs/features/workshops-2.png)
+![Markets](docs/features/workshops-3.png)
+![Markets](docs/features/workshops-4.png)
+![Markets](docs/features/workshops-5.png)
+
+</details>
+
+### Booking
+- Allow users to make a booking for a workshop
+- Allows users to input their details and select dietary requirements
+- redirected back to profile page following successful booking
+
+<details><summary>See feature images</summary>
+
+![Register](docs/features/booking-1.png)
+![Register](docs/features/booking-2.png)
+![Register](docs/features/booking-3.png)
+</details>
+
+### Sign up / Register
+- Allow users to register an acoount
+- Username and password is required, email is optional
+
+<details><summary>See feature images</summary>
+
+![Register](docs/features/signup.png)
+</details>
+
+
+### Login
+- User can login to book a workshop, view/edit and delete their bookings and leave likes and comments on the website
+- On successful sign in, redirected to your profile page to see your bookings.
+
+<details><summary>See feature images</summary>
+
+![Login](docs/features/sign-in.png)
+![Login](docs/features/profile-page-2.png)
+</details>
+
+
+### Logout
+- Allows the user to securely log out
+- Ask user if they are sure they want to log out
+
+<details><summary>See feature images</summary>
+
+![Logout](docs/features/logout-1.png)
+![Logout](docs/features/logout-2.png)
+</details>
+
+
+### Profile Page
+- Allow the users to view, edit and delete their bookings
+- If user has no bookings, then a note is shown to inform them and ask them if they would like to look at workshops and make a booking.
+
+<details><summary>See feature images</summary>
+
+<details><summary>Profile Page</summary>
+
+![Book](docs/features/profile-page-1.png)
+![Book](docs/features/profile-page-2.png)
+
+</details>
+<details><summary>Edit Booking</summary>
+
+![Book](docs/features/profile-page-edit-1.png)
+![Book](docs/features/profile-page-edit-2.png)
+
+</details>
+<details><summary>Delete Booking</summary>
+
+![Book](docs/features/profile-page-delete-1.png)
+![Book](docs/features/profile-page-delete-2.png)
+
+</details>
+
+<details><summary>No Bookings</summary>
+
+![Book](docs/features/no-booking-1.png)
+![Book](docs/features/no-booking-2.png)
+
+</details>
+</details>
+
+### Contact Us
+- Using EmailJS, a contact form is presented to all people wishing to contact the business.
+- other options include Whatsapp and Facebook Messenger
+  
+<details><summary>See feature images</summary>
+
+![Contact Us](docs/features/contact-1.png)
+![Contact Us](docs/features/contact-2.png)
+</details>
+
+
+### Social Media Links
+- A logo and link is used for each social media displayed
+- All links open in a new tab to ensure user is not directed away from the business
+- Displayed on all pages
+  
+<details><summary>See feature images</summary>
+
+![Social Media Links](docs/features/social-1.png)
+![Social Media Links](docs/features/social-2.png)
+
+</details>
+
+##### Back to [top](#table-of-contents)<hr>
