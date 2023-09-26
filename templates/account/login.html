@@ -6,10 +6,8 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-
-</body>
-<!-- Re-open body tag to allow background image -->
-<body id="index-body" class="d-flex flex-column h-100 main-bg">
+<!-- Re-open body tag to allow background image effect -->
+<div id="index-body" class="d-flex flex-column h-100 main-bg">
 
     <!-- Workshops Column -->
     <div id="workshop-container" class="col-12 left">
@@ -45,7 +43,7 @@
                         <button class="primaryAction btn btn--red" type="submit">{% trans "Sign In" %}</button>
                     </form>
 
-                    <h2>{% blocktrans %}</h2>
+                    {% blocktrans %}
                     <br>
                     <p>If you do not have an account, then please
                       <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
