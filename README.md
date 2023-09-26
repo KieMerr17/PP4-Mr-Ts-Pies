@@ -595,6 +595,8 @@ JSHint JS Validation Service
 <img src="docs/validation/js/JSHint-validation-alert.png">
 </details>
 <details><summary>Contact.js</summary>
+** One Undefined variable shown in the coding, however this is the tutorial followed on EmailJS website, with small modifications for my own styling **
+(https://www.emailjs.com/docs/sdk/installation/)
 <img src="docs/validation/js/JSHint-validation-contact.png">
 </details>
 <details><summary>Reviews.js</summary>
