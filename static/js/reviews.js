@@ -50,8 +50,6 @@ const reviews = [
   const reviewText = document.getElementById("review-text");
   const reviewContainer = document.querySelector(".review");
   
-  let index = 0;
-  
   let previousIndex = -1;
 
 function showReview() {
