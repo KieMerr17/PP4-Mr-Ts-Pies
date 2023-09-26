@@ -528,10 +528,52 @@ index.html
 </details>
 
 <details><summary>About</summary>
+about-us.html
+<img src="docs/validation/html/html-validation about-us.png">
+news.html
+<img src="docs/validation/html/html-validation news.png">
+news-detail.html
+<img src="docs/validation/html/html-validation news-detail.png">
+</details>
+
+<details><summary>Pies</summary>
+pies.html
+<img src="docs/validation/html/html-validation pies.png">
+</details>
+
+<details><summary>Workshops</summary>
+workshops.html
+<img src="docs/validation/html/html-validation workshops.png">
+workshops-detail.html
+<img src="docs/validation/html/html-validation workshop-detail.png">
+</details>
+
+<details><summary>Booking</summary>
+booking-form.html
+<img src="docs/validation/html/html-validation booking-form.png">
+edit-booking.html
+<img src="docs/validation/html/html-validation edit-booking.png">
+delete-booking.html
+<img src="docs/validation/html/html-validation delete-booking.png">
+</details>
+
+<details><summary>Account Pages</summary>
+login.html
+<img src="docs/validation/html/html-validation login.png">
+logout.html
+<img src="docs/validation/html/html-validation logout.png">
+register.html
+<img src="docs/validation/html/html-validation register.png">
+</details>
+
+<details><summary>Profile Page</summary>
+profile-page.html
+<img src="docs/validation/html/html-validation profile-page.png">
+</details>
+
+<details><summary>Contact</summary>
 base.html
-<img src="docs/validation/html/html-validation base.png">
-index.html
-<img src="docs/validation/html/html-validation index.png">
+<img src="docs/validation/html/html-validation contact.png">
 </details>
 <hr>
 
