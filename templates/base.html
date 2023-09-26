@@ -28,120 +28,120 @@
 
     <!-- Navigation -->
     <div class="container-fluid nav-container px-0">
-        <nav class="navbar navbar-dark navbar-expand-sm mb-0 b-0">
-            <button class="navbar-toggler ms-auto me-auto b-0" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon rounded"></span>
-            </button>
+            <nav class="navbar navbar-dark navbar-expand-sm mb-0 b-0">
+                <button class="navbar-toggler ms-auto me-auto b-0" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon rounded"></span>
+                </button>
 
-            <!-- Main Nav Section -->
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item me-2">
-                        <a class="nav-link" href="{% url 'home' %}">Home</a>
-                    </li>
+                <!-- Main Nav Section -->
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item me-2">
+                            <a class="nav-link" href="{% url 'home' %}">Home</a>
+                        </li>
 
-                    <li class="nav-item dropdown">
-                        <p class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
-                            About
-                        </p>
-                        <ul class="dropdown-menu dropdown-menu-dark text-center">
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="{% url 'about_us' %}">About Us</a>
-                            </li>
-                            <li>
-                                <a class="nav-link" aria-current="page" href="{% url 'news' %}">News</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item me-2" data-toggle="collapse" data-target="#navbarNavDropdown">
-                        <a class="nav-link" href="{% url 'pies' %}">Pies</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <p class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
-                            Events
-                        </p>
-                        <ul class="dropdown-menu dropdown-menu-dark text-center">
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="{% url 'home' %}#markets-outer">Markets</a>
-                            </li>
-                            <li>
-                                <a class="nav-link" aria-current="page" href="{% url 'workshops' %}">Workshops</a>
-                            </li>
-                        </ul>
-                    </li>
+                        <li class="nav-item dropdown">
+                            <p class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                About
+                            </p>
+                            <ul class="dropdown-menu dropdown-menu-dark text-center">
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="{% url 'about_us' %}">About Us</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" aria-current="page" href="{% url 'news' %}">News</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item me-2" data-toggle="collapse" data-target="#navbarNavDropdown">
+                            <a class="nav-link" href="{% url 'pies' %}">Pies</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <p class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                                Events
+                            </p>
+                            <ul class="dropdown-menu dropdown-menu-dark text-center">
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="{% url 'home' %}#markets-outer">Markets</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" aria-current="page" href="{% url 'workshops' %}">Workshops</a>
+                                </li>
+                            </ul>
+                        </li>
 
-                    <!-- Login/Logout section -->
-                    {% if user.is_authenticated %}
-                    <li id="logout" class="nav-item">
-                        <a class="nav-link me-2" href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    <li>
-                        <a class="nav-link me-3" href="{% url 'profile' %}"><i class="fa-solid fa-user"></i></a>
-                    </li>
-                    {% else %}
-                    <li id="register" class="nav-item">
-                        <a class="nav-link me-2" href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    <li id="login" class="nav-item">
-                        <a class="nav-link me-2" href="{% url 'account_login' %}">Login</a>
-                    </li>
-                    {% endif %}
+                        <!-- Login/Logout section -->
+                        {% if user.is_authenticated %}
+                        <li id="logout" class="nav-item">
+                            <a class="nav-link me-2" href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                        <li>
+                            <a class="nav-link me-3" href="{% url 'profile' %}"><i class="fa-solid fa-user"></i></a>
+                        </li>
+                        {% else %}
+                        <li id="register" class="nav-item">
+                            <a class="nav-link me-2" href="{% url 'account_signup' %}">Register</a>
+                        </li>
+                        <li id="login" class="nav-item">
+                            <a class="nav-link me-2" href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        {% endif %}
 
-                    <li id="contact-nav" class="d-sm-none nav-item" data-toggle="collapse" data-target="#navbarNavDropdown">
-                        <a class="nav-link" href="{% url 'contact' %}">Get In Touch</a>
-                    </li>
-                </ul>
-            </div>
+                        <li id="contact-nav" class="d-sm-none nav-item" data-toggle="collapse" data-target="#navbarNavDropdown">
+                            <a class="nav-link" href="{% url 'contact' %}">Get In Touch</a>
+                        </li>
+                    </ul>
+                </div>
 
-            <!-- Right side nav bar -->
-            <div class="d-none d-sm-block">
-                <p class="d-none d-lg-inline navbar-text my-auto me-2"><i>Great pies just when you need them!</i></p>
-                <a href="{% url 'contact' %}" class="d-md-inline btn btn--cta btn--red">Get in Touch</a>
-            </div>
-        </nav>
+                <!-- Right side nav bar -->
+                <div class="d-none d-sm-block">
+                    <p class="d-none d-lg-inline navbar-text my-auto me-2"><i>Great pies just when you need them!</i></p>
+                    <a href="{% url 'contact' %}" class="d-md-inline btn btn--cta btn--red">Get in Touch</a>
+                </div>
+            </nav>
+        </div>
+        <!-- End Navigation -->
+
+
+        <div class="flex-shrink-0 main-bg">
+            {% block content %}
+
+            <!-- Content Goes here -->
+
+            {% endblock content %}
+        </div>
+
+
+        <!-- Social Links -->
+        <footer>
+            <ul id="social-networks" class="p-2 mb-0 text-center">
+                <li class="d-inline mx-5">
+                    <a href="https://www.facebook.com/mrtpies" target="_blank" class="text-decoration-none" rel="noopener" aria-label="Vist our Facebook page (Opens in new tab)">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </li>
+                <li class="d-inline m-5">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Vist our Instagram page (Opens in new tab)">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>     
+        
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/dce19298c1.js" crossorigin="anonymous"></script>  
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <!-- JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- Local JS files -->
+        <script src="{% static 'js/script.js' %}"></script>
+        <script src="{% static 'js/alerts.js' %}"></script>
+        <script src="{% static 'js/contact.js' %}"></script>
+        <script src="{% static 'js/reviews.js' %}"></script>
     </div>
-    <!-- End Navigation -->
-
-
-    <div class="flex-shrink-0 main-bg">
-        {% block content %}
-
-        <!-- Content Goes here -->
-
-        {% endblock content %}
-    </div>
-
-
-    <!-- Social Links -->
-    <footer>
-        <ul id="social-networks" class="p-2 mb-0 text-center">
-            <li class="d-inline mx-5">
-                <a href="https://www.facebook.com/mrtpies" target="_blank" class="text-decoration-none" rel="noopener" aria-label="Vist our Facebook page (Opens in new tab)">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-            </li>
-            <li class="d-inline m-5">
-                <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Vist our Instagram page (Opens in new tab)">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-            </li>
-        </ul>
-    </footer>     
-    
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/dce19298c1.js" crossorigin="anonymous"></script>  
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Local JS files -->
-    <script src="{% static 'js/script.js' %}"></script>
-    <script src="{% static 'js/alerts.js' %}"></script>
-    <script src="{% static 'js/contact.js' %}"></script>
-    <script src="{% static 'js/reviews.js' %}"></script>
-</div>
 </body>
 
 </html>

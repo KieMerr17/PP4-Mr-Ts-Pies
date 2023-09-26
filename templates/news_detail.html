@@ -44,8 +44,10 @@
                                         <span>{{ article.likes.count }}</span>
                                     </form>
                                     {% else %}
-                                    <i class="fas fa-heart"></i>
-                                        <span id="like_count">{{ article.likes.count }}</span>
+                                    <p>
+                                        <i class="fas fa-heart"></i>
+                                        <span>{{ article.likes.count }}</span>
+                                    </p>
                                     {% endif %}                
                                 </div>
                             </div>
