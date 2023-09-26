@@ -172,14 +172,6 @@ body {
     border: none;
 }
 
-/*--------------------------------------------------------- Page Headers */
-
-#btn-locate {
-    background-color: #df4929;
-    border-color: #df4929;
-    color: white;
-}
-
 /*--------------------------------------------------------- Markets */
   
 
@@ -233,12 +225,17 @@ body {
 }
 
 .feature .btn {
-    background-color: white;
-    border-color: white;
+    background-color: #df4929;
+    border-color: #df4929;
+    color: white;
     border-radius: 15px;
     min-width: 100px;
     font-weight: bold;
     margin-top: 10px;
+}
+
+.feature .btn:hover {
+    color: #444;
 }
 
 .timings h6 {

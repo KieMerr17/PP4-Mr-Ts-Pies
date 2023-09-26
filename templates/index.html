@@ -1,9 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-</body>
 <!-- Re-open body tag to allow background image effect -->
-<body id="index-body" class="d-flex flex-column h-100 main-bg">
+<div id="index-body" class="d-flex flex-column h-100 main-bg">
 
 <!-- CTA -->
 <div class="overlay container-fluid cta-container">
@@ -41,11 +40,12 @@
                     <hr class="block-divider block-divider--short block-divider--orange">
                 </div>
             </div>
-            <div id="about-us-content" class="row">
+            <div class="row">
                 <div class="col-12 col-md-6">
                     <div class="media d-inline m-1">
                         <div class="d-sm-block">
-                            <img src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1695226444/static/images/andy.jpg" class="pie-master-images rounded-circle me-3" height=100 width=100>
+                            <img src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1695226444/static/images/andy.jpg" 
+                                class="pie-master-images rounded-circle me-3" height=100 width=100 alt="Photo of Andy the owner">
                         </div>
                         <div class="media-body">
                             <blockquote class="blockquote">
@@ -60,7 +60,8 @@
                 <div class="col-12 col-md-6">
                     <div class="media d-inline m-1">
                         <div class="d-sm-block">
-                            <img src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1695226445/static/images/evan.jpg" class="pie-master-images rounded-circle me-3" height=100 width=100>
+                            <img src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1695226445/static/images/evan.jpg" 
+                                class="pie-master-images rounded-circle me-3" height=100 width=100 alt="Photo of Evan">
                         </div>
                         <div class="media-body">
                             <blockquote class="blockquote">
@@ -89,7 +90,7 @@
                     to sample local delicacies.</p>
                     <i class="fa-solid fa-location-dot"></i>
                 <div>
-                    <a class="btn btn-sm btn-light" id="btn-locate" href="https://goo.gl/maps/BwySiup1xkgUgbmZA" target="_blank">Visit us!</a>
+                    <a class="btn" href="https://goo.gl/maps/BwySiup1xkgUgbmZA" target="_blank">Visit us!</a>
                 </div>
                 <br>
                 <div class="timings">
@@ -107,7 +108,7 @@
                     fresh produce, local crafts, clothing, and other goods.</p>
                     <i class="fa-solid fa-location-dot"></i>
                     <div>
-                        <a class="btn btn-sm btn-light" id="btn-locate" href="https://goo.gl/maps/kCo5mM1aXyMkLE5p7" target="_blank">Visit us!</a>
+                        <a class="btn" href="https://goo.gl/maps/kCo5mM1aXyMkLE5p7" target="_blank">Visit us!</a>
                     </div>
                     <br>                    
                     <div class="timings">
@@ -126,7 +127,7 @@
                 </p>
                     <i class="fa-solid fa-location-dot"></i>
                     <div>
-                        <a class="btn btn-sm btn-light" id="btn-locate" href="https://goo.gl/maps/eWr9kepB7GQRJrrv7" target="_blank">Visit us!</a>
+                        <a class="btn" href="https://goo.gl/maps/eWr9kepB7GQRJrrv7" target="_blank">Visit us!</a>
                     </div>
                     <br>                    
                     <div class="timings">
@@ -144,7 +145,7 @@
                     destination for locals and visitors looking to experience the unique character of this charming town.</p>
                     <i class="fa-solid fa-location-dot"></i>
                     <div>
-                        <a class="btn btn-sm btn-light" id="btn-locate" href="https://goo.gl/maps/Xp1EBgxFu9PBEtoz9" target="_blank">Visit us!</a>
+                        <a class="btn" href="https://goo.gl/maps/Xp1EBgxFu9PBEtoz9" target="_blank">Visit us!</a>
                     </div>
                     <br>                    
                     <div class="timings">
@@ -162,7 +163,7 @@
                     those looking for unique and one-of-a-kind finds.</p>
                     <i class="fa-solid fa-location-dot"></i>
                     <div>
-                        <a class="btn btn-sm btn-light" id="btn-locate" href="https://goo.gl/maps/pr6W8ahaJex5oYtX9" target="_blank">Visit us!</a>
+                        <a class="btn" href="https://goo.gl/maps/pr6W8ahaJex5oYtX9" target="_blank">Visit us!</a>
                     </div>
                     <br>                    
                     <div class="timings">
@@ -179,7 +180,7 @@
                     stalls selling local produce, crafts, and other goods. Visitors can also take a walk around the old castle grounds located in the town.</p>
                     <i class="fa-solid fa-location-dot"></i>
                     <div>
-                        <a class="btn btn-sm btn-light" id="btn-locate" href="https://goo.gl/maps/Cvdm4sXEegKpiv8U9" target="_blank">Visit us!</a>
+                        <a class="btn" href="https://goo.gl/maps/Cvdm4sXEegKpiv8U9" target="_blank">Visit us!</a>
                     </div>
                     <br>                    
                     <div class="timings">
@@ -197,7 +198,7 @@
                     from locally sourced ingredients.</p>
                     <i class="fa-solid fa-location-dot"></i>
                     <div>
-                        <a class="btn btn-sm btn-light" id="btn-locate" href="https://goo.gl/maps/EV4A7F2RzKdejCjD6" target="_blank">Visit us!</a>
+                        <a class="btn" href="https://goo.gl/maps/EV4A7F2RzKdejCjD6" target="_blank">Visit us!</a>
                     </div>
                     <br>                    
                     <div class="timings">
@@ -214,7 +215,7 @@
 <div id="testimonials">
     <div id="tesitmonial-content">
         <div class="testimonial-carousel row review">
-            <h3 id="review-text"></h3>
+            <h3 id="review-text">-</h3>
             <p id="review-name">- </p>
         </div>
     </div>
