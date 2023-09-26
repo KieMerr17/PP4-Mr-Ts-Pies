@@ -10,31 +10,36 @@
         <!-- Title section -->
         <div id="workshop-container" class="col-12 left">
             <div class="row justify-content-center">
-            {% if user.is_authenticated %}
-                <h1>Welcome, {{ user.username }}</h1>
-            {% endif %}
-        </div>
+                {% if user.is_authenticated %}
+                    <h1>Welcome, {{ user.username }}</h1>
+                {% endif %}
+            </div>
 
-        <!-- Card detailed information -->
-        <section class="row">
-            <div class="col card mx-5 mb-4 mt-3 left top">
-                <div class="card-body h-100">
-                    <div class="row">
-                        <div class="col-12">
-                            <h2>Delete Booking</h2>
-                            <p>Are you sure you want to delete the booking for {{ booking.workshop.title }}?</p>
-                            
-                            <!-- Form link to current booking ID -->
-                            <form method="post">
-                                {% csrf_token %}
-                                <button type="submit" class="confirm-delete-button"><a class="text-success confirm-delete"><i class="fa-solid fa-check"></i></a></button>
-                                <a class="text-danger cancel-delete" href="{% url 'profile' %}"><i class="fa-solid fa-xmark"></i></a>
-                            </form>
-                            
+            <!-- Card detailed information -->
+            <section class="row">
+                <div class="col card mx-5 mb-4 mt-3 left top">
+                    <div class="card-body h-100">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2>Delete Booking</h2>
+                                <p>Are you sure you want to delete the booking for {{ booking.workshop.title }}?</p>
+                                
+                                <!-- Form link to current booking ID -->
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="confirm-delete-button text-success"><i class="fa-solid fa-check"></i></button>
+                                    <a class="text-danger cancel-delete" href="{% url 'profile' %}"><i class="fa-solid fa-xmark"></i></a>
+                                </form>
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            
+        </div>
+
+    </div>
+</div>
               
 {%endblock%}

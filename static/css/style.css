@@ -290,7 +290,7 @@ footer {
     max-width: 800px;
 }
 
-#image-container {
+.image-container {
     position: relative;
 }
 
@@ -406,7 +406,7 @@ footer {
 
 /*--------------------------------------------------------- News Articles */
 
-#news-card-outer {
+.news-card-outer {
     height: 650px;
 }
 

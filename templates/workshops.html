@@ -20,11 +20,11 @@
                             <div class="col mb-4">
                                 <a href="{% url 'workshop_detail' workshop.slug %}" class="post-link text-decoration-none">
                                     <div class="card h-100 workshop-card">
-                                        <div id="image-container">
+                                        <div class="image-container">
                                             {% if "placeholder" in workshop.featured_image.url %}
-                                                <img class="card-img-top fixed-height-img" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1695229698/workshop_placeholder.jpg">
+                                                <img class="card-img-top fixed-height-img" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1695229698/workshop_placeholder.jpg" alt="placeholder image for workshop showing a large selection of pies with someone in the background removing some with a metal tray">
                                             {% else %}
-                                                <img class="card-img-top fixed-height-img" src="{{ workshop.featured_image.url }}">
+                                                <img class="card-img-top fixed-height-img" src="{{ workshop.featured_image.url }}" alt="featured image relating to workshop">
                                             {% endif %}
                                             <div class="workshop-image-flash pt-1">
                                                 <p class="workshop-date author">{{ workshop.event_date|date:"M" }}</p>
@@ -79,5 +79,7 @@
                 </nav>
             {% endif %}
         </div>
+
     </div>
+</div>
 {%endblock%}

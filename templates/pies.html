@@ -8,83 +8,87 @@
 <div class="container-fluid">
     <div class="row">
         
-        
         <!-- Title section -->
         <div id="workshop-container" class="col-12 left">
             <div class="row justify-content-center">
-            <h1>Pies</h1>            
+                <h1>Pies</h1>            
+            </div>
+
+            <!-- Card detailed information -->
+            <div class="row justify-content-center">
+
+                <div id="pies-card-outer" class="col card mx-5 mb-4 mt-3 pb-4 left top">
+                    <div class="row">
+
+                        <!-- loop through pies -->
+                        {% for pie in pie_list %}
+                        <section class="product">
+                            <div class="product-photo">
+                                <div class="photo-container">
+                                    <div class="photo-main">
+                                        
+                                        <!-- Image -->
+                                        {% if "placeholder" in pie.featured_image.url %}
+                                            <img class="pies-image card-img-top" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1695229290/pies_placeholder.jpg" alt="Placeholder image of a pit top down view with a T ontop">
+                                        {% else %}
+                                            <img class="pies-image card-img-top" src="{{ pie.featured_image.url }}" alt="Featured image relating to pie">
+                                        {% endif %}
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                            <!-- Product info section -->
+                            <div class="product-info">
+                                <div class="title">
+                                    <h4>{{ pie.title }}</h4>
+                                </div>
+                                <div class="description">
+                                    {{ pie.description|safe }}
+                                </div>
+                                <div class="allergy">
+                                    <p><span>Contains:</span>
+                                    {% for allergy in pie.allergies.all %}
+                                        {{ allergy }}
+                                    {% empty %}
+                                        No allergies
+                                    {% endfor %}</p>
+                                </div>
+                                <div class="likes">
+                                    <!-- Check if logged in user has already liked the pie -->
+                                    {% if user.is_authenticated %}
+                                        <form class="d-inline" action="{% url 'pie_like' pie.slug %}" method="POST">
+                                            {% csrf_token %}
+                                            {% if request.user in pie.likes.all %}
+                                                <button type="submit" name="pie_id" value="{{pie.slug}}" class="btn-like p-0 text-danger">
+                                                    <i class="fas fa-heart"></i>
+                                                </button>
+                                            {% else %}
+                                            <button type="submit" name="pie_id" value="{{pie.slug}}" class="btn-like p-0">
+                                                <i class="far fa-heart"></i>
+                                            </button>
+                                            {% endif %}
+                                            <span>{{ pie.likes.count }}</span>
+                                        </form>
+                                    {% else %}
+                                        <!-- if not logged in, display total number of likes -->
+                                        <p><i class="fas fa-heart"></i>
+                                            <span id="like_count"> {{ pie.likes.count }}</span>
+                                        </p>
+                                    {% endif %}          
+                                </div>
+                            </div>
+                        </section>
+                        <hr>
+                        {% endfor %}
+
+                    </div>         
+                </div>
+            </div>
+
         </div>
 
-        <!-- Card detailed information -->
-        <section class="row justify-content-center">
-
-            <div id="pies-card-outer" class="col card mx-5 mb-4 mt-3 pb-4 left top">
-                <div class="row">
-
-                    <!-- loop through pies -->
-                    {% for pie in pie_list %}
-                    <section class="product">
-                        <div class="product-photo">
-                            <div class="photo-container">
-                                <div class="photo-main">
-                                    
-                                    <!-- Image -->
-                                    {% if "placeholder" in pie.featured_image.url %}
-                                        <img class="pies-image card-img-top" src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1695229290/pies_placeholder.jpg">
-                                    {% else %}
-                                        <img class="pies-image card-img-top" src="{{ pie.featured_image.url }}">
-                                    {% endif %}
-                                </div>
-                                
-                            </div>
-                        </div>
-                        
-                        <!-- Product info section -->
-                        <div class="product-info">
-                            <div class="title">
-                                <h4>{{ pie.title }}</h4>
-                            </div>
-                            <div class="description">
-                                <span class="">{{ pie.description|safe }}</span>
-                            </div>
-                            <div class="allergy">
-                                <p><span>Contains:</span>
-                                {% for allergy in pie.allergies.all %}
-                                    {{ allergy }}
-                                {% empty %}
-                                    No allergies
-                                {% endfor %}</p>
-                            </div>
-                            <div class="likes">
-                                <!-- Check if logged in user has already liked the pie -->
-                                {% if user.is_authenticated %}
-                                    <form class="d-inline" action="{% url 'pie_like' pie.slug %}" method="POST">
-                                        {% csrf_token %}
-                                        {% if request.user in pie.likes.all %}
-                                            <button type="submit" name="pie_id" value="{{pie.slug}}" class="btn-like p-0 text-danger">
-                                                <i class="fas fa-heart"></i>
-                                            </button>
-                                        {% else %}
-                                        <button type="submit" name="pie_id" value="{{pie.slug}}" class="btn-like p-0">
-                                            <i class="far fa-heart"></i>
-                                        </button>
-                                        {% endif %}
-                                        <span>{{ pie.likes.count }}</span>
-                                    </form>
-                                {% else %}
-                                    <!-- if not logged in, display total number of likes -->
-                                    <p><i class="fas fa-heart"></i>
-                                        <span id="like_count"> {{ pie.likes.count }}</span>
-                                    </p>
-                                {% endif %}          
-                            </div>
-                        </div>
-                    </section>
-                    <hr>
-                    {% endfor %}
-
-                </div>         
-            </div>
-        </section>
+    </div>
+</div>
 
 {%endblock%}

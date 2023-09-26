@@ -36,7 +36,7 @@ ALLOWED_HOSTS = ['mrtspies.herokuapp.com',
                  'localhost',
                  '8000-kiemerr17-pp4mrtspies-9cy47l899b0.ws-eu105.gitpod.io']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-kiemerr17-pp4mrtspies-9cy47l899b0.ws-eu104.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-kiemerr17-pp4mrtspies-9cy47l899b0.ws-eu105.gitpod.io']
 
 
 # Application definition
