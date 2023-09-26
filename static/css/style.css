@@ -534,17 +534,6 @@ footer {
 .description {
 	clear: left;
 	margin: 2em 0;
-
-	ul {
-		font-size: 0.8em;
-		list-style: disc;
-		margin-left: 1em;
-	}
-
-	li {
-		text-indent: -0.6em;
-		margin-bottom: 0.5em;
-	}
 }
 
 .controls {
@@ -552,10 +541,6 @@ footer {
     justify-content: space-between;
     padding: 0.8em;
     color: #fff;
-
-    i {
-        cursor: pointer;
-    }
 }
 
 /*--------------------------------------------------------- Contact Page */
