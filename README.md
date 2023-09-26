@@ -514,3 +514,63 @@ The wireframes were created using Balsamiq
 
 
 ##### Back to [top](#table-of-contents)<hr>
+
+
+## Validation
+
+The W3C Markup Validation Service
+
+<details><summary>Home</summary>
+base.html
+<img src="docs/validation/html/html-validation base.png">
+index.html
+<img src="docs/validation/html/html-validation index.png">
+</details>
+
+<details><summary>About</summary>
+base.html
+<img src="docs/validation/html/html-validation base.png">
+index.html
+<img src="docs/validation/html/html-validation index.png">
+</details>
+<hr>
+
+
+### CSS Validation
+The W3C Jigsaw CSS Validation Service
+
+<details><summary>Style.css</summary>
+<img src="docs/validation/css/css-validation.png">
+</details><hr>
+
+### JavaScript Validation
+JSHint JS Validation Service
+
+<details><summary>Script.js</summary>
+<img src="docs/validation/js/JSHint-validation-script.png">
+</details>
+<details><summary>Alert.js</summary>
+<img src="docs/validation/js/JSHint-validation-alert.png">
+</details>
+<details><summary>Contact.js</summary>
+<img src="docs/validation/js/JSHint-validation-contact.png">
+</details>
+<details><summary>Reviews.js</summary>
+<img src="docs/validation/js/JSHint-validation-reviews.png">
+</details><hr>
+
+### PEP8 Validation
+PEP8 Validation Service was used to check the code for PEP8 requirements via Pycodestyle as PEP8online was down
+
+
+### Lighthouse
+
+Performance, best practices and SEO was tested using Lighthouse.
+
+
+### Wave
+WAVE was used to test the websites accessibility.
+
+
+##### Back to [top](#table-of-contents)<hr>
+
