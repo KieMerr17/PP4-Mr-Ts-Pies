@@ -148,7 +148,7 @@ body {
 }
 
 .btn--red {
-    color: white !important;
+    color: #000 !important;
     background-color: #df4929 !important;
 }
 
@@ -157,7 +157,7 @@ body {
 .btn--red:focus,
 .btn--red:active:focus {
     background-color: #df4929;
-    color: white;
+    color: #fff;
 }
 
 .nav-prev {
@@ -225,7 +225,7 @@ body {
 .feature .btn {
     font-weight: 500;
     background-color: #df4929;
-    color: white;
+    color: #000;
     border-radius: 15px;
     min-width: 100px;
     margin-top: 10px;
