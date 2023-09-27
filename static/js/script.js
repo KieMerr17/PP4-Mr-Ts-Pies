@@ -24,3 +24,36 @@ window.addEventListener('scroll', OverlayOpacity);
 
 // Call the function
 OverlayOpacity();
+
+
+/**Event listener for delete comment confirmation for comments
+ * related to the user */ 
+document.addEventListener("DOMContentLoaded", function() {
+  const deleteContainers = document.querySelectorAll(".delete-container");
+
+  deleteContainers.forEach(container => {
+    // Select all variables
+      const deleteButton = container.querySelector(".delete-comment");
+      const confirmationDiv = container.querySelector(".confirmation");
+      const confirmDeleteButton = container.querySelector(".confirm-delete");
+      const cancelDeleteButton = container.querySelector(".cancel-delete");
+
+      // Hide delete button and show confirmation event listeners
+      deleteButton.addEventListener("click", function() {
+          deleteButton.classList.add("hidden");
+          confirmationDiv.classList.remove("hidden");
+      });
+
+      // hide confirmation if no
+      cancelDeleteButton.addEventListener("click", function() {
+          confirmationDiv.classList.add("hidden");
+          deleteButton.classList.remove("hidden");
+      });
+
+      // submit form if yes
+      confirmDeleteButton.addEventListener("click", function() {
+          const form = container.querySelector(".delete-form");
+          form.submit();
+      });
+  });
+});
