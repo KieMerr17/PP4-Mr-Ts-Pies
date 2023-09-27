@@ -41,7 +41,7 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <p class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                            <p class="nav-link dropdown-toggle mb-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
                                 About
                             </p>
                             <ul class="dropdown-menu dropdown-menu-dark text-center">
@@ -57,7 +57,7 @@
                             <a class="nav-link" href="{% url 'pies' %}">Pies</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <p class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                            <p class="nav-link dropdown-toggle mb-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
                                 Events
                             </p>
                             <ul class="dropdown-menu dropdown-menu-dark text-center">
@@ -73,17 +73,17 @@
                         <!-- Login/Logout section -->
                         {% if user.is_authenticated %}
                         <li id="logout" class="nav-item">
-                            <a class="nav-link me-2" href="{% url 'account_logout' %}">Logout</a>
+                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                         <li>
-                            <a class="nav-link me-3" href="{% url 'profile' %}"><i class="fa-solid fa-user"></i></a>
+                            <a class="nav-link" href="{% url 'profile' %}"><i class="fa-solid fa-user"></i></a>
                         </li>
                         {% else %}
                         <li id="register" class="nav-item">
-                            <a class="nav-link me-2" href="{% url 'account_signup' %}">Register</a>
+                            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                         </li>
                         <li id="login" class="nav-item">
-                            <a class="nav-link me-2" href="{% url 'account_login' %}">Login</a>
+                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                         </li>
                         {% endif %}
 
