@@ -649,19 +649,19 @@ JSHint JS Validation Service
 <details><summary>Workshops App</summary>
 
   <details><summary>views.py</summary>
-  <img src="docs/validation/python/python-validation-news-views.png">
+  <img src="docs/validation/python/python-validation-workshops-views.png">
   </details>
   <details><summary>models.py</summary>
-  <img src="docs/validation/python/python-validation-news-models.png">
+  <img src="docs/validation/python/python-validation-workshops-models.png">
   </details>
   <details><summary>admin.py</summary>
-  <img src="docs/validation/python/python-validation-news-admin.png">
+  <img src="docs/validation/python/python-validation-workshops-admin.png">
   </details>
   <details><summary>urls.py</summary>
-  <img src="docs/validation/python/python-validation-news-urls.png">
+  <img src="docs/validation/python/python-validation-workshops-urls.png">
   </details>
   <details><summary>forms.py</summary>
-  <img src="docs/validation/python/python-validation-news-forms.png">
+  <img src="docs/validation/python/python-validation-workshops-forms.png">
   </details>
  
 </details>
