@@ -5,7 +5,7 @@ from .models import Article, Comment
 from .forms import CommentForm
 
 
-
+# Register Article with news.html
 class ArticleList(generic.ListView):
     model = Article
     queryset = Article.objects.filter(status=1).order_by('created_on')
@@ -16,10 +16,11 @@ class ArticleList(generic.ListView):
 class ArticleDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
-        queryset = Article.objects.filter (status=1)
+        queryset = Article.objects.filter(status=1)
         article = get_object_or_404(queryset, slug=slug)
         liked = False
 
+        # Check if article is liked
         if article.likes.filter(id=self.request.user.id).exists():
             liked = True
 
@@ -48,7 +49,8 @@ def ArticleComment(request, slug):
             comment = comment_form.save(commit=False)
             comment.post = article
             comment.save()
-            url = reverse('news_detail', kwargs={'slug': slug}) + '#comments-box'
+            url = reverse(
+                    'news_detail', kwargs={'slug': slug}) + '#comments-box'
             return redirect(url)
     else:
         comment_form = CommentForm()
@@ -57,6 +59,7 @@ def ArticleComment(request, slug):
     return redirect(url)
 
 
+# function to delete users comments
 def delete_comment(request, comment_id, slug):
     article = get_object_or_404(Article, slug=slug)
     comment = get_object_or_404(Comment, id=comment_id)
@@ -68,6 +71,7 @@ def delete_comment(request, comment_id, slug):
         return redirect(url)
 
 
+# function to handle likes for registered users
 class ArticleLike(View):
 
     def post(self, request, slug):
