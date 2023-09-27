@@ -13,13 +13,17 @@ class Workshop(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     event_date = models.DateField()
     spaces = models.IntegerField(default=6)
-    chef = models.ForeignKey(User, on_delete=models.CASCADE, related_name="event_chef")
+    chef = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="event_chef"
+        )
     content = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    likes = models.ManyToManyField(User, related_name='workshop_likes', blank=True)
+    likes = models.ManyToManyField(
+        User, related_name='workshop_likes', blank=True
+        )
 
     class Meta:
         ordering = ['-created_on']
@@ -34,11 +38,22 @@ class Workshop(models.Model):
         return self.event_date > date.today()
 
 
-DIET = ((0, "No Special Requirement"), (1, "Vegetarian"), (2, "Pescetarian"), (3, "Vegan"), (4, "Nut Allergy"))
+DIET = (
+    (0, "No Special Requirement"),
+    (1, "Vegetarian"),
+    (2, "Pescetarian"),
+    (3, "Vegan"),
+    (4, "Nut Allergy")
+)
+
 
 class Booking(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1, related_name="bookings") 
-    workshop = models.ForeignKey(Workshop, on_delete=models.CASCADE, related_name="bookings")
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, default=1, related_name="bookings"
+        )
+    workshop = models.ForeignKey(
+        Workshop, on_delete=models.CASCADE, related_name="bookings"
+        )
     name = models.CharField(max_length=80)
     email = models.EmailField()
     phone_number = models.BigIntegerField(default=123456789)
@@ -55,17 +70,22 @@ class Booking(models.Model):
 
     def clean(self):
         if self.spaces <= 0:
-            raise ValidationError("Please cancel your booking if you do not require any spaces")
+            raise ValidationError(
+                "Please cancel your booking if you do not require any spaces"
+                )
 
         if self.approved:
             # Check if it's a new booking (no primary key) or an existing one
             if self.pk is None:
                 new_spaces = self.workshop.spaces - self.spaces
                 if new_spaces < 0:
-                    raise ValidationError("Requested spaces exceed available spaces")
+                    raise ValidationError(
+                        "Requested spaces exceed available spaces"
+                        )
                 else:
                     self.workshop.spaces = new_spaces
-                    self.workshop.save()  # Save the related workshop with updated spaces
+                    # Save the related workshop with updated spaces
+                    self.workshop.save()
             else:
                 original_booking = Booking.objects.get(pk=self.pk)
                 original_approved = original_booking.approved
@@ -75,17 +95,23 @@ class Booking(models.Model):
                         space_diff = self.spaces - original_booking.spaces
                         new_spaces = self.workshop.spaces - space_diff
                         if new_spaces < 0:
-                            raise ValidationError("Requested spaces exceed available spaces")
+                            raise ValidationError(
+                                "Requested spaces exceed available spaces"
+                                )
                         else:
                             self.workshop.spaces = new_spaces
-                            self.workshop.save()  # Save the related workshop with updated spaces
+                            # Save the related workshop with updated spaces
+                            self.workshop.save()
                 elif new_approved:
                     check_spaces = self.workshop.spaces - self.spaces
                     if check_spaces < 0:
-                        raise ValidationError("Requested spaces exceed available spaces")
+                        raise ValidationError(
+                            "Requested spaces exceed available spaces"
+                            )
                     else:
                         self.workshop.spaces = check_spaces
-                        self.workshop.save()  # Save the related workshop with updated spaces
+                        # Save the related workshop with updated spaces
+                        self.workshop.save()
 
         else:  # Booking changed from approved to unapproved
             if self.pk is None:
@@ -98,8 +124,8 @@ class Booking(models.Model):
                     self.workshop.save()
                 else:
                     self.workshop.spaces = new_spaces
-                    self.workshop.save()  # Save the related workshop with updated spaces
-                
+                    # Save the related workshop with updated spaces
+                    self.workshop.save()
 
     def save(self, *args, **kwargs):
         self.workshop.save()  # Save the related workshop with updated spaces
@@ -107,7 +133,7 @@ class Booking(models.Model):
 
     def delete(self, *args, **kwargs):
         if self.approved:
-            # Add the spaces back to the workshop when an approved booking is deleted
+            # Return spaces to the workshop when an approved booking is deleted
             self.workshop.spaces += self.spaces
         self.workshop.save()
         super().delete(*args, **kwargs)
