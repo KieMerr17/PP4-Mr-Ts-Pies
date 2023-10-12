@@ -24,6 +24,7 @@
     - [Wireframes](#wireframes)
   - [Technologies Used](#technologies-used)
   - [Features](#features)
+  - [Validation](#validation)
 
 ### About
 
