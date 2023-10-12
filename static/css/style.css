@@ -3,7 +3,7 @@ body {
 }
 
 #index-body {
-    background: url('https://res.cloudinary.com/dnyzrhjyz/image/upload/v1695229292/main_background.jpg') no-repeat center center fixed;
+    background: url('https://res.cloudinary.com/dnyzrhjyz/image/upload/c_scale,w_2443/v1695229292/main_background.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
