@@ -677,6 +677,44 @@ Performance, best practices and SEO was tested using Lighthouse.
 ### Wave
 WAVE was used to test the websites accessibility.
 
+<details><summary>See WAVE reports</summary>
+
+<details><summary>Home</summary>
+<img src="docs/validation/wave-reports/WAVE-home.png">
+</details>
+<details><summary>About Us</summary>
+<img src="docs/validation/wave-reports/WAVE-about-us.png">
+</details>
+<details><summary>News</summary>
+<img src="docs/validation/wave-reports/WAVE-news.png">
+</details>
+<details><summary>News/Detail</summary>
+<img src="docs/validation/wave-reports/WAVE-news-detail.png">
+</details>
+<details><summary>Pies</summary>
+<img src="docs/validation/wave-reports/WAVE-pies.png">
+</details>
+<details><summary>Workshops</summary>
+<img src="docs/validation/wave-reports/WAVE-workshops.png">
+</details>
+<details><summary>Workshops/Detail</summary>
+<img src="docs/validation/wave-reports/WAVE-workshops-detail.png">
+</details>
+<details><summary>Login</summary>
+<img src="docs/validation/wave-reports/WAVE-login.png">
+</details>
+<details><summary>Sign Up</summary>
+<img src="docs/validation/wave-reports/WAVE-signup.png">
+</details>
+<details><summary>Profile</summary>
+<img src="docs/validation/wave-reports/WAVE-profile.png">
+</details>
+<details><summary>Contact</summary>
+<img src="docs/validation/wave-reports/WAVE-contact.png">
+</details>
+
+</details>
+
 
 ##### Back to [top](#table-of-contents)<hr>
 
