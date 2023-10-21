@@ -36,6 +36,6 @@ class BookingForm(forms.ModelForm):
                 f'Only <strong>{ workshop.spaces } </strong>'
                 f'spaces remain on <br>"{ workshop }"'
             )
-        raise forms.ValidationError(mark_safe(error_message))
+            raise forms.ValidationError(mark_safe(error_message))
 
         return spaces
