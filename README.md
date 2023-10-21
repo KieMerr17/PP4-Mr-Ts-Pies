@@ -672,13 +672,49 @@ JSHint JS Validation Service
   </details>
  
 </details>
-    
-
 
 
 ### Lighthouse
 
 Performance, best practices and SEO was tested using Lighthouse.
+
+<details><summary>See Lighthouse reports</summary>
+
+<details><summary>Home</summary>
+<img src="docs/validation">
+</details>
+<details><summary>About Us</summary>
+<img src="docs/validation">
+</details>
+<details><summary>News</summary>
+<img src="docs/validation">
+</details>
+<details><summary>News/Detail</summary>
+<img src="docs/validation">
+</details>
+<details><summary>Pies</summary>
+<img src="docs/validation">
+</details>
+<details><summary>Workshops</summary>
+<img src="docs/validation">
+</details>
+<details><summary>Workshops/Detail</summary>
+<img src="docs/validation/wave-reports">
+</details>
+<details><summary>Login</summary>
+<img src="docs/validation">
+</details>
+<details><summary>Sign Up</summary>
+<img src="docs/validation">
+</details>
+<details><summary>Profile</summary>
+<img src="docs/validation">
+</details>
+<details><summary>Contact</summary>
+<img src="docs/validation">
+</details>
+
+</details>
 
 
 ### Wave
@@ -733,10 +769,12 @@ WAVE was used to test the websites accessibility.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| From the homepage use the naviagtion bar/menu to switch between pages | Be able to navigate between all areas of the website | Worked as expected |
 
 <details><summary></summary>
-<img src="">
+<img src="docs/testing/manual-testing/manual-test-1.1.png">
+<img src="docs/testing/manual-testing/manual-test-1.2.png">
+
 </details>
 
 
@@ -744,10 +782,18 @@ WAVE was used to test the websites accessibility.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| From the homepage use the naviagtion bar/menu to switch between pages | Be able to navigate between all areas of the website | Worked as expected |
+| Scroll to the bottom of the home page to navigate socials | Open social sites linked to the business | Worked as expected |
 
 <details><summary></summary>
-<img src="">
+Option 1
+<img src="docs/testing/manual-testing/manual-test-1.1.png">
+<img src="docs/testing/manual-testing/manual-test-1.2.png">
+Option 2
+<img src="docs/testing/manual-testing/manual-test-2.1.png">
+<img src="docs/testing/manual-testing/manual-test-2.2.png">
+<img src="docs/testing/manual-testing/manual-test-2.3.png">
+
 </details>
 
 3.	As a User i can view the contact details so that I know how to contact them via email, phone and socials
@@ -767,7 +813,11 @@ WAVE was used to test the websites accessibility.
 |  |  |  |
 
 <details><summary></summary>
-<img src="">
+<img src="docs/testing/manual-testing/manual-test-4.1.png">
+<img src="docs/testing/manual-testing/manual-test-4.2.png">
+<img src="docs/testing/manual-testing/manual-test-4.3.png">
+<img src="docs/testing/manual-testing/manual-test-4.4.png">
+
 </details>
 
 5.	As a User i can update my booking so that i can change the details on my booking
