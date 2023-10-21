@@ -93,6 +93,7 @@ def delete_booking(request, booking_id):
     booking = get_object_or_404(Booking, pk=booking_id)
     if request.method == 'POST':
         booking.delete()
+        messages.success(request, 'Booking deleted successfully.')
         # Redirect to the user's profile page
         return redirect('profile')
 

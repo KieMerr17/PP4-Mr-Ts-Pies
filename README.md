@@ -774,7 +774,6 @@ WAVE was used to test the websites accessibility.
 <details><summary></summary>
 <img src="docs/testing/manual-testing/manual-test-1.1.png">
 <img src="docs/testing/manual-testing/manual-test-1.2.png">
-
 </details>
 
 
@@ -793,7 +792,6 @@ Option 2
 <img src="docs/testing/manual-testing/manual-test-2.1.png">
 <img src="docs/testing/manual-testing/manual-test-2.2.png">
 <img src="docs/testing/manual-testing/manual-test-2.3.png">
-
 </details>
 
 3.	As a User i can view the contact details so that I know how to contact them via email, phone and socials
@@ -810,84 +808,102 @@ Option 2
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| Once logged into your profile, navigate through 'Events' then into 'Workshops'. Select the workshop you wish to book onto. Enter the details and any specific dietary requirements before submitting. If valid booking, you are directed back to your profile page and shown that your booking is waiting approval. | Booking to be made for the user, pending approval | Worked as expected |
 
 <details><summary></summary>
 <img src="docs/testing/manual-testing/manual-test-4.1.png">
 <img src="docs/testing/manual-testing/manual-test-4.2.png">
 <img src="docs/testing/manual-testing/manual-test-4.3.png">
 <img src="docs/testing/manual-testing/manual-test-4.4.png">
-
+<img src="docs/testing/manual-testing/manual-test-4.5.png">
+<img src="docs/testing/manual-testing/manual-test-4.6.png">
 </details>
 
 5.	As a User i can update my booking so that i can change the details on my booking
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| Once logged in, navigate to your profile page, click the pencil icon to edit your booking. Enter the new information and click save. | My booking to be updated with the new details | Worked as expected |
 
 <details><summary></summary>
-<img src="">
+<img src="docs/testing/manual-testing/manual-test-5.1.png">
+<img src="docs/testing/manual-testing/manual-test-5.2.png">
+<img src="docs/testing/manual-testing/manual-test-5.3.png">
+<img src="docs/testing/manual-testing/manual-test-5.4.png">
+<img src="docs/testing/manual-testing/manual-test-5.5.png">
 </details>
 
 6.	As a User i can delete my booking so that i can free up space for someone else
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| Once logged in, navigate to your profile page, click the trash icon to delete your booking. When prompted to confirm deletion, click yes. | The booking to be deleted | Worked as expected |
 
 <details><summary></summary>
-<img src="">
+<img src="docs/testing/manual-testing/manual-test-5.1.png">
+<img src="docs/testing/manual-testing/manual-test-6.2.png">
+<img src="docs/testing/manual-testing/manual-test-6.3.png">
+<img src="docs/testing/manual-testing/manual-test-6.4.png">
 </details>
 
 7.	As a User i can view my booking so that i can check the details of the workshop
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| Once logged in, navigate to your profile to see a list of your bookings. Click the edit to see your booking in more detail | View the details of my booking | Worked as expected |
 
 <details><summary></summary>
-<img src="">
+<img src="docs/testing/manual-testing/manual-test-5.1.png">
+<img src="docs/testing/manual-testing/manual-test-7.2.png">
+<img src="docs/testing/manual-testing/manual-test-7.3.png">
 </details>
 
 8.	As a User i can be notified of my action in creation, editing, or deleting of a booking so that i know it has been successful
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| Create, Update or Delete a current booking | Notification of the user action to be displayed | Worked as expected |
 
 <details><summary></summary>
-<img src="">
+<img src="docs/testing/manual-testing/manual-test-8.1.png">
+<img src="docs/testing/manual-testing/manual-test-8.2.png">
+<img src="docs/testing/manual-testing/manual-test-8.3.png">
+
 </details>
 
 9. As a User i can register for a new account so that i can make a booking at an event and leave comments
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| From the home page click register in the navigation bar. Enter User details. | A new account to be created and navigated to the home page displaying notification your now logged in as that new user | Worked as expected |
 
 <details><summary></summary>
-<img src="">
+<img src="docs/testing/manual-testing/manual-test-9.1.png">
+<img src="docs/testing/manual-testing/manual-test-9.2.png">
+<img src="docs/testing/manual-testing/manual-test-9.3.png">
 </details>
 
 10. As a User i can log in to my account so that i can make a booking or leave comments
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| From the home page click login in the navigation bar. Enter User details. | Logged into your account, notification to be displayed and directed to the home page | Worked as expected |
 
 <details><summary></summary>
-<img src="">
+<img src="docs/testing/manual-testing/manual-test-10.1.png">
+<img src="docs/testing/manual-testing/manual-test-10.2.png">
+<img src="docs/testing/manual-testing/manual-test-10.3.png">
 </details>
 
 11. As a User i can see login status so that i know if i am logged in or not
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| Navigate to the home page | See in the navigation bar an option to either 'register/login' or to 'logout' depending on login status | Worked as expected |
 
 <details><summary></summary>
-<img src="">
+<img src="docs/testing/manual-testing/manual-test-11.1.png">
+<img src="docs/testing/manual-testing/manual-test-11.2.png">
 </details>
 
 12. As a User i can view the sites news articles so that I can learn more information, read articles
