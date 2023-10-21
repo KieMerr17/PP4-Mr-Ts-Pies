@@ -25,6 +25,12 @@
   - [Technologies Used](#technologies-used)
   - [Features](#features)
   - [Validation](#validation)
+  - [Testing](#testing)
+    - [Manual testing](#manual-testing)
+  - [Bugs](#bugs)
+  - [Heroku Deployment](#heroku-deployment)
+  - [Credits](#credits)
+  - [Acknowledgements](#acknowledgements)
 
 ### About
 
@@ -719,3 +725,391 @@ WAVE was used to test the websites accessibility.
 
 ##### Back to [top](#table-of-contents)<hr>
 
+## Testing
+
+### Manual testing
+
+1.	As a User i can navigate across the site so that I can move to each feature of the site easily 
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+
+2.	As a User i can use a navbar, footer, and social icons so that I can navigate the site, access menus, and access socials
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+3.	As a User i can view the contact details so that I know how to contact them via email, phone and socials
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+4.	As a User i can book onto an workshop so that i can reserve a space
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+5.	As a User i can update my booking so that i can change the details on my booking
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+6.	As a User i can delete my booking so that i can free up space for someone else
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+7.	As a User i can view my booking so that i can check the details of the workshop
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+8.	As a User i can be notified of my action in creation, editing, or deleting of a booking so that i know it has been successful
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+9. As a User i can register for a new account so that i can make a booking at an event and leave comments
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+10. As a User i can log in to my account so that i can make a booking or leave comments
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+11. As a User i can see login status so that i know if i am logged in or not
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+12. As a User i can view the sites news articles so that I can learn more information, read articles
+
+**Step** | **Expected Result** | **Actual Result** 
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+13. As a User i can Create Read Update and Delete my comments on articles so that i can connect with the site owner
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+15. As a User i can not book an event in the past so that my booking remains valid
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+16. As a User i can view news articles page-by-page so that the screen isn't crowded with information
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+28. As a User i can View a list of events so that I can choose which one i want to book onto
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+29. As a User i can hide past events so that I can NOT book an event in the past
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+30. As a User i can view event likes so that i can see the popular events
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+31. As a User i can view events in pages so that the screen doesn't get blocked up with too many events
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+17. As a Admin i can login so that i can access the back end of the site
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+18. As a Admin i can manually add a booking so that people can book onto an event in other ways
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+19. As a Admin i can accept or reject booking so that we avoid false bookings
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+23. As a Admin i can filter events by date so that I can see what events we have for a particular day
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+27. As a Site Admin i can create, update and delete events so that users can book onto them
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+24. As a Site Owner i can provide a fully responsive site for my customers so that they have a good user experience
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+25. As a Site Owner i can validate data entered into my site so that all submitted data is correct to avoid errors
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+26. As a Site Owner i can provide a contact us page so that users can get in touch with the business
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+|  |  |  |
+
+<details><summary></summary>
+<img src="">
+</details>
+
+## Bugs
+
+| **Bug** | **Fix** |
+| ------- | ------- |
+|  |  |
+
+##### Back to [top](#table-of-contents)<hr>
+
+### Heroku Deployment
+This application has been deployed from GitHub to Heroku by following the steps:<br>
+(non project specific deployment process images used)
+
+<details><summary>Steps</summary>
+<br>
+First Enter the following into Github Terminal to get the requirements for heroku.
+'pip3 freeze > requirements.txt'
+<img src="docs/deployment/heroku-deployment-1.png">
+<br>
+Once you have your requirements generated, save and push the changes to github.
+<img src="docs/deployment/heroku-deployment-git-2.png">
+<br>
+Go to Heroku and Sign up or Login
+<img src="docs/deployment/heroku-deployment-1.png">
+<br>
+
+<img src="docs/deployment/heroku-deployment-2.png">
+<img src="docs/deployment/heroku-deployment-3.png">
+<br>
+On the right click new and create new app
+<img src="docs/deployment/heroku-deployment-4.png">
+<br>
+Enter an app name and select your area then click create
+<img src="docs/deployment/heroku-deployment-5.png">
+<br>
+First go to the settings tab
+<img src="docs/deployment/heroku-deployment-6.png">
+<br>
+Click reveal config vars
+<img src="docs/deployment/heroku-deployment-7.png">
+<br>
+In this box type 'CREDS'
+<img src="docs/deployment/heroku-deployment-8.png">
+<br>
+Head over to your project and to the creds.json file, copy its contents over to the value box.
+<img src="docs/deployment/heroku-deployment-9.png">
+<br>
+Copy into the value box and click 'add'
+<img src="docs/deployment/heroku-deployment-10.png">
+<img src="docs/deployment/heroku-deployment-11.png">
+<img src="docs/deployment/heroku-deployment-12.png">
+<br>
+Add the buildpacks in the correct order with Python first and Nodejs 2nd
+<img src="docs/deployment/heroku-deployment-13.png">
+<img src="docs/deployment/heroku-deployment-14.png">
+<img src="docs/deployment/heroku-deployment-15.png">
+<br>
+Head back over to the deploy tab
+<img src="docs/deployment/heroku-deployment-16.png">
+<br>
+Connect to your Github Account and search your project name
+<img src="docs/deployment/heroku-deployment-17.png">
+<br>
+Click 'connect' to link your project
+<img src="docs/deployment/heroku-deployment-18.png">
+<img src="docs/deployment/heroku-deployment-19.png">
+<br>
+First select which branch you wish to deploy, then either auto deploy or manual. 
+Auto means each time you push changes Heroku will automatically update the app.
+Manual means YOU have to update yourself
+<img src="docs/deployment/heroku-deployment-20.png">
+<img src="docs/deployment/heroku-deployment-21.png">
+<br>
+Your app is being built
+<img src="docs/deployment/heroku-deployment-22.png">
+<br>
+Click to view completed app
+<img src="docs/deployment/heroku-deployment-23.png">
+<img src="docs/deployment/heroku-deployment-24.png">
+</details>
+
+### Fork Repository
+To fork the repository by following these steps:
+1. Go to the GitHub repository
+2. Click on Fork button in upper right hand corner
+<hr>
+
+### Clone Repository
+You can clone the repository by following these steps:
+1. Go to the GitHub repository 
+2. Locate the Code button above the list of files and click it 
+3. Select if you prefere to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL to your clipboard
+4. Open Git Bash
+5. Change the current working directory to the one where you want the cloned directory
+6. Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+7. Press Enter to create your local clone.
+
+##### Back to [top](#table-of-contents)<hr>
+
+## Credits
+
+### Images
+
+Images used were sourced from Pexels.com and provided by Mr T's Pies
+
+### Code
+
+##### Back to [top](#table-of-contents)<hr>
+
+## Acknowledgements
+
+### Special thanks to the following:
+- Code Institute
+- My Mentor Mo Shami
