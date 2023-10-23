@@ -1,7 +1,7 @@
 # Mr T's Pies 
 <img src="https://res.cloudinary.com/dnyzrhjyz/image/upload/v1698070350/blk-glasses_bfidfb.png" style="width: 150px; height: 50px;">
 
-![Am I Responsive](docs/am-i-responsive.PNG)
+![Am I Responsive](docs/am-i-responsive.png)
 
 **Developer: Kieran Merrett**
 
