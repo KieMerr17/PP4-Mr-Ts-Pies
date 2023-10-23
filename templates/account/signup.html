@@ -18,26 +18,28 @@
                     <br>
 
                     <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-                      {% csrf_token %}
+                        {% csrf_token %}
                         {% for field in form %}
-                            <label for="{{ field.id_for_label }}" class="custom-label">
-                                {% if field.field.required %}<span class="required"></span>{% endif %}
-                                {{ field.label }}
-                            </label>
-                            <p class="textarea-input signin-input">
-                                {{ field }}
-                                <!-- Remove placeholder with inline script for input elements -->
-                                {% if field.field.widget.input_type != 'checkbox' %}
-                                    <script>
-                                        document.getElementById("{{ field.id_for_label }}").placeholder = "";
-                                    </script>
-                                {% endif %}
-                            </p>
+                            {% if field.field.widget.input_type != 'email' %}
+                                <label for="{{ field.id_for_label }}" class="custom-label">
+                                    {% if field.field.required %}<span class="required"></span>{% endif %}
+                                    {{ field.label }}
+                                </label>
+                                <p class="textarea-input signin-input">
+                                    {{ field }}
+                                    <!-- Remove placeholder with inline script for input elements -->
+                                    {% if field.field.widget.input_type != 'checkbox' %}
+                                        <script>
+                                            document.getElementById("{{ field.id_for_label }}").placeholder = "";
+                                        </script>
+                                    {% endif %}
+                                </p>
+                            {% endif %}
                         {% endfor %}
-                      {% if redirect_field_value %}
-                      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                      {% endif %}
-                      <button class="btn btn--red" type="submit">{% trans "Sign Up" %} &raquo;</button>
+                        {% if redirect_field_value %}
+                            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                        {% endif %}
+                        <button class="btn btn--red" type="submit">{% trans "Sign Up" %} &raquo;</button>
                     </form>
                     <br>
 
