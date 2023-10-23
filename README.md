@@ -180,7 +180,7 @@ The footer contains all relevant social media links that the business has so the
 - Built with Python and the Django framework with a database of a Postgres for the deployed Heroku version(production)
 
 <details><summary>Show diagram</summary>
-<img src="">
+<img src= docs/database-diagram.png>
 </details>
 
 
@@ -281,6 +281,7 @@ The wireframes were created using Balsamiq
 - [Balsamiq](https://balsamiq.com/)
 - [Bootstrap v5.2](https://getbootstrap.com/)
 - [Cloudinary](https://cloudinary.com/)
+- [dbdiagram.io](https://dbdiagram.io/)
 - [Favicon.io](https://favicon.io)
 - [Chrome dev tools](https://developers.google.com/web/tools/chrome-devtools/)
 - [EmailJS](https://www.emailjs.com/)
@@ -290,7 +291,7 @@ The wireframes were created using Balsamiq
 - [Google Fonts](https://fonts.google.com/)
 - [Heroku Platform](https://id.heroku.com/login)
 - [jQuery](https://jquery.com)
-- [Postgres](https://www.postgresql.org/)
+- [ElephantSQL](https://www.elephantsql.com/)
 - [Summernote](https://summernote.org/)
 - Validation:
   - [WC3 Validator](https://validator.w3.org/)
