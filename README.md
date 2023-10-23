@@ -95,7 +95,6 @@ Mr Ts Pies is a website designed to help promote a local pie making business, sh
 
 28. As a User i can View a list of events so that I can choose which one i want to book onto
 29. As a User i can hide past events so that I can NOT book an event in the past
-30. As a User i can view event likes so that i can see the popular events
 31. As a User i can view events in pages so that the screen doesn't get blocked up with too many events
 
 
@@ -1014,18 +1013,6 @@ Delete a comment
 <details><summary>Instructions</summary>
 <img src="docs/testing/manual-testing/manual-test-15.1.png">
 <img src="docs/testing/manual-testing/manual-test-15.2.png">
-</details>
-<hr>
-
-
-30. As a User i can view event likes so that i can see the popular events
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-|  |  |  |
-
-<details><summary>Instructions</summary>
-<img src="">
 </details>
 <hr>
 
