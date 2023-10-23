@@ -801,10 +801,12 @@ Option 2
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| Select 'Get in touch' from the navigation menu. Scroll to the bottom of the page. | Be shown all methods of contacting the company, email, phone, socials and alt forms of contact. Socials are displayed in the footer of each page | Worked as expected |
 
 <details><summary>Instructions</summary>
-<img src="">
+<img src="docs/testing/manual-testing/manual-test-25.10.png">
+<img src="docs/testing/manual-testing/manual-test-3.2.png">
+<img src="docs/testing/manual-testing/manual-test-3.3.png">
 </details>
 <hr>
 
