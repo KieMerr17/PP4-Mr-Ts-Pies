@@ -88,7 +88,7 @@ Mr Ts Pies is a website designed to help promote a local pie making business, sh
 10. As a User i can log in to my account so that i can make a booking or leave comments
 11. As a User i can see login status so that i know if i am logged in or not
 12. As a User i can view the sites news articles so that I can learn more information, read articles
-13. As a User i can Create Read Update and Delete my comments on articles so that i can connect with the site owner
+13. As a User i can Create Read and Delete my comments on articles so that i can connect with the site owner
 15. As a User i can not book an event in the past so that my booking remains valid
 16. As a User i can view news articles page-by-page so that the screen isn't crowded with information
 
@@ -771,10 +771,11 @@ WAVE was used to test the websites accessibility.
 ------------ | ------------ | ------------ |
 | From the homepage use the naviagtion bar/menu to switch between pages | Be able to navigate between all areas of the website | Worked as expected |
 
-<details><summary></summary>
+<details><summary>Instructions</summary>
 <img src="docs/testing/manual-testing/manual-test-1.1.png">
 <img src="docs/testing/manual-testing/manual-test-1.2.png">
 </details>
+<hr>
 
 
 2.	As a User i can use a navbar, footer, and social icons so that I can navigate the site, access menus, and access socials
@@ -784,7 +785,7 @@ WAVE was used to test the websites accessibility.
 | From the homepage use the naviagtion bar/menu to switch between pages | Be able to navigate between all areas of the website | Worked as expected |
 | Scroll to the bottom of the home page to navigate socials | Open social sites linked to the business | Worked as expected |
 
-<details><summary></summary>
+<details><summary>Instructions</summary>
 Option 1
 <img src="docs/testing/manual-testing/manual-test-1.1.png">
 <img src="docs/testing/manual-testing/manual-test-1.2.png">
@@ -793,6 +794,7 @@ Option 2
 <img src="docs/testing/manual-testing/manual-test-2.2.png">
 <img src="docs/testing/manual-testing/manual-test-2.3.png">
 </details>
+<hr>
 
 3.	As a User i can view the contact details so that I know how to contact them via email, phone and socials
 
@@ -800,9 +802,10 @@ Option 2
 ------------ | ------------ | ------------ |
 |  |  |  |
 
-<details><summary></summary>
+<details><summary>Instructions</summary>
 <img src="">
 </details>
+<hr>
 
 4.	As a User i can book onto an workshop so that i can reserve a space
 
@@ -810,7 +813,7 @@ Option 2
 ------------ | ------------ | ------------ |
 | Once logged into your profile, navigate through 'Events' then into 'Workshops'. Select the workshop you wish to book onto. Enter the details and any specific dietary requirements before submitting. If valid booking, you are directed back to your profile page and shown that your booking is waiting approval. | Booking to be made for the user, pending approval | Worked as expected |
 
-<details><summary></summary>
+<details><summary>Instructions</summary>
 <img src="docs/testing/manual-testing/manual-test-4.1.png">
 <img src="docs/testing/manual-testing/manual-test-4.2.png">
 <img src="docs/testing/manual-testing/manual-test-4.3.png">
@@ -818,6 +821,8 @@ Option 2
 <img src="docs/testing/manual-testing/manual-test-4.5.png">
 <img src="docs/testing/manual-testing/manual-test-4.6.png">
 </details>
+<hr>
+
 
 5.	As a User i can update my booking so that i can change the details on my booking
 
@@ -825,13 +830,15 @@ Option 2
 ------------ | ------------ | ------------ |
 | Once logged in, navigate to your profile page, click the pencil icon to edit your booking. Enter the new information and click save. | My booking to be updated with the new details | Worked as expected |
 
-<details><summary></summary>
+<details><summary>Instructions</summary>
 <img src="docs/testing/manual-testing/manual-test-5.1.png">
 <img src="docs/testing/manual-testing/manual-test-5.2.png">
 <img src="docs/testing/manual-testing/manual-test-5.3.png">
 <img src="docs/testing/manual-testing/manual-test-5.4.png">
 <img src="docs/testing/manual-testing/manual-test-5.5.png">
 </details>
+<hr>
+
 
 6.	As a User i can delete my booking so that i can free up space for someone else
 
@@ -839,12 +846,14 @@ Option 2
 ------------ | ------------ | ------------ |
 | Once logged in, navigate to your profile page, click the trash icon to delete your booking. When prompted to confirm deletion, click yes. | The booking to be deleted | Worked as expected |
 
-<details><summary></summary>
+<details><summary>Instructions</summary>
 <img src="docs/testing/manual-testing/manual-test-5.1.png">
 <img src="docs/testing/manual-testing/manual-test-6.2.png">
 <img src="docs/testing/manual-testing/manual-test-6.3.png">
 <img src="docs/testing/manual-testing/manual-test-6.4.png">
 </details>
+<hr>
+
 
 7.	As a User i can view my booking so that i can check the details of the workshop
 
@@ -852,11 +861,13 @@ Option 2
 ------------ | ------------ | ------------ |
 | Once logged in, navigate to your profile to see a list of your bookings. Click the edit to see your booking in more detail | View the details of my booking | Worked as expected |
 
-<details><summary></summary>
+<details><summary>Instructions</summary>
 <img src="docs/testing/manual-testing/manual-test-5.1.png">
 <img src="docs/testing/manual-testing/manual-test-7.2.png">
 <img src="docs/testing/manual-testing/manual-test-7.3.png">
 </details>
+<hr>
+
 
 8.	As a User i can be notified of my action in creation, editing, or deleting of a booking so that i know it has been successful
 
@@ -864,12 +875,13 @@ Option 2
 ------------ | ------------ | ------------ |
 | Create, Update or Delete a current booking | Notification of the user action to be displayed | Worked as expected |
 
-<details><summary></summary>
+<details><summary>Instructions</summary>
 <img src="docs/testing/manual-testing/manual-test-8.1.png">
 <img src="docs/testing/manual-testing/manual-test-8.2.png">
 <img src="docs/testing/manual-testing/manual-test-8.3.png">
-
 </details>
+<hr>
+
 
 9. As a User i can register for a new account so that i can make a booking at an event and leave comments
 
@@ -877,11 +889,13 @@ Option 2
 ------------ | ------------ | ------------ |
 | From the home page click register in the navigation bar. Enter User details. | A new account to be created and navigated to the home page displaying notification your now logged in as that new user | Worked as expected |
 
-<details><summary></summary>
+<details><summary>Instructions</summary>
 <img src="docs/testing/manual-testing/manual-test-9.1.png">
 <img src="docs/testing/manual-testing/manual-test-9.2.png">
 <img src="docs/testing/manual-testing/manual-test-9.3.png">
 </details>
+<hr>
+
 
 10. As a User i can log in to my account so that i can make a booking or leave comments
 
@@ -889,11 +903,13 @@ Option 2
 ------------ | ------------ | ------------ |
 | From the home page click login in the navigation bar. Enter User details. | Logged into your account, notification to be displayed and directed to the home page | Worked as expected |
 
-<details><summary></summary>
+<details><summary>Instructions</summary>
 <img src="docs/testing/manual-testing/manual-test-10.1.png">
 <img src="docs/testing/manual-testing/manual-test-10.2.png">
 <img src="docs/testing/manual-testing/manual-test-10.3.png">
 </details>
+<hr>
+
 
 11. As a User i can see login status so that i know if i am logged in or not
 
@@ -901,70 +917,104 @@ Option 2
 ------------ | ------------ | ------------ |
 | Navigate to the home page | See in the navigation bar an option to either 'register/login' or to 'logout' depending on login status | Worked as expected |
 
-<details><summary></summary>
+<details><summary>Instructions</summary>
 <img src="docs/testing/manual-testing/manual-test-11.1.png">
 <img src="docs/testing/manual-testing/manual-test-11.2.png">
 </details>
+<hr>
+
 
 12. As a User i can view the sites news articles so that I can learn more information, read articles
 
 **Step** | **Expected Result** | **Actual Result** 
 ------------ | ------------ | ------------ |
-|  |  |  |
+| From the home page, navigate to 'About' drop down then click 'News'. | A list of news articles relted to the company to be displayed with the option to read each article in more detail | Worked as expected |
 
-<details><summary></summary>
-<img src="">
+<details><summary>Instructions</summary>
+<img src="docs/testing/manual-testing/manual-test-12.1.png">
+<img src="docs/testing/manual-testing/manual-test-12.2.png">
+<img src="docs/testing/manual-testing/manual-test-12.3.png">
+<img src="docs/testing/manual-testing/manual-test-12.4.png">
 </details>
+<hr>
 
-13. As a User i can Create Read Update and Delete my comments on articles so that i can connect with the site owner
+
+13. As a User i can Create Read and Delete my comments on articles so that i can connect with the site owner
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| Read a comment - From the home page, navigate to 'About' drop down then click 'News'. Click 'read more' on the article you want to find out more from or leave a comment. Scroll to the bottom of the page to the section where you can leave a comment. | A display of comments left by users on that article to be shown | Worked as expected |
+| Create a comment - (must be logged in) write your words in the box on the article detail, click 'add comment'. | The users comment to be added to the list of comments | Worked as expected |
+| Delete a comment - Click the red trash can next to your comment | A notification to confirm deletion of the comment to pop up next to the comment. If confirmed, comment deleted, if not then the notification to be hidden | Worked as expected |
 
-<details><summary></summary>
-<img src="">
+<details><summary>Instructions</summary>
+Read Comments
+<img src="docs/testing/manual-testing/manual-test-12.1.png">
+<img src="docs/testing/manual-testing/manual-test-12.2.png">
+<img src="docs/testing/manual-testing/manual-test-12.3.png">
+<img src="docs/testing/manual-testing/manual-test-13.4.png">
+Create Comment
+<img src="docs/testing/manual-testing/manual-test-13.5.png">
+<img src="docs/testing/manual-testing/manual-test-13.6.png">
+<img src="docs/testing/manual-testing/manual-test-13.7.png">
+Delete a comment
+<img src="docs/testing/manual-testing/manual-test-13.8.png">
+<img src="docs/testing/manual-testing/manual-test-13.9.png">
+<img src="docs/testing/manual-testing/manual-test-13.10.png">
 </details>
+<hr>
 
 15. As a User i can not book an event in the past so that my booking remains valid
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| Navigate to the 'Events' drop down then click 'Workshops'. | All current workshops displayed are all Future dates | Worked as expected |
 
-<details><summary></summary>
-<img src="">
+<details><summary>Instructions</summary>
+<img src="docs/testing/manual-testing/manual-test-15.1.png">
+<img src="docs/testing/manual-testing/manual-test-15.2.png">
 </details>
+<hr>
 
 16. As a User i can view news articles page-by-page so that the screen isn't crowded with information
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| From the home page, navigate to 'About' drop down then click 'News'. Click 'Next' to see more articles. | Articles to be paginated and displaying x3 per page | Worked as expected |
 
-<details><summary></summary>
-<img src="">
+<details><summary>Instructions</summary>
+<img src="docs/testing/manual-testing/manual-test-12.1.png">
+<img src="docs/testing/manual-testing/manual-test-16.2.png">
+<img src="docs/testing/manual-testing/manual-test-16.3.png">
 </details>
+<hr>
+
 
 28. As a User i can View a list of events so that I can choose which one i want to book onto
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| From the home page, navigate to 'Events' then to 'Workshops | A list of all workshops to be displayed for you to browse and book at your leisure | Worked as expected |
 
-<details><summary></summary>
-<img src="">
+<details><summary>Instructions</summary>
+<img src="docs/testing/manual-testing/manual-test-4.1.png">
+<img src="docs/testing/manual-testing/manual-test-28.2.png">
 </details>
+<hr>
+
 
 29. As a User i can hide past events so that I can NOT book an event in the past
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| Navigate to the 'Events' drop down then click 'Workshops'. | All current workshops displayed are all Future dates | Worked as expected |
 
-<details><summary></summary>
-<img src="">
+<details><summary>Instructions</summary>
+<img src="docs/testing/manual-testing/manual-test-15.1.png">
+<img src="docs/testing/manual-testing/manual-test-15.2.png">
 </details>
+<hr>
+
 
 30. As a User i can view event likes so that i can see the popular events
 
@@ -972,105 +1022,190 @@ Option 2
 ------------ | ------------ | ------------ |
 |  |  |  |
 
-<details><summary></summary>
+<details><summary>Instructions</summary>
 <img src="">
 </details>
+<hr>
+
 
 31. As a User i can view events in pages so that the screen doesn't get blocked up with too many events
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| Navigate to the 'Events' drop down then click 'Workshops'. Click 'Next' to see more available workhops | See that the workshops are paginated, displaying x4 per page | Worked as expected |
 
-<details><summary></summary>
-<img src="">
+<details><summary>Instructions</summary>
+<img src="docs/testing/manual-testing/manual-test-15.1.png">
+<img src="docs/testing/manual-testing/manual-test-31.2.png">
+<img src="docs/testing/manual-testing/manual-test-31.3.png">
 </details>
+<hr>
+
 
 17. As a Admin i can login so that i can access the back end of the site
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| In the address bar, navigate to 'mrtspies.herokuapp.com/admin. Login with your Admin login details | Be shown the Admin panel where you can make changes to Admin areas | Worked as expected |
 
-<details><summary></summary>
-<img src="">
+<details><summary>Instructions</summary>
+<img src="docs/testing/manual-testing/manual-test-17.1.png">
+<img src="docs/testing/manual-testing/manual-test-17.2.png">
 </details>
+<hr>
+
 
 18. As a Admin i can manually add a booking so that people can book onto an event in other ways
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| From the Admin panel, scroll down and select 'add' next to Booking. Enter the Users details, select which workshop the booking is for, also if any special dietary requirements are needed and check if the Approved status needs to be yes or no. Click Save  | Booking for selected workshop to be successfully added | Worked as expected |
 
-<details><summary></summary>
-<img src="">
+<details><summary>Instructions</summary>
+<img src="docs/testing/manual-testing/manual-test-18.1.png">
+<img src="docs/testing/manual-testing/manual-test-18.2.png">
+<img src="docs/testing/manual-testing/manual-test-18.3.png">
+<img src="docs/testing/manual-testing/manual-test-18.4.png">
+<img src="docs/testing/manual-testing/manual-test-18.5.png">
 </details>
+<hr>
+
 
 19. As a Admin i can accept or reject booking so that we avoid false bookings
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| From the Admin panel scroll down and select 'Bookings'. Click the user name for the booking you want to change. Bookings default to 'not approved'. Click to either approve and save the booking or delete the booking | Changes made to the booking to be reflected in the Admin panel 'Bookings' section | Worked as expected |
 
-<details><summary></summary>
-<img src="">
+<details><summary>Instructions</summary>
+<img src="docs/testing/manual-testing/manual-test-18.1.png">
+<img src="docs/testing/manual-testing/manual-test-19.2.png">
+<img src="docs/testing/manual-testing/manual-test-19.3.png">
+<img src="docs/testing/manual-testing/manual-test-19.4.png">
+<img src="docs/testing/manual-testing/manual-test-19.5.png">
+<img src="docs/testing/manual-testing/manual-test-19.6.png">
 </details>
+<hr>
+
 
 23. As a Admin i can filter events by date so that I can see what events we have for a particular day
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| Scroll down on the Admin panel and select 'Workshops'. On the right hand side there is an option to filter the Workshops by many things, select which one you would like to filter them by. You can choose to clear the filter once it has been applied | Workshops to be filtered depending on which option is selected | Worked as expected |
 
-<details><summary></summary>
-<img src="">
+<details><summary>Instructions</summary>
+<img src="docs/testing/manual-testing/manual-test-18.1.png">
+<img src="docs/testing/manual-testing/manual-test-23.2.png">
+<img src="docs/testing/manual-testing/manual-test-23.3.png">
+<img src="docs/testing/manual-testing/manual-test-23.4.png">
 </details>
+<hr>
+
 
 27. As a Site Admin i can create, update and delete events so that users can book onto them
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| Create an event - Scroll down to the section 'Workshops' and click 'Add'. Input the relevent details, choose if the workshop is publised or draft and click 'Save'  | Workshop to be created and if 'published', displayed to users for booking | Worked as expected |
+| Update an event - Scroll down to the section 'Workshops' and click 'Workshops. Click on the enent you wish to make the changes to. Make adjustments before scrolling down, and clicking save. | Changes made to the even to be update on the workshop | Worked as expected |
+| Delete an event - Scroll down to the section 'Workshops' and click 'Workshops. Click on the event you wish to delete. Scroll to the bottom of that page and click 'delete'. Then confirm your deletion. | Event to be deleted and removed from the list of workshops | Worked as expected |
 
-<details><summary></summary>
-<img src="">
+<details><summary>Instructions</summary>
+Create an event
+<img src="docs/testing/manual-testing/manual-test-18.1.png">
+<img src="docs/testing/manual-testing/manual-test-27.2.png">
+<img src="docs/testing/manual-testing/manual-test-27.3.png">
+<img src="docs/testing/manual-testing/manual-test-27.4.png">
+<img src="docs/testing/manual-testing/manual-test-27.5.png">
+Update an event
+<img src="docs/testing/manual-testing/manual-test-18.1.png">
+<img src="docs/testing/manual-testing/manual-test-23.2.png">
+<img src="docs/testing/manual-testing/manual-test-27.6.png">
+<img src="docs/testing/manual-testing/manual-test-27.7.png">
+<img src="docs/testing/manual-testing/manual-test-27.8.png">
+<img src="docs/testing/manual-testing/manual-test-27.9.png">
+Delete an event
+<img src="docs/testing/manual-testing/manual-test-18.1.png">
+<img src="docs/testing/manual-testing/manual-test-23.2.png">
+<img src="docs/testing/manual-testing/manual-test-27.6.png">
+<img src="docs/testing/manual-testing/manual-test-27.10.png">
+<img src="docs/testing/manual-testing/manual-test-27.11.png">
+<img src="docs/testing/manual-testing/manual-test-27.12.png">
+<img src="docs/testing/manual-testing/manual-test-27.13.png">
 </details>
+<hr>
+
 
 24. As a Site Owner i can provide a fully responsive site for my customers so that they have a good user experience
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| Open the webpage on google chrome, right click and select 'inspect'. Test all screen sizes by changing the preset values. | All content to be readable and scales dependant on viewing platform. | Worked as expected |
 
-<details><summary></summary>
-<img src="">
+<details><summary>Instructions</summary>
+<img src="docs/testing/manual-testing/manual-test-24.1.png">
+<img src="docs/testing/manual-testing/manual-test-24.2.png">
+<img src="docs/testing/manual-testing/manual-test-24.3.png">
+<img src="docs/testing/manual-testing/manual-test-24.4.png">
 </details>
+<hr>
+
 
 25. As a Site Owner i can validate data entered into my site so that all submitted data is correct to avoid errors
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| Go to book onto an event, enter incorrect/missing data. | Be notified of the incorrect data | Worked as expected |
+| Create a comment - (must be logged in) submit an empty box by clicking 'add comment'. | Be notified of incorrect data | Worked as expected |
+| Navigate to the get in touch section, attempt to submit empty form and/or incorrect/missing data | Be notified of incorrect data | Worked as expected |
 
-<details><summary></summary>
-<img src="">
+<details><summary>Instructions</summary>
+Invalid booking
+<img src="docs/testing/manual-testing/manual-test-4.1.png">
+<img src="docs/testing/manual-testing/manual-test-4.2.png">
+<img src="docs/testing/manual-testing/manual-test-4.3.png">
+<img src="docs/testing/manual-testing/manual-test-4.4.png">
+<img src="docs/testing/manual-testing/manual-test-4.5.png">
+<img src="docs/testing/manual-testing/manual-test-25.6.png">
+<img src="docs/testing/manual-testing/manual-test-25.7.png">
+<img src="docs/testing/manual-testing/manual-test-25.8.png">
+<img src="docs/testing/manual-testing/manual-test-25.9.png">
+Empty Comment Error
+<img src="docs/testing/manual-testing/manual-test-12.1.png">
+<img src="docs/testing/manual-testing/manual-test-12.2.png">
+<img src="docs/testing/manual-testing/manual-test-12.3.png">
+<img src="docs/testing/manual-testing/manual-test-13.4.png">
+<img src="docs/testing/manual-testing/manual-test-25.4.png">
+<img src="docs/testing/manual-testing/manual-test-25.5.png">
+Get in touch valid data
+<img src="docs/testing/manual-testing/manual-test-25.10.png">
+<img src="docs/testing/manual-testing/manual-test-25.11.png">
+<img src="docs/testing/manual-testing/manual-test-25.12.png">
+<img src="docs/testing/manual-testing/manual-test-25.13.png">
 </details>
+<hr>
+
 
 26. As a Site Owner i can provide a contact us page so that users can get in touch with the business
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-|  |  |  |
+| Navigate to the 'Get in Touch' button on the home screen. | Be presented with a form to contact the business and also some alternative methods of contact | Worked as expected |
 
-<details><summary></summary>
-<img src="">
+<details><summary>Instructions</summary>
+<img src="docs/testing/manual-testing/manual-test-25.10.png">
+<img src="docs/testing/manual-testing/manual-test-26.2.png">
 </details>
+<hr>
+
 
 ## Bugs
 
 | **Bug** | **Fix** |
 | ------- | ------- |
-|  |  |
+| Booking form error when submitting a new booking | Minor indentation error when flowing through code. |
+| Empty Contact form submitting | Added a 'required' field to the text box area |
 
 ##### Back to [top](#table-of-contents)<hr>
 
