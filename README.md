@@ -684,7 +684,8 @@ JSHint JS Validation Service
 
 Performance, best practices and SEO was tested using Lighthouse.
 
-*I had alot of issues trying to get the lighthouse report on my computer, i had to seek help and get some screenshots sent over to me to show me the reports. Ended up with a complete mixture of results ranging in performance and mixed scores for the same page. I have attached both screenshots from my computer (light theme) and the ones sent to me (dark theme)
+**I had alot of issues trying to get the lighthouse report on my computer, i had to seek help and get some screenshots sent over to me to show me the reports. Ended up with a complete mixture of results ranging in performance and mixed scores for the same page. I have attached both screenshots from my computer (light theme) and the ones sent to me (dark theme).
+**Low performance score is due to the use of images and data being stored on third party hosting sites, images (Cloudinary) and data (elephantSQL) needing to be pulled to site.
 
 <details><summary>See Lighthouse reports</summary>
 
