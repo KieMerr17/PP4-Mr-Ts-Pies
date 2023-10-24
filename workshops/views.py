@@ -8,6 +8,7 @@ from .forms import BookingForm
 from django.db.models import F
 
 
+# Function to Book onto a workshop
 def book_workshop(request, workshop_id):
     workshop = Workshop.objects.get(pk=workshop_id)
     if request.method == 'POST':
@@ -28,6 +29,7 @@ def book_workshop(request, workshop_id):
     })
 
 
+# Function to edit a booking
 def edit_booking(request, booking_id):
     booking = get_object_or_404(Booking, pk=booking_id)
     current_workshop = booking.workshop
@@ -89,6 +91,7 @@ def edit_booking(request, booking_id):
     })
 
 
+# Function to delete a booking
 def delete_booking(request, booking_id):
     booking = get_object_or_404(Booking, pk=booking_id)
     if request.method == 'POST':
@@ -118,6 +121,7 @@ class WorkshopList(generic.ListView):
         return queryset
 
 
+# Function to load the workshop detail
 class WorkshopDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Workshop.objects.filter(status=1)

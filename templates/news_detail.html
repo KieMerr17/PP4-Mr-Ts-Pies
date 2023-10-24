@@ -23,6 +23,7 @@
                         </div>
                         <div class="d-flex align-items-center col-12 pt-2">
                             <div>
+                                <!-- Article content -->
                                 <h5 class="d-block d-md-none py-2 col-12">'{{ workshop.title }}'</h5>
                                 <div class="card-text pt-3">
                                     {{ article.content | safe }}
@@ -41,6 +42,7 @@
                                             <i class="far fa-heart"></i>
                                         </button>
                                         {% endif %}
+                                        <!-- Number of likes -->
                                         <span>{{ article.likes.count }}</span>
                                     </form>
                                     {% else %}
@@ -86,7 +88,7 @@
                                                     {% endif %}
                                                 </div>
                                                 <hr>
-                                            {% endfor %}
+                                                {% endfor %}
                                             </div>
                                         </div>
 

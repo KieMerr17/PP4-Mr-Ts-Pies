@@ -52,6 +52,7 @@ const reviews = [
   
   let previousIndex = -1;
 
+/**Function to show the reviews on the template */ 
 function showReview() {
   let randomIndex = previousIndex;
   while (randomIndex === previousIndex) {

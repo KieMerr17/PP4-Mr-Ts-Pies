@@ -8,6 +8,7 @@ from django.contrib.auth import get_user_model
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
+# Database fields for Workshop model
 class Workshop(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -47,6 +48,7 @@ DIET = (
 )
 
 
+# Database fields for Booking model
 class Booking(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, default=1, related_name="bookings"

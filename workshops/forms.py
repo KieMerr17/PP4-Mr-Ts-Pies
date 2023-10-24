@@ -4,6 +4,7 @@ from django.utils.safestring import mark_safe
 from datetime import date
 
 
+# register the Booking model and select which fields to use
 class BookingForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -13,7 +14,6 @@ class BookingForm(forms.ModelForm):
             event_date__gt=date.today()
             )
 
-    # register the Booking model and selected fields
     class Meta:
         model = Booking
         fields = [

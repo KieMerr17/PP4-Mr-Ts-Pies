@@ -141,14 +141,16 @@
 
         <!-- Local JS files -->
         <script src="{% static 'js/script.js' %}"></script>
-            <!-- Page specific JS -->
-            {% if request.path == '/' %}
-                <script src="{% static 'js/alerts.js' %}"></script>
-                <script src="{% static 'js/reviews.js' %}"></script>
-            {% endif %}
-            {% if request.path == '/contact/' %}
-                <script src="{% static 'js/contact.js' %}"></script>
-            {% endif %}
+        <!-- Page specific JS -->
+        <!-- Home page -->
+        {% if request.path == '/' %}
+            <script src="{% static 'js/alerts.js' %}"></script>
+            <script src="{% static 'js/reviews.js' %}"></script>
+        {% endif %}
+        <!-- Contact page -->
+        {% if request.path == '/contact/' %}
+            <script src="{% static 'js/contact.js' %}"></script>
+        {% endif %}
     </div>
 </body>
 

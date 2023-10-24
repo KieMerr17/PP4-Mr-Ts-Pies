@@ -13,8 +13,9 @@ class ArticleList(generic.ListView):
     paginate_by = 3
 
 
+# Function to load Article details
 class ArticleDetail(View):
-
+    
     def get(self, request, slug, *args, **kwargs):
         queryset = Article.objects.filter(status=1)
         article = get_object_or_404(queryset, slug=slug)
@@ -24,6 +25,7 @@ class ArticleDetail(View):
         if article.likes.filter(id=self.request.user.id).exists():
             liked = True
 
+        # Load and input all comments for article
         comment_form = CommentForm(initial={'name': request.user.username})
         comments = article.comments.all()
 
@@ -39,6 +41,7 @@ class ArticleDetail(View):
         )
 
 
+# Function for adding comments to articles
 def ArticleComment(request, slug):
 
     article = get_object_or_404(Article, slug=slug)
