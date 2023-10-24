@@ -684,40 +684,53 @@ JSHint JS Validation Service
 
 Performance, best practices and SEO was tested using Lighthouse.
 
+*I had alot of issues trying to get the lighthouse report on my computer, i had to seek help and get some screenshots sent over to me to show me the reports. Ended up with a complete mixture of results ranging in performance and mixed scores for the same page. I have attached both screenshots from my computer (light theme) and the ones sent to me (dark theme)
+
 <details><summary>See Lighthouse reports</summary>
 
 <details><summary>Home</summary>
-<img src="docs/validation">
+<img src="docs/validation/lighthouse/lighthouse-home.png">
 </details>
 <details><summary>About Us</summary>
-<img src="docs/validation">
+<img src="docs/validation/lighthouse/lighthouse-about-us.png">
+<img src="docs/validation/lighthouse/lighthouse-about-us-2.png">
 </details>
 <details><summary>News</summary>
-<img src="docs/validation">
+<img src="docs/validation/lighthouse/lighthouse-news.png">
+<img src="docs/validation/lighthouse/lighthouse-news-2.png">
 </details>
 <details><summary>News/Detail</summary>
-<img src="docs/validation">
+<img src="docs/validation/lighthouse/lighthouse-news-detail.png">
 </details>
 <details><summary>Pies</summary>
-<img src="docs/validation">
+<img src="docs/validation/lighthouse/lighthouse-pies.png">
+<img src="docs/validation/lighthouse/lighthouse-pies-2.png">
 </details>
 <details><summary>Workshops</summary>
-<img src="docs/validation">
+<img src="docs/validation/lighthouse/lighthouse-workshops.png">
+<img src="docs/validation/lighthouse/lighthouse-workshops-2.png">
 </details>
 <details><summary>Workshops/Detail</summary>
-<img src="docs/validation/wave-reports">
+<img src="docs/validation/lighthouse/lighthouse-workshop-detail.png">
+</details>
+<details><summary>Booking</summary>
+<img src="docs/validation/lighthouse/lighthouse-booking.png">
+<img src="docs/validation/lighthouse/lighthouse-booking-2.png">
 </details>
 <details><summary>Login</summary>
-<img src="docs/validation">
+<img src="docs/validation/lighthouse/lighthouse-login.png">
+<img src="docs/validation/lighthouse/lighthouse-login-2.png">
 </details>
 <details><summary>Sign Up</summary>
-<img src="docs/validation">
+<img src="docs/validation/lighthouse/lighthouse-signup.png">
+<img src="docs/validation/lighthouse/lighthouse-signup-2.png">
 </details>
 <details><summary>Profile</summary>
-<img src="docs/validation">
+<img src="docs/validation/lighthouse/lighthouse-profile.png">
+<img src="docs/validation/lighthouse/lighthouse-profile-2.png">
 </details>
 <details><summary>Contact</summary>
-<img src="docs/validation">
+<img src="docs/validation/lighthouse/lighthouse-contact.png">
 </details>
 
 </details>
