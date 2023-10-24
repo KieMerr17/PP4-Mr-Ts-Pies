@@ -588,6 +588,11 @@ profile-page.html
 base.html
 <img src="docs/validation/html/html-validation contact.png">
 </details>
+
+<details><summary>404</summary>
+404.html
+<img src="docs/validation/html/html-validation 404.png">
+</details>
 <hr>
 
 
