@@ -17,6 +17,17 @@
                     <h2>{% trans "Sign Up" %}</h2>
                     <br>
 
+                    <!-- Any errors displayed here -->
+                    {% if form.errors %}
+                        <div class="alert alert-danger">
+                            {% for field, error in form.errors.items %}
+                                {% for message in error %}
+                                    <p>{{ message }}</p>
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
                     <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
                         {% csrf_token %}
                         {% for field in form %}
