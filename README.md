@@ -258,8 +258,13 @@ The Pie Model contains the following:
 
 ### Wireframes
 The wireframes were created using Balsamiq
-<details><summary></summary>
-<img src="">
+<details><summary>Images</summary>
+Desktop
+<img src="docs/mrtspies-wireframe-desktop.png">
+Tablet
+<img src="docs/mrtspies-wireframe-tablet.png">
+Mobile
+<img src="docs/mrtspies-wireframe-mobile.png">
 </details>
 
 
