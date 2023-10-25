@@ -1,4 +1,4 @@
-from django.test import SimpleTestCase
+from django.test import TestCase
 from django.urls import reverse, resolve
 from .views import PieList, PieLike
 
@@ -6,7 +6,7 @@ from .views import PieList, PieLike
 # a pie is also correct
 
 
-class TestUrls(SimpleTestCase):
+class TestUrls(TestCase):
     def test_pie_list_url_resolves(self):
         url = reverse('pies')
         self.assertEquals(resolve(url).func.view_class, PieList)
