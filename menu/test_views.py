@@ -6,9 +6,11 @@ from .models import Pie, Allergy
 # These tests first create a Pie, then tests it loads on the assigned template,
 # it can be liked/unliked by the user, and checks for 404 error
 
+
 class PieTestCase(TestCase):
     def setUp(self):
-        self.user = User.objects.create_user(username='testuser', password='testpassword')
+        self.user = User.objects.create_user(
+            username='testuser', password='testpassword')
         self.allergy_milk = Allergy.objects.create(allergy=0)
         self.pie = Pie.objects.create(
             title='Test Pie',
@@ -42,5 +44,6 @@ class PieTestCase(TestCase):
 
     # Test 404 page loads for non existent Pie
     def test_pie_like_view_nonexistent_pie(self):
-        response = self.client.post(reverse('pie_like', args=['nonexistent-pie']))
+        response = self.client.post(
+            reverse('pie_like', args=['nonexistent-pie']))
         self.assertEqual(response.status_code, 404)

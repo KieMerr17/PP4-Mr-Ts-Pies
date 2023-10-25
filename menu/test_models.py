@@ -3,14 +3,15 @@ from .models import Allergy, Pie
 from django.contrib.auth.models import User
 
 
-# These tests will create a Pie item, check the max length of title, a description
-# can be added and a pie gives total likes count.
+# These tests will create a Pie item, check the max length of title,
+# a description can be added and a pie gives total likes count.
 # Also check that a DIET and ALLERGY can be associated to the pie.
 
 class PieModelTest(TestCase):
 
     def setUp(self):
-        test_user = User.objects.create_user(username='testuser', password='testpassword')
+        test_user = User.objects.create_user(
+                        username='testuser', password='testpassword')
         allergy = Allergy.objects.create(allergy=0)
 
         self.pie = Pie.objects.create(
