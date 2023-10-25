@@ -3,9 +3,8 @@ from django.urls import reverse, resolve
 from .views import WorkshopList, WorkshopDetail, book_workshop, edit_booking, delete_booking
 
 
-
 # These tests check that the Workshop and booking urls
-# work correctly 
+# work correctly
 
 class TestUrls(TestCase):
     def test_workshop_list_url_resolves(self):
