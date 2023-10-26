@@ -642,7 +642,17 @@ JSHint JS Validation Service
   <details><summary>urls.py</summary>
   <img src="docs/validation/python/python-validation-pies-urls.png">
   </details>
- 
+  <details><summary>test_models.py</summary>
+  <img src="docs/validation/python/python-validation-menu_models-test.png">
+  </details>
+  <details><summary>test_urls.py</summary>
+  <img src="docs/validation/python/python-validation-menu_urls-test.png">
+  </details>
+  <details><summary>test_views.py</summary>
+  <img src="docs/validation/python/python-validation-menu_views-test.png">
+  </details>
+  -
+  <br>
 </details>
 
 <details><summary>News App</summary>
@@ -662,6 +672,17 @@ JSHint JS Validation Service
   <details><summary>forms.py</summary>
   <img src="docs/validation/python/python-validation-news-forms.png">
   </details>
+  <details><summary>test_models.py</summary>
+  <img src="docs/validation/python/python-validation-news_models-test.png">
+  </details>
+  <details><summary>test_urls.py</summary>
+  <img src="docs/validation/python/python-validation-news_urls-test.png">
+  </details>
+  <details><summary>test_views.py</summary>
+  <img src="docs/validation/python/python-validation-news_views-test.png">
+  </details>
+  -
+  <br>
  
 </details>
 
@@ -682,6 +703,17 @@ JSHint JS Validation Service
   <details><summary>forms.py</summary>
   <img src="docs/validation/python/python-validation-workshops-forms.png">
   </details>
+  <details><summary>test_models.py</summary>
+  <img src="docs/validation/python/python-validation-workshops_models-test.png">
+  </details>
+  <details><summary>test_urls.py</summary>
+  <img src="docs/validation/python/python-validation-workshops_urls-test.png">
+  </details>
+  <details><summary>test_views.py</summary>
+  <img src="docs/validation/python/python-validation-workshops_views-test.png">
+  </details>
+  -
+  <br>
  
 </details>
 

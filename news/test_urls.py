@@ -3,7 +3,7 @@ from django.urls import reverse, resolve
 from .views import ArticleList, ArticleLike, ArticleComment, delete_comment
 
 
-# These tests check that the Article urls are correct and that the 
+# These tests check that the Article urls are correct and that the
 # link once liking, commenting and deleting a comment is also correct
 
 class TestUrls(TestCase):
