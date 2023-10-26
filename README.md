@@ -1408,6 +1408,8 @@ Images used were sourced from Pexels.com and provided by Mr T's Pies
 
 - I have used different elements to display all of the news articles and the workshops from examples on https://www.tutorialrepublic.com/snippets/gallery.php?tag=carousel
 
+- Main navigation/buttons and landing image styling and layout taken from CI Walkthrough project - 'Whiskey Drop' and adjusted to suit my project.
+
 
 ##### Back to [top](#table-of-contents)<hr>
 
