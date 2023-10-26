@@ -28,6 +28,7 @@
   - [Validation](#validation)
   - [Testing](#testing)
     - [Manual testing](#manual-testing)
+    - [Automatic testing](#automatic-testing)
   - [Bugs](#bugs)
   - [Heroku Deployment](#heroku-deployment)
   - [Credits](#credits)
@@ -1213,6 +1214,55 @@ Get in touch valid data
 <img src="docs/testing/manual-testing/manual-test-26.2.png">
 </details>
 <hr>
+
+### Automated testing
+
+- Testing was done using the built in Django module, unittest.
+<details><summary>All tests</summary>
+<img src="docs/testing/automatic testing/all-tests.png">
+</details>
+
+<details><summary>Menu App</summary>
+<details><summary>test_models.py</summary>
+<img src="docs/testing/automatic testing/menu-test_models.png">
+</details>
+
+<details><summary>test_views.py</summary>
+<img src="docs/testing/automatic testing/menu-test_views.png">
+</details>
+
+<details><summary>test_urls.py</summary>
+<img src="docs/testing/automatic testing/menu-test_urls.png">
+</details>
+</details>
+
+<details><summary>News App</summary>
+<details><summary>test_models.py</summary>
+<img src="docs/testing/automatic testing/news-test_models.png">
+</details>
+
+<details><summary>test_views.py</summary>
+<img src="docs/testing/automatic testing/news-test_views.png">
+</details>
+
+<details><summary>test_urls.py</summary>
+<img src="docs/testing/automatic testing/news-test_urls.png">
+</details>
+</details>
+
+<details><summary>Workshop App</summary>
+<details><summary>test_models.py</summary>
+<img src="docs/testing/automatic testing/workshop-test_models.png">
+</details>
+
+<details><summary>test_views.py</summary>
+<img src="docs/testing/automatic testing/workshop-test_views.png">
+</details>
+
+<details><summary>test_urls.py</summary>
+<img src="docs/testing/automatic testing/workshop-test_urls.png">
+</details>
+</details>
 
 
 ## Bugs
