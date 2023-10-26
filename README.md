@@ -1404,6 +1404,11 @@ Images used were sourced from Pexels.com and provided by Mr T's Pies
 
 ### Code
 
+- I have used code where needed from Bootstrap: https://getbootstrap.com/docs/4.0/getting-started/introduction/
+
+- I have used different elements to display all of the news articles and the workshops from examples on https://www.tutorialrepublic.com/snippets/gallery.php?tag=carousel
+
+
 ##### Back to [top](#table-of-contents)<hr>
 
 ## Acknowledgements
