@@ -28,21 +28,15 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['mrtspies.herokuapp.com',
-                 'https://www.mrtspies.com',
-                 'https://www.mrtspies.co.uk',
-                 'https://mrtspies.com',
-                 'https://mrtspies.co.uk',
-                 'mrtspies.com',
-                 'mrtspies.co.uk',
                  'localhost',
-                 '8000-kiemerr17-pp4mrtspies-9cy47l899b0.ws-eu105.gitpod.io']
+                 '8000-kiemerr17-pp4mrtspies-9cy47l899b0.ws-eu106.gitpod.io']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-kiemerr17-pp4mrtspies-9cy47l899b0.ws-eu105.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-kiemerr17-pp4mrtspies-9cy47l899b0.ws-eu106.gitpod.io']
 
 
 # Application definition
