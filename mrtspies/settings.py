@@ -35,7 +35,8 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 ALLOWED_HOSTS = ['mrtspies.herokuapp.com',
                  'localhost',
                  '8000-kiemerr17-pp4mrtspies-9cy47l899b0.ws-eu106.gitpod.io',
-                 'www.mrtspies.com']
+                 'www.mrtspies.com',
+                 'mrtspies.com']
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-kiemerr17-pp4mrtspies-9cy47l899b0.ws-eu106.gitpod.io']
 
